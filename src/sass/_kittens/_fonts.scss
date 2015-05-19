@@ -1,0 +1,23 @@
+@include font-face("grobold", font-files("grobold.ttf",
+									  "grobold.eot",
+									  "grobold.woff",
+									  "grobold.svg"));
+
+.proxima {
+	font-family: "grobold", Helvetica, Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	font-weight: 100 !important;
+}
+
+@include font-face("proxima-bold", font-files("ProximaNovaBold.ttf",
+									  "ProximaNovaBold.eot",
+									  "ProximaNovaBold.woff",
+									  "ProximaNovaBold.svg"));
+
+.proxima-bold {
+	font-family: "proxima-bold", Helvetica, Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	font-weight: 100 !important;
+}
