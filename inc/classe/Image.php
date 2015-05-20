@@ -62,6 +62,7 @@ class Image{
 		}else{
 		    $nb_kittens = 0;
 		}
+
     	return $files[rand(0, $nb_kittens-1)];
     }
 

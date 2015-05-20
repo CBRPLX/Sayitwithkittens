@@ -1,0 +1,47 @@
+{% extends 'squelette.html.twig' %}
+
+{% block header %}
+<div class="bloc-header">
+	<div class="bloc-header-contenu generate">
+		<div class="row txtcenter">
+			<div class="col txtcenter pas bloc-mobile proxima-bold">
+				<textarea type="text" name="texte" id="texte" 
+				placeholder="Punchline" class="pas proxima-bold inbl w100" maxlength="50"></textarea>
+			</div>
+		</div>
+		<div class="row txtcenter">
+			<div class="col txtcenter pas bloc-mobile proxima-bold">
+				<input type="text" name="texte" id="texte" 
+				placeholder="Pseudo" class="pas proxima-bold inbl w100" maxlength="21"/>
+			</div>
+		</div>
+		<div class="row txtcenter pts">
+			<div class="col txtcenter pas bloc-mobile proxima-bold">
+				<div class="regenerate inbl">
+					<i class="icone-loop block"></i>
+					<div class="mts h4-like">Change the kitten</div>
+				</div>
+			</div>
+		</div>
+		<div class="row txtcenter ptl mtl">
+			<div class="col txtcenter pas bloc-mobile">
+				<a href="generate/" class="h3-like proxima-bold not-a-like pts pbs plm prm">Say it 
+					<i class="fa fa-chevron-right h4-like txtmiddle"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$('.regenerate').click(function(){
+	var bg = $('.bloc-header').css('background-image');
+	bg = bg.split("/");
+	bg = bg[bg.length-3]+'/'+bg[bg.length-2]+'/'+bg[bg.length-1];
+	bg = bg.split(')')[0];
+
+	var retour = file('/inc/ajax/change_kitten.php', 'bg='+bg);
+	$('.bloc-header').css('background-image', 'url("/'+retour+'")');
+});
+</script>
+{% endblock %}

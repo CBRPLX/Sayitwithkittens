@@ -13,6 +13,6 @@ include "inc/php/config.php";
 // var_dump($i->likeKitten(1));
 
 $pageController = new \controller\generalController();
-echo $pageController->genererIndex();
+echo $pageController->genererGenerate();
 
 ?>

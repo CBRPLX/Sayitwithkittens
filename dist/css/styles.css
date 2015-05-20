@@ -4804,7 +4804,7 @@ img {
 }
 
 .menu-barre {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   min-width: 100%;
@@ -4840,23 +4840,55 @@ img {
 .bloc-header a:hover {
   color: #ffffff;
 }
-.bloc-header .bloc-header-contenu .row {
+.bloc-header .bloc-header-contenu.index .row {
   position: relative;
 }
-.bloc-header .bloc-header-contenu .row .col {
+.bloc-header .bloc-header-contenu.index .row .col {
   width: 100%;
 }
-.bloc-header .bloc-header-contenu .row .col.example-text {
+.bloc-header .bloc-header-contenu.index .row .col.example-text {
   padding-top: 20% !important;
   padding-bottom: 5% !important;
   font-size: 5em;
   min-height: 361px;
   text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
 }
-.bloc-header .bloc-header-contenu .row:last-of-type {
+.bloc-header .bloc-header-contenu.index .row:last-of-type {
   position: absolute;
   bottom: 130px;
   width: 100%;
+}
+.bloc-header .bloc-header-contenu.generate .row .col input, .bloc-header .bloc-header-contenu.generate .row .col textarea {
+  color: #f26a94;
+  border: 2px solid #f26a94;
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 300px;
+  border-radius: 3px;
+  font-size: 1.5em;
+}
+.bloc-header .bloc-header-contenu.generate .row .col input:-moz-placeholder, .bloc-header .bloc-header-contenu.generate .row .col textarea:-moz-placeholder {
+  color: #f26a94;
+}
+.bloc-header .bloc-header-contenu.generate .row .col input::-moz-placeholder, .bloc-header .bloc-header-contenu.generate .row .col textarea::-moz-placeholder {
+  color: #f26a94;
+}
+.bloc-header .bloc-header-contenu.generate .row .col input:-ms-input-placeholder, .bloc-header .bloc-header-contenu.generate .row .col textarea:-ms-input-placeholder {
+  color: #f26a94;
+}
+.bloc-header .bloc-header-contenu.generate .row .col input::-webkit-input-placeholder, .bloc-header .bloc-header-contenu.generate .row .col textarea::-webkit-input-placeholder {
+  color: #f26a94;
+}
+.bloc-header .bloc-header-contenu.generate .row .col textarea {
+  max-height: 150px;
+}
+.bloc-header .bloc-header-contenu.generate .row .col .regenerate {
+  cursor: pointer;
+}
+.bloc-header .bloc-header-contenu.generate .row .col .regenerate i {
+  opacity: 0.9;
+}
+.bloc-header .bloc-header-contenu.generate .row:first-of-type {
+  padding-top: 15% !important;
 }
 
 .bloc-rond {
@@ -4918,7 +4950,7 @@ img {
   width: 100%;
   border-radius: 3px;
   font-size: 1em;
-  border: 1px solid #f26a94 !important;
+  border: 2px solid #f26a94 !important;
   border-bottom: 3px solid #f26a94 !important;
 }
 .bloc-newsletter form div button:hover {
@@ -4968,13 +5000,13 @@ img {
 }
 
 [class^="icone-"] {
-  background: url('../images/icone-sd929c15856.png');
+  background: url('../images/icone-s3868bcf765.png');
   display: inline-block;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min—moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   [class^="icone-"] {
-    background: url('../images/icone-2x-sc6adcc4efb.png');
-    background-size: 47px 30px;
+    background: url('../images/icone-2x-s748cb2e94d.png');
+    background-size: 49px 91px;
   }
 }
 
@@ -4984,8 +5016,18 @@ img {
   width: 47px;
 }
 
+.icone-loop {
+  background-position: 0 -35px;
+  height: 56px;
+  width: 49px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min—moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icone-logo {
     background-position: 0 0;
+  }
+
+  .icone-loop {
+    background-position: 0 -35px;
   }
 }

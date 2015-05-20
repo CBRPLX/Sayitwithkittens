@@ -21,22 +21,18 @@ ________________________________________________________________________________
 
 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-{% if DEV %}
-<link rel="stylesheet" type="text/css" href="/dist/css/styles.css?t={{TIME}}" />
-{% else %}
-<link rel="stylesheet" type="text/css" href="/dist/css/styles.min.css?t={{TIME}}" />
-{% endif %}
+<link rel="stylesheet" type="text/css" href="/dist/css/styles.css" />
 <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <link type="image/png" href="/dist/images/favicon-16x16.png" rel="icon" sizes="16x16" /> 
 <link type="image/png" href="/dist/images/favicon-32x32.png" rel="icon" sizes="32x32" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-{% block head %}
-	<title>Nouveautés et astuces du web - Articles, blog et projets - cbrplx.io</title>
-	<meta name="description" content="Awesome guy with an awesome website !">
-	<meta name="tags" content="Astuces nouveautés technologies web desktop mobile nancy paris développeur php html css front back end framework informatique chef gestion projet chronostan robin pierrot freelance cbrplx cyberplix outlookcsvparser dark aci webplug iut charlemagne étudiant licence cisiie dut Nouveautés et astuces du web - Articles, blog et projets ">
+	<title>Say it with kittens</title>
+	<meta name="description" content="Say it with kittens">
+	<meta name="tags" content="Say it with kittens">
 
 	<!--- Viewport tweaks -->
 	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -46,85 +42,81 @@ ________________________________________________________________________________
 	<meta name="mobile-web-app-capable" content="yes">
 
 	<!-- Windows 8 et windows phone-->
-	<meta name="application-name" content="cbrplx.io"/>
+	<!-- <meta name="application-name" content="cbrplx.io"/>
 	<meta name="msapplication-TileColor" content="#000000"/>
 	<meta name="msapplication-square70x70logo" content="/dist/images/windows-tiny.jpg"/>
 	<meta name="msapplication-square150x150logo" content="/dist/images/windows-square.jpg"/>
 	<meta name="msapplication-wide310x150logo" content="/dist/images/windows-wide.jpg"/>
 	<meta name="msapplication-square310x310logo" content="/dist/images/windows-large.jpg"/>
-	<meta name="msapplication-tap-highlight" content="no"/> 
+	<meta name="msapplication-tap-highlight" content="no"/>  -->
 
 	<!-- Apple touch icons -->
-	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-152x152-precomposed.jpg" sizes="152x152">
+	<!-- <link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-152x152-precomposed.jpg" sizes="152x152">
 	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-120x120-precomposed.jpg" sizes="120x120">
 	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-76x76-precomposed.jpg" sizes="76x76">
 	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-precomposed.jpg">
-	<link rel="apple-touch-icon" href="/dist/images/apple-touch-icon-152x152-precomposed.jpg" sizes="152x152">
+	<link rel="apple-touch-icon" href="/dist/images/apple-touch-icon-152x152-precomposed.jpg" sizes="152x152"> -->
 
 	<!-- Apple load image -->
 	<!-- iPad, retina, portrait -->
-	<link href="/dist/images/apple-touch-startup-image-1536x2008.jpg" 
+	<!-- <link href="/dist/images/apple-touch-startup-image-1536x2008.jpg" 
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 	<!-- iPad, retina, landscape -->
-	<link href="/dist/images/apple-touch-startup-image-1496x2048.jpg"
+	<!-- <link href="/dist/images/apple-touch-startup-image-1496x2048.jpg"
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 	<!-- iPad, portrait -->
-	<link href="/dist/images/apple-touch-startup-image-768x1004.jpg"
+	<!-- <link href="/dist/images/apple-touch-startup-image-768x1004.jpg"
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 	<!-- iPad, landscape -->
-	<link href="/dist/images/apple-touch-startup-image-748x1024.jpg"
+	<!-- <link href="/dist/images/apple-touch-startup-image-748x1024.jpg"
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 	<!-- iPhone 5 -->
-	<link href="/dist/images/apple-touch-startup-image-640x1096.jpg"
+	<!-- <link href="/dist/images/apple-touch-startup-image-640x1096.jpg"
 	    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 	<!-- iPhone, retina -->
-	<link href="/dist/images/apple-touch-startup-image-640x920.jpg"
+	<!-- <link href="/dist/images/apple-touch-startup-image-640x920.jpg"
 	    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 	<!-- iPhone -->
-	<link href="/dist/images/apple-touch-startup-image-320x460.jpg"
+	<!-- <link href="/dist/images/apple-touch-startup-image-320x460.jpg"
 	    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
-	    rel="apple-touch-startup-image">
+	    rel="apple-touch-startup-image"> -->
 
 	<!-- Facebook -->
-	<meta property="og:title" content="Nouveautés et astuces du web - Articles, blog et projets - cbrplx.io">
+	<!-- <meta property="og:title" content="Nouveautés et astuces du web - Articles, blog et projets - cbrplx.io">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="Awesome guy with an awesome website !">
 	<meta property="og:image" content="http://cbrplx.io/dist/images/share.jpg">
 	<meta property="og:url" content="http://cbrplx.io/">
 	<meta property="og:site_name" content="cbrplx.io">
-	<meta property="fb:admins" content="1614882856">
+	<meta property="fb:admins" content="1614882856"> -->
 
 	<!-- Google+ -->
-	<meta itemprop="name" content="Nouveautés et astuces du web - Articles, blog et projets - cbrplx.io">
+	<!-- <meta itemprop="name" content="Nouveautés et astuces du web - Articles, blog et projets - cbrplx.io">
 	<meta itemprop="description" content="Awesome guy with an awesome website !">
-	<meta itemprop="image" content="http://cbrplx.io/dist/images/share.jpg">
+	<meta itemprop="image" content="http://cbrplx.io/dist/images/share.jpg"> -->
 
 	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image">
+	<!-- <meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@CBRPLX">
 	<meta name="twitter:title" content="Nouveautés et astuces du web - Articles, blog et projets - cbrplx.io">
 	<meta name="twitter:description" content="Awesome guy with an awesome website !">
 	<meta name="twitter:creator" content="@CBRPLX">
-	<meta name="twitter:image:src" content="http://cbrplx.io/dist/images/share.jpg">
-{% endblock %}
+	<meta name="twitter:image:src" content="http://cbrplx.io/dist/images/share.jpg"> -->
 </head>
 
 <body id="body">
-	<div class="bloc-chargement txtcenter transition" id="bloc-chargement-general">
-		<div class="icone-loading-droite rotating-droite"></div>
-	</div>
 	<div id="search-overlay" class="pal">
 		<div id="close-search-overlay" class="close-search-overlay pam">
 			&times;
 		</div>
 		<form class="form-search" id="form-search">
-			<input type="text" id="search-keywords" name="keywords" placeholder="Recherche d'articles..." class="proxima italic pam" />
+			<input type="text" id="search-keywords" name="keywords" placeholder="Search for kittens ..." class="proxima italic pam" />
 			<label for="submit-form-search" id="label-submit-search" class="pam">
 				<i class="fa fa-search pls"></i>
 			</label>
@@ -135,23 +127,28 @@ ________________________________________________________________________________
 		<div class="menu-barre">
 			<div class="menu-barre-body">
 				<div class="menu-barre-logo inbl proxima-bold h4-like pam transition-fast">
-					<a href="/" class="not-a-like">CBRPLX.IO</a>
+					<a href="/" class="not-a-like">
+						<span class="icone-logo txtmiddle"></span>
+						<span class="txtsub">Say it with Kittens</span>
+					</a>
 				</div>
 				<div class="menu-barre-search inbl right proxima-bold h4-like pam transition-fast">
 					<a class="not-a-like" id="search-button">Search <i class="fa fa-search pls"></i></a>
 				</div>
 			</div>
 		</div>
-		{% include 'header.html.twig' %}
 
-		<div class="bloc-contenu" id="bloc-contenu"><div class="bloc-article">{{CONTENU|raw}}</div></div>
+		{% block header %}
+		{% endblock %}
+
+		<div class="bloc-contenu" id="bloc-contenu"><div class="bloc-article"></div></div>
 
 		{% include 'footer.html.twig' %}
+
 	</div>
 
-	{% if DEV == false %}
 		<!-- GOOGLE ANALYTICS -->
-		<script>
+		<!-- <script>
 		if(window.location.host == "cbrplx.io" || window.location.host == "www.cbrplx.io"){
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -161,13 +158,8 @@ ________________________________________________________________________________
 		  ga('create', 'UA-59171361-1', 'auto');
 		  ga('send', 'pageview');
 		}
-		</script>
-	{% endif %}
+		</script> -->
 
-	{% if DEV %}
-	<script type="text/javascript" src="/dist/js/main.js?v={{TIME}}"></script>
-	{% else %}
-	<script type="text/javascript" src="/dist/js/main.min.js?v={{TIME}}"></script>
-	{% endif %}
+	<script type="text/javascript" src="/dist/js/main.js"></script>
 </body>
 </html>

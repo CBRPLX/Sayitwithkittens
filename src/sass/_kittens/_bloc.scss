@@ -92,7 +92,7 @@
 }
 
 .menu-barre{
-	position: fixed;
+	position: absolute;
 	top: 0;
 	width: 100%;
 	min-width: 100%;
@@ -133,25 +133,65 @@
 	}
 
 	.bloc-header-contenu{
-		.row{
-			position: relative;
 
-			.col{
-				width: 100%;
+		&.index{
+			.row{
+				position: relative;
 
-				&.example-text{
-					padding-top: 20% !important;
-					padding-bottom: 5% !important;
-					font-size: 5em;
-					min-height: 361px;
-					@include text-shadow(rgba($noir, 0.5) 2px 2px)
+				.col{
+					width: 100%;
+
+					&.example-text{
+						padding-top: 20% !important;
+						padding-bottom: 5% !important;
+						font-size: 5em;
+						min-height: 361px;
+						@include text-shadow(rgba($noir, 0.5) 2px 2px)
+					}
+				}
+
+				&:last-of-type{
+					position: absolute;
+					bottom: 130px;
+					width: 100%;
 				}
 			}
+		}
 
-			&:last-of-type{
-				position: absolute;
-				bottom: 130px;
-				width: 100%;
+		&.generate{
+			.row{
+
+				.col{
+					input, textarea{
+						color: $rose;
+						border: 2px solid $rose;
+						background-color: rgba(255,255,255,0.9);
+						max-width: 300px; 
+						border-radius: 3px;
+						font-size: 1.5em;
+
+						@include input-placeholder{
+							color: $rose;
+						}
+					}
+
+					textarea{
+						max-height: 150px;
+						// height: 2em;
+					}
+
+					.regenerate{
+						cursor: pointer;
+
+						i{
+							opacity: 0.9;
+						}
+					}
+				}
+
+				&:first-of-type{
+					padding-top: 15% !important;
+				}
 			}
 		}
 	}
@@ -290,7 +330,7 @@
 				width: 100%;
 				border-radius: 3px;
 				font-size: 1em;
-				border: 1px solid $rose !important;
+				border: 2px solid $rose !important;
 				border-bottom: 3px solid $rose !important;
 
 				&:hover{
