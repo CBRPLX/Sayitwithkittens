@@ -184,4 +184,5 @@ return array(
     'Twig_TokenStream' => $vendorDir . '/twig/twig/lib/Twig/TokenStream.php',
     'classe\\Box' => $baseDir . '/inc/classe/Box.php',
     'classe\\Color' => $baseDir . '/inc/classe/Color.php',
+    'classe\\Image' => $baseDir . '/inc/classe/Image.php',
 );
