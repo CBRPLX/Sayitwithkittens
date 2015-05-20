@@ -21,3 +21,15 @@
 	-moz-osx-font-smoothing: grayscale !important;
 	font-weight: 100 !important;
 }
+
+@include font-face("wendy", font-files("Wendy.ttf",
+									  "Wendy.eot",
+									  "Wendy.woff",
+									  "Wendy.svg"));
+
+.wendy {
+	font-family: "wendy", Helvetica, Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	font-weight: 100 !important;
+}

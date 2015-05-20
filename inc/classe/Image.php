@@ -66,10 +66,10 @@ class Image{
     	return $files[rand(0, $nb_kittens-1)];
     }
 
-    public function generate(){
-    	if(!empty($this->texte) && !empty($this->id_image)){
+    public function generate($kitten){
+    	if(!empty($this->texte) && !empty($this->id_image) && !empty($kitten)){
 	    	/* Nom du kitten d'origine */
-			$filename = $this->chooseKitten();
+			$filename = $kitten;
 
 			/* Get extension du kitten d'origine */
 			$imgInfo = getimagesize($filename);
@@ -154,6 +154,7 @@ class Image{
 
 			/* Fonts */
 			$font = 'dist/fonts/grobold.ttf';
+			$font = 'dist/fonts/Wendy.ttf';
 			$proxima = "dist/fonts/ProximaNovaBold.ttf";
 
 			/* On remet la transparence */
@@ -164,7 +165,7 @@ class Image{
 			$box->setFontFace($font);
 			$box->setFontColor(new \classe\Color(255, 255, 255));
 			$box->setTextShadow(new \classe\Color(0, 0, 0, 50), 2, 2);
-			$box->setFontSize(80);
+			$box->setFontSize(90);
 			$box->setLineHeight(1.2);
 			// $box->enableDebug();
 			$box->setBox(20, 30, 860, 500);
@@ -184,7 +185,7 @@ class Image{
 			/* Ajout du texte */
 			imagettftext($imgImg, 17, 0, $x+0, 580, $white, $proxima, "#SAYITWITHKITTENS");
 
-			imagepng($imgImg, "assets/generate/".$this->id_image.".png");
+			imagepng($imgImg, "assets/generate/kitten_".sha1($this->id_image).".png");
 			// imagepng($imgImg);
 			imagedestroy($imgImg);
 			return "assets/generate/".$this->id_image.".png";

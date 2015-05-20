@@ -32,4 +32,16 @@ class generalController {
 
         return $contenu;
     }
+
+    public function genererKitten($id_image){
+        global $twig;
+        global $dev;
+
+        $template = $twig->loadTemplate('kitten.html.twig');
+        $contenu = $template->render(array(
+            'kitten_img' => sha1($id_image)
+        ));
+
+        return $contenu;
+    }
 }

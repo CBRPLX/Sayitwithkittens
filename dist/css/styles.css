@@ -4847,9 +4847,9 @@ img {
   width: 100%;
 }
 .bloc-header .bloc-header-contenu.index .row .col.example-text {
-  padding-top: 20% !important;
+  padding-top: 17% !important;
   padding-bottom: 5% !important;
-  font-size: 5em;
+  font-size: 6em;
   min-height: 361px;
   text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
 }
@@ -4994,6 +4994,17 @@ img {
 }
 .proxima-bold {
   font-family: "proxima-bold", Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-weight: 100 !important;
+}
+
+@font-face {
+  font-family: "wendy";
+  src: url('../fonts/Wendy.ttf?1432153570') format('truetype'), url('../fonts/Wendy.eot?1432153570') format('embedded-opentype'), url('../fonts/Wendy.woff?1432153570') format('woff'), url('../fonts/Wendy.svg?1432153570') format('svg');
+}
+.wendy {
+  font-family: "wendy", Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   font-weight: 100 !important;

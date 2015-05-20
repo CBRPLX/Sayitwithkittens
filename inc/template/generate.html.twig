@@ -11,7 +11,7 @@
 		</div>
 		<div class="row txtcenter">
 			<div class="col txtcenter pas bloc-mobile proxima-bold">
-				<input type="text" name="texte" id="texte" 
+				<input type="text" name="pseudo" id="pseudo" 
 				placeholder="Pseudo" class="pas proxima-bold inbl w100" maxlength="21"/>
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 		</div>
 		<div class="row txtcenter ptl mtl">
 			<div class="col txtcenter pas bloc-mobile">
-				<a href="generate/" class="h3-like proxima-bold not-a-like pts pbs plm prm">Say it 
+				<a href="#" class="h3-like proxima-bold not-a-like pts pbs plm prm" id="generate_it">Say it 
 					<i class="fa fa-chevron-right h4-like txtmiddle"></i>
 				</a>
 			</div>
@@ -42,6 +42,23 @@ $('.regenerate').click(function(){
 
 	var retour = file('/inc/ajax/change_kitten.php', 'bg='+bg);
 	$('.bloc-header').css('background-image', 'url("/'+retour+'")');
+});
+
+$('#generate_it').click(function(){
+	var bg = $('.bloc-header').css('background-image');
+	bg = bg.split("/");
+	bg = bg[bg.length-3]+'/'+bg[bg.length-2]+'/'+bg[bg.length-1];
+	bg = bg.split(')')[0];
+
+	var pseudo = $('#pseudo').val();
+	var texte = $('#texte').val();
+
+	if(pseudo != "" && texte != ""){
+		var retour = file('/inc/ajax/generate_image.php', 'kitten='+bg+'&pseudo='+pseudo+'&texte='+texte);
+		if(retour != 'false'){
+			window.location.href = "/kitten/"+retour;
+		}
+	}
 });
 </script>
 {% endblock %}
