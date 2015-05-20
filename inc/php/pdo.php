@@ -5,7 +5,7 @@ global $dev;
 $pdo = null;
 try{
 	if($dev){
-		$pdo = new PDO('mysql:host=127.0.0.1;dbname=cbrplx_io', 'root', 'root');
+		$pdo = new PDO('mysql:host=127.0.0.1;dbname=kittens', 'root', 'root');
 	}else{
 		$pdo = new PDO('mysql:host=mysql51-77.perso;dbname=robinpieappart', 'robinpieappart', 'KAC000762');
 	}

@@ -1,12 +1,13 @@
 <?php
-include 'Box.php';
-include 'Color.php';
+// include 'Box.php';
+// include 'Color.php';
+include 'inc/php/config.php';
 
 $dev = false;
 if(isset($_GET['dev'])) $dev = true;
 
 //Filename
-$filename = "kitten.jpg";
+$filename = "assets/kittens/kitten_0.jpg";
 
 //Get extension
 $imgInfo = getimagesize($filename) or diewith("Unable to open '$uri'");
@@ -101,19 +102,19 @@ $text = $_GET['text'];
 $text = wordwrap($text, 25, "\n");
 
 // Remplacez le chemin par votre propre chemin de police
-$font = 'GROBOLD.ttf';
-$pacifico = "Lobster.otf";
-$proxima = "ProximaNovaBold.ttf";
+$font = 'dist/fonts/grobold.ttf';
+// $pacifico = "Lobster.otf";
+$proxima = "dist/fonts/ProximaNovaBold.ttf";
 
 
 
 //On remet la transparence
 imagealphablending($imgImg, true);
 
-$box = new GDText\Box($imgImg);
+$box = new \classe\Box($imgImg);
 $box->setFontFace($font);
-$box->setFontColor(new GDText\Color(255, 255, 255));
-$box->setTextShadow(new GDText\Color(0, 0, 0, 50), 2, 2);
+$box->setFontColor(new \classe\Color(255, 255, 255));
+$box->setTextShadow(new \classe\Color(0, 0, 0, 50), 2, 2);
 $box->setFontSize(80);
 $box->setLineHeight(1.2);
 $box->setBox(20, 30, 860, 500);

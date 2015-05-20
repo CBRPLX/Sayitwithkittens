@@ -1,6 +1,8 @@
 <?php
 namespace classe;
 
+include 'inc/php/config.php';
+
 class Box
 {
     /**
@@ -66,13 +68,13 @@ class Box
     public function __construct(&$image)
     {
         $this->im = $image;
-        $this->fontColor = new Color(0, 0, 0);
+        $this->fontColor = new \classe\Color(0, 0, 0);
     }
 
     /**
      * @param Color $color Font color
      */
-    public function setFontColor(Color $color)
+    public function setFontColor(\classe\Color $color)
     {
         $this->fontColor = $color;
     }
@@ -98,7 +100,7 @@ class Box
      * @param int $xShift Relative shadow position in pixels. Positive values move shadow to right, negative to left.
      * @param int $yShift Relative shadow position in pixels. Positive values move shadow to bottom, negative to up.
      */
-    public function setTextShadow(Color $color, $xShift, $yShift)
+    public function setTextShadow(\classe\Color $color, $xShift, $yShift)
     {
         $this->textShadow = array(
             'color' => $color,
@@ -205,7 +207,7 @@ class Box
                 $this->box['y'],
                 $this->box['width'],
                 $this->box['height'],
-                new Color(rand(180, 255), rand(180, 255), rand(180, 255), 80)
+                new \classe\Color(rand(180, 255), rand(180, 255), rand(180, 255), 80)
             );
         }
 
@@ -252,7 +254,7 @@ class Box
                     $this->box['y'] + $yAlign + ($n * $lineHeightPx),
                     $boxWidth,
                     $lineHeightPx,
-                    new Color(rand(1, 180), rand(1, 180), rand(1, 180))
+                    new \classe\Color(rand(1, 180), rand(1, 180), rand(1, 180))
                 );
             }
             
@@ -264,7 +266,7 @@ class Box
                     $line
                 );
             }
-
+            
             $this->drawInternal(
                 $xMOD,
                 $yMOD,
@@ -281,7 +283,7 @@ class Box
         return 0.75 * $this->fontSize;
     }
 
-    protected function drawFilledRectangle($x, $y, $width, $height, Color $color)
+    protected function drawFilledRectangle($x, $y, $width, $height, \classe\Color $color)
     {
         imagefilledrectangle($this->im, $x, $y, $x + $width, $y + $height,
             $color->getIndex($this->im)
@@ -293,7 +295,7 @@ class Box
         return imageftbbox($this->getFontSizeInPoints(), 0, $this->fontFace, $text);
     }
 
-    protected function drawInternal($x, $y, Color $color, $text)
+    protected function drawInternal($x, $y, \classe\Color $color, $text)
     {
         imagefttext(
             $this->im,

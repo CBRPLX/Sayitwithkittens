@@ -1,5 +1,6 @@
 <?php
 namespace classe;
+include 'inc/php/config.php';
 
 class Color
 {
