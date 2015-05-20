@@ -13,6 +13,7 @@ RewriteEngine on
 RewriteRule ^404/$  404.php
 RewriteRule ^403/$  403.php
 RewriteRule ^generate/$  generate.php
+RewriteRule ^kitten/(.*)$  kitten.php?id_image=$1
 
 ErrorDocument 404 /404/
 ErrorDocument 403 /403/
