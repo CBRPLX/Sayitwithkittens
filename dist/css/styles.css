@@ -4809,6 +4809,7 @@ img {
   width: 100%;
   min-width: 100%;
   color: #ffffff;
+  z-index: 999;
 }
 .menu-barre .menu-barre-body {
   max-width: 90%;
