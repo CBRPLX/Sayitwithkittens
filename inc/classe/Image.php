@@ -54,16 +54,24 @@ class Image{
     	}
     }
 
-    public function chooseKitten(){
+    public function chooseKitten($nb_kitten){
     	$files = glob('assets/kittens/kitten_*.*');
+    	// asort($files);
 
 		if ($files !== false){
 		    $nb_kittens = count($files);
 		}else{
 		    $nb_kittens = 0;
 		}
+		$key = array_search("assets/kittens/kitten_".$nb_kitten.".jpg", $files);
+		
+		if($key == ($nb_kittens - 1)){
+			$key = 0;
+		}else{
+			$key++;
+		}
 
-    	return $files[rand(0, $nb_kittens-1)];
+    	return $files[$key];
     }
 
     public function generate($kitten){
