@@ -4840,6 +4840,7 @@ img {
 }
 .bloc-header a:hover {
   color: #ffffff;
+  background-color: #C54A6F;
 }
 .bloc-header .bloc-header-contenu.index .row {
   position: relative;
