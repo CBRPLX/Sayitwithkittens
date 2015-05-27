@@ -4600,7 +4600,7 @@ ul li {
 }
 
 .dnone {
-  display: none;
+  display: none !important;
 }
 
 .txtrouge {
@@ -4825,11 +4825,12 @@ img {
   min-height: 465px;
   max-height: 100%;
   height: 100%;
-  background-image: url("/assets/kittens/kitten_0.jpg");
+  background-image: url("/assets/kittens/kitten_14.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
   background-position: 50%;
+  overflow: hidden;
 }
 .bloc-header a {
   color: #ffffff;
@@ -4853,9 +4854,20 @@ img {
   min-height: 361px;
   text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
 }
+@media (max-width: 768px) {
+  .bloc-header .bloc-header-contenu.index .row .col.example-text {
+    font-size: 4em;
+    padding-top: 24% !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bloc-header .bloc-header-contenu.index .row .col.example-text {
+    font-size: 5em;
+  }
+}
 .bloc-header .bloc-header-contenu.index .row:last-of-type {
   position: absolute;
-  bottom: 130px;
+  bottom: 10%;
   width: 100%;
 }
 .bloc-header .bloc-header-contenu.generate .row .col input, .bloc-header .bloc-header-contenu.generate .row .col textarea {
@@ -4983,6 +4995,17 @@ img {
 }
 .grobold {
   font-family: "grobold", Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-weight: 100 !important;
+}
+
+@font-face {
+  font-family: "proxima";
+  src: url('../fonts/ProximaNovaRegular.ttf?1430831282') format('truetype'), url('../fonts/ProximaNovaRegular.eot?1430831288') format('embedded-opentype'), url('../fonts/ProximaNovaRegular.woff?1430831280') format('woff'), url('../fonts/ProximaNovaRegular.svg?1430831291') format('svg');
+}
+.proxima {
+  font-family: "proxima", Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   font-weight: 100 !important;
