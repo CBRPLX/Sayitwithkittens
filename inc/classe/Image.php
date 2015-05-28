@@ -5,6 +5,7 @@ include "inc/php/config.php";
 class Image{
 
 	private $id_image;
+	private $id_kitten;
 	private $texte;
 	private $date_creation;
 	private $ip_creator;
@@ -23,10 +24,27 @@ class Image{
     	$this->$attr = $value;
     }
 
+    public function load(){
+    	global $pdo;
+
+    	$sql = 'SELECT * FROM kitten_image WHERE id_image = ?';
+    	$stmt = $pdo->prepare($sql);
+    	$stmt->execute(array($this->id_image));
+    	if($stmt->rowCount() > 0){
+    		$res = $stmt->fetch(\PDO::FETCH_ASSOC);
+    		foreach ($res as $k => $v) {
+    			$this->$k = $v;
+    		}
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
+
     public function add(){
     	global $pdo;
 
-    	if(!empty($this->texte) && !empty($this->pseudo) && $this->pseudo != "Sayitwithkittens"){
+    	if(!empty($this->id_kitten) && !empty($this->texte) && !empty($this->pseudo) && $this->pseudo != "Sayitwithkittens"){
     		$ip = $this->getIPCreator();
 
     		if(strlen($this->texte) > 50){
@@ -37,11 +55,11 @@ class Image{
     			$this->pseudo = substr($this->pseudo, 0, 15);
     		}
     		
-    		$sql = "INSERT INTO image (texte, date_creation, ip_creator, pseudo, likes)
-    				VALUES (?,?,?,?,?)";
+    		$sql = "INSERT INTO kitten_image (id_kitten, texte, date_creation, ip_creator, pseudo, likes)
+    				VALUES (?,?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($sql);
-    		$stmt->execute(array($this->texte, time(), $ip, $this->pseudo, 0));
+    		$stmt->execute(array($this->id_kitten, $this->texte, time(), $ip, $this->pseudo, 0));
 
     		if($stmt->rowCount() > 0){
     			$this->id_image = $pdo->lastInsertId();
@@ -241,14 +259,14 @@ class Image{
     		if($this->verifCookie($id_image)){
     			$this->setCookie($id_image);
 
-    			$sql = "SELECT likes FROM image WHERE id_image = ?";
+    			$sql = "SELECT likes FROM kitten_image WHERE id_image = ?";
     			$stmt = $pdo->prepare($sql);
     			$stmt->execute(array($id_image));
 
     			if($stmt->rowCount() > 0){
     				$res = $stmt->fetch(\PDO::FETCH_OBJ);
 
-    				$sql = "UPDATE image SET likes = ? WHERE id_image = ?";
+    				$sql = "UPDATE kitten_image SET likes = ? WHERE id_image = ?";
     				$stmt = $pdo->prepare($sql);
     				$stmt->execute(array($res->likes+1, $id_image));
 

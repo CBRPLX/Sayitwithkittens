@@ -1,8 +1,8 @@
 {% extends 'squelette.html.twig' %}
 
 {% block header %}
-	{% if kitten_bg != "" %}
-		<div class="bloc-header" style="background-image:url('../{{kitten_bg}}')">
+	{% if img.get('id_kitten') %}
+		<div class="bloc-header" style="background-image:url('../assets/kittens/kitten_{{img.get('id_kitten')}}.jpg')">
 	{% else %}
 		<div class="bloc-header">
 	{% endif %}
@@ -11,8 +11,8 @@
 				<div class="row txtcenter txtmiddle row-mobile">
 					<div class="col txtcenter txtmiddle pas col-mobile">
 						<img src="/assets/generate/kitten_{{kitten_img}}.png"/>
-						<div class="kitten-options txtcenter proxima-bold row">
-							<div class="kitten-options-left col w60">
+						<div class="kitten-options txtcenter proxima-bold row row-mobile">
+							<div class="kitten-options-left col col-mobile w60">
 								<div class="kitten-options-left-top">
 									Download
 								</div>
@@ -25,7 +25,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="kitten-options-right col w40 txtmiddle">
+							<div class="kitten-options-right col col-mobile w40 txtmiddle">
 								Another
 							</div>
 						</div>
