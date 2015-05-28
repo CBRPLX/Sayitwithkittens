@@ -134,6 +134,12 @@
 		}
 	}
 
+	.bloc-header-overlay{
+		background-color: rgba(0,0,0,0.7);
+		width: 100%;
+		height: 100%;
+	}
+
 	.bloc-header-contenu{
 
 		&.index{
@@ -202,6 +208,57 @@
 
 				&:first-of-type{
 					padding-top: 15% !important;
+				}
+			}
+		}
+
+		&.kitten{
+			height: 100%;
+
+			&>.row{
+
+				.col{
+
+					img, .kitten-options{
+						max-width: 50%;
+					}
+
+					img{
+						border: 2px solid $white;
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+					}
+
+					.kitten-options{
+						border: 2px solid $white;
+						border-top: none;
+						margin: auto;
+						border-bottom-left-radius: 5px;
+						border-bottom-right-radius: 5px;
+
+						.kitten-options-left{
+							width: 66%;
+							border-right: 2px solid $white;
+
+							.kitten-options-left-top{
+								border-bottom: 2px solid $white;
+							}
+
+							.kitten-options-left-bottom{
+								.facebook{
+									border-right: 2px solid $white;
+								}
+							}
+						}
+
+						.kitten-options-right{
+							width: 33%;
+						}
+					}
+				}
+
+				&:first-of-type{
+					height: 100%;
 				}
 			}
 		}

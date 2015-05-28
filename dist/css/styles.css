@@ -4842,6 +4842,11 @@ img {
   color: #ffffff;
   background-color: #C54A6F;
 }
+.bloc-header .bloc-header-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+}
 .bloc-header .bloc-header-contenu.index .row {
   position: relative;
 }
@@ -4902,6 +4907,40 @@ img {
 }
 .bloc-header .bloc-header-contenu.generate .row:first-of-type {
   padding-top: 15% !important;
+}
+.bloc-header .bloc-header-contenu.kitten {
+  height: 100%;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col img, .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options {
+  max-width: 50%;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col img {
+  border: 2px solid #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options {
+  border: 2px solid #ffffff;
+  border-top: none;
+  margin: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left {
+  width: 66%;
+  border-right: 2px solid #ffffff;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-top {
+  border-bottom: 2px solid #ffffff;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .facebook {
+  border-right: 2px solid #ffffff;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-right {
+  width: 33%;
+}
+.bloc-header .bloc-header-contenu.kitten > .row:first-of-type {
+  height: 100%;
 }
 
 .bloc-rond {

@@ -44,9 +44,14 @@ class generalController {
         global $twig;
         global $dev;
 
+        $kitten_bg = "";
+        if(!empty($_SESSION['kitten_img']))
+            $kitten_bg = $_SESSION['kitten_img'];
+
         $template = $twig->loadTemplate('kitten.html.twig');
         $contenu = $template->render(array(
-            'kitten_img' => sha1($id_image)
+            'kitten_img' => sha1($id_image),
+            'kitten_bg' => $kitten_bg
         ));
 
         return $contenu;
