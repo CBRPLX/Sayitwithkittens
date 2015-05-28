@@ -1,7 +1,11 @@
 {% extends 'squelette.html.twig' %}
 
 {% block header %}
-<div class="bloc-header">
+	{% if kitten_img != "" %}
+		<div class="bloc-header" style="background-image:url('../{{kitten_img}}')">
+	{% else %}
+		<div class="bloc-header">
+	{% endif %}
 	<div class="bloc-header-contenu generate">
 		<div class="row txtcenter">
 			<div class="col txtcenter pas bloc-mobile proxima-bold">

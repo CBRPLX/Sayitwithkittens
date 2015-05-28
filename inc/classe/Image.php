@@ -71,6 +71,8 @@ class Image{
 			$key++;
 		}
 
+		$_SESSION['kitten_img'] = $files[$key];
+
     	return $files[$key];
     }
 
