@@ -2,6 +2,7 @@
 require "inc/php/config.php";
 
 $i = new \classe\Image();
-$nb_kitten = explode(".", explode("_", $_POST['bg'])[1])[0];
-$new_bg = $i->chooseKitten($nb_kitten);
+$nb_kitten = explode("_", $_POST['bg']);
+$nb_kitten = explode(".", $nb_kitten[1]);
+$new_bg = $i->chooseKitten($nb_kitten[0]);
 echo $new_bg;

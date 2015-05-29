@@ -5,7 +5,7 @@ ini_set('date.timezone', 'Europe/Paris');
 session_start();
 
 $dev = true;
-if($_SERVER["SERVER_NAME"] == "cbrplx.io" || $_SERVER["SERVER_NAME"] == "www.cbrplx.io"){
+if($_SERVER["SERVER_NAME"] == "sayitwithkittens.io" || $_SERVER["SERVER_NAME"] == "www.sayitwithkittens.io"){
 	$dev = false;
 }
 

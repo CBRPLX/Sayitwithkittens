@@ -1,8 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-#RewriteCond %{HTTP_HOST} !^cbrplx\.io$       [NC]
-#RewriteRule ^(.*)$       http://cbrplx.io/$1 [R=301,L]
+#RewriteCond %{HTTP_HOST} !^sayitwithkittens\.io$       [NC]
+#RewriteRule ^(.*)$       http://sayitwithkittens.io/$1 [R=301,L]
 
 #RewriteCond %{QUERY_STRING} PHPSESSID=.*$ 
 #RewriteRule .* %{REQUEST_URI}? [R=301,L]
@@ -13,7 +13,7 @@ RewriteEngine on
 RewriteRule ^404/$  404.php
 RewriteRule ^403/$  403.php
 RewriteRule ^generate/$  generate.php
-RewriteRule ^kitten/(.*)$  kitten.php?id_image=$1
+RewriteRule ^cat/(.*)$  kitten.php?id_image=$1
 
 ErrorDocument 404 /404/
 ErrorDocument 403 /403/

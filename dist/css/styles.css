@@ -4942,6 +4942,10 @@ img {
   vertical-align: middle !important;
   word-break: keep-all !important;
 }
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options a {
+  background-color: transparent;
+  border: none;
+}
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left-top, .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-right {
   background-color: rgba(242, 106, 148, 0);
 }

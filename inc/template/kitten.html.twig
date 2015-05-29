@@ -13,21 +13,29 @@
 						<img src="/assets/generate/kitten_{{kitten_img}}.png"/>
 						<div class="kitten-options txtcenter proxima-bold row row-mobile h5-like">
 							<div class="kitten-options-left col col-mobile w60">
-								<div class="kitten-options-left-top pas pointer transition-fast">
-									<span class="txtmiddle">Download <span class="tiny-hidden small-hidden">your kitten</span></span> &nbsp; <i class="fa fa-download txtmiddle"></i>
+								<div class="kitten-options-left-top pointer transition-fast">
+									<a class="inbl w100 pas not-a-like" href="/assets/generate/kitten_{{kitten_img}}.png" download>
+										<span class="txtmiddle">Download <span class="tiny-hidden small-hidden">your kitten</span></span> &nbsp; <i class="fa fa-download txtmiddle"></i>
+									</a>
 								</div>
 								<div class="kitten-options-left-bottom clearfix">
-									<div class="facebook w50 left inbl pas pointer transition-fast">
-										<i class="fa fa-facebook"></i>&nbsp;
+									<div class="facebook w50 left inbl pointer transition-fast">
+										<a class="inbl w100 pas not-a-like" href="https://www.facebook.com/dialog/share?app_id=1569268633335610&display=page&href=http://sayitwithkittens.io/assets/generate/kitten_{{kitten_img}}.png&redirect_uri=http://sayitwithkittens.io/cat/{{img.get('id_image')}}">
+											<i class="fa fa-facebook"></i>&nbsp;
+										</a>
 									</div>
-									<div class="twitter w50 right inbl pas pointer transition-fast">
-										<i class="fa fa-twitter"></i>&nbsp;
+									<div class="twitter w50 right inbl pointer transition-fast">
+										<a class="inbl w100 pas not-a-like" href="https://twitter.com/intent/tweet?original_referer=http://sayitwithkittens.io/assets/generate/kitten_{{kitten_img}}.png&tw_p=tweetbutton&url=http://sayitwithkittens.io/kitten/{{img.get('id_image')}}">
+											<i class="fa fa-twitter"></i>&nbsp;
+										</a>
 									</div>
 								</div>
 							</div>
 							<div class="kitten-options-right col col-mobile w40 txtmiddle pas pointer transition-fast">
-								<i class="fa fa-refresh fa-lg"></i>
-								<div class="pts">Create another<span class="tiny-hidden small-hidden"> kitten</span></div>
+								<a class="inbl w100 pas not-a-like" href="/generate/">
+									<i class="fa fa-refresh fa-lg"></i>
+									<div class="pts">Create another<span class="tiny-hidden small-hidden"> kitten</span></div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -35,4 +43,10 @@
 			</div>
 		</div>
 </div>
+
+<script type="text/javascript">
+// $('.kitten-options-left-top').click(function(){
+// 	window.location = "/assets/generate/kitten_{{kitten_img}}.png";
+// });
+</script>
 {% endblock %}

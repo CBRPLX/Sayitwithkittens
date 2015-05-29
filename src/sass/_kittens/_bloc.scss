@@ -246,6 +246,11 @@
 						vertical-align: middle !important;
 						@include word-break(keep-all !important);
 
+						a{
+							background-color: transparent;
+							border: none;
+						}
+
 						.kitten-options-left-top, .kitten-options-right{
 							background-color: rgba(242, 106, 148, 0);
 
