@@ -4875,6 +4875,16 @@ img {
     font-size: 5em;
   }
 }
+.bloc-header .bloc-header-contenu.index .row .col.example-text .typed-text {
+  -o-word-break: keep-all !important;
+  -moz-word-break: keep-all !important;
+  -webkit-word-break: keep-all !important;
+  word-break: keep-all !important;
+  -o-word-wrap: normal !important;
+  -moz-word-wrap: normal !important;
+  -webkit-word-wrap: normal !important;
+  word-wrap: normal !important;
+}
 .bloc-header .bloc-header-contenu.index .row:last-of-type {
   position: absolute;
   bottom: 10%;

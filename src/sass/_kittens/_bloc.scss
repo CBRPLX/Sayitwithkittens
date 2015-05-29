@@ -164,6 +164,18 @@
 						@media (min-width: $small-screen + 1) and (max-width: $medium-screen){
 							font-size: 5em;
 						}
+
+						.typed-text{
+							-o-word-break: keep-all !important;
+							-moz-word-break: keep-all !important;
+							-webkit-word-break: keep-all !important;
+							word-break: keep-all !important;
+
+							-o-word-wrap:  normal !important;
+							-moz-word-wrap:  normal !important;
+							-webkit-word-wrap:  normal !important;
+							word-wrap:  normal !important;
+						}
 					}
 				}
 
