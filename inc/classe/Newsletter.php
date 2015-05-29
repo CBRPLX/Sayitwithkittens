@@ -33,14 +33,14 @@ class Newsletter{
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array($nom, $email, time()));
             if($stmt->rowCount() > 0){                
-                // $pageController = new \controller\emailController();
-                // $contenu = $pageController->genererInscriptionNews($_POST["nom"]);
+                $pageController = new \controller\emailController();
+                $contenu = $pageController->genererInscriptionNews($_POST["nom"]);
                 
-                // $destinataire = ucfirst(strtolower($_POST["nom"]))." <".$_POST["email"].">";
-                // $pageController->envoyerEmail($destinataire, "Inscription à la newsletter cbrplx.io", $contenu);
+                $destinataire = ucfirst(strtolower($_POST["nom"]))." <".$_POST["email"].">";
+                $pageController->envoyerEmail($destinataire, "Subscription to the newsletter", $contenu);
 
-                // $contenu = $pageController->genererNouvelleInscription($_POST["nom"], $_POST["email"]);
-                // $pageController->envoyerEmail('cbrplx.io <robin.pierrot@gmail.com>', "Nouvelle inscription à la newsletter cbrplx.io", $contenu);
+                $contenu = $pageController->genererNouvelleInscription($_POST["nom"], $_POST["email"]);
+                $pageController->envoyerEmail('Say it with kittens <robin.pierrot@gmail.com>', "New subscription to the newsletter Sayitwithkittens.io", $contenu);
 
                 return true;
             }else{
