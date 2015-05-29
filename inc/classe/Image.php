@@ -151,7 +151,6 @@ class Image{
 					break;
 				
 				default:
-					diewith("Bad extension");
 					break;
 			}
 

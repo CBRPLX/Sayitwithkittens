@@ -59,7 +59,7 @@ $('#generate_it').click(function(){
 
 	if(pseudo != "" && texte != ""){
 		var retour = file('/inc/ajax/generate_image.php', 'kitten='+bg+'&pseudo='+pseudo+'&texte='+texte);
-		// console.log(retour);
+		// alert(retour);
 		if(retour != 'false'){
 			window.location.href = "/cat/"+retour;
 		}
