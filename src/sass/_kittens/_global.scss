@@ -91,7 +91,7 @@ a, .a-like{
 
 .transition-fast{
   @include transition-property(all);
-  @include transition-duration(0.3s);
+  @include transition-duration(0.15s);
   @include transition-timing-function(ease);
 }
 
@@ -178,6 +178,10 @@ img{
 			cursor: pointer;
 		}
 	}
+}
+
+.pointer{
+	cursor: pointer;
 }
 
 .typed-cursor{

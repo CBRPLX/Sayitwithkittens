@@ -4565,8 +4565,8 @@ a:hover, .a-like:hover {
 .transition-fast {
   -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
@@ -4653,6 +4653,10 @@ img {
   background-color: rgba(0, 0, 0, 0.6);
 }
 .preview-photo .preview-photo-options [class^='icone-cross'] {
+  cursor: pointer;
+}
+
+.pointer {
   cursor: pointer;
 }
 
@@ -4936,9 +4940,15 @@ img {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   vertical-align: middle !important;
+  word-break: keep-all !important;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left-top, .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-right {
+  background-color: rgba(242, 106, 148, 0);
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left-top:hover, .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-right:hover {
+  background-color: #f26a94;
 }
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left {
-  width: 66%;
   border-right: 2px solid #ffffff;
 }
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-top {
@@ -4946,9 +4956,16 @@ img {
 }
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .facebook {
   border-right: 2px solid #ffffff;
+  background-color: rgba(59, 89, 152, 0);
 }
-.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-right {
-  width: 33%;
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .facebook:hover {
+  background-color: #3b5998;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .twitter {
+  background-color: rgba(29, 202, 255, 0);
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .twitter:hover {
+  background-color: #1dcaff;
 }
 .bloc-header .bloc-header-contenu.kitten > .row:first-of-type {
   height: 100%;

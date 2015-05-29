@@ -244,9 +244,17 @@
 						border-bottom-left-radius: 5px;
 						border-bottom-right-radius: 5px;
 						vertical-align: middle !important;
+						@include word-break(keep-all !important);
+
+						.kitten-options-left-top, .kitten-options-right{
+							background-color: rgba(242, 106, 148, 0);
+
+							&:hover{
+								background-color: $rose;
+							}
+						}
 
 						.kitten-options-left{
-							width: 66%;
 							border-right: 2px solid $white;
 
 							.kitten-options-left-top{
@@ -256,12 +264,24 @@
 							.kitten-options-left-bottom{
 								.facebook{
 									border-right: 2px solid $white;
+									background-color: rgba(59, 89, 152, 0);
+
+									&:hover{
+										background-color: rgba(59, 89, 152, 1);
+									}
+								}
+
+								.twitter{
+									background-color: rgba(29, 202, 255, 0);
+
+									&:hover{
+										background-color: rgba(29, 202, 255, 1);
+									}
 								}
 							}
 						}
 
 						.kitten-options-right{
-							width: 33%;
 						}
 					}
 				}

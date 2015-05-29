@@ -48,9 +48,8 @@ class generalController {
         $i->set('id_image', $id_image);
         $i->load();
 
-        // $kitten_bg = "";
-        if(isset($_SESSION['kitten_img']))
-            unset($_SESSION['kitten_img']);
+        // if(isset($_SESSION['kitten_img']))
+        //     unset($_SESSION['kitten_img']);
 
         $template = $twig->loadTemplate('kitten.html.twig');
         $contenu = $template->render(array(
