@@ -48,12 +48,14 @@ class generalController {
         $i->set('id_image', $id_image);
         $i->load();
 
+        $texte_filename = explode(" ", strtolower($i->get('texte')));
+
         // if(isset($_SESSION['kitten_img']))
         //     unset($_SESSION['kitten_img']);
 
         $template = $twig->loadTemplate('kitten.html.twig');
         $contenu = $template->render(array(
-            'kitten_img' => sha1($id_image),
+            'kitten_img' => implode("_", $texte_filename),
             'img' => $i
         ));
 

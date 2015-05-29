@@ -213,10 +213,13 @@ class Image{
 			/* Ajout du texte */
 			imagettftext($imgImg, 17, 0, $x+0, 580, $white, $proxima, "#SAYITWITHKITTENS");
 
-			imagepng($imgImg, "assets/generate/kitten_".sha1($this->id_image).".png");
+			$texte_filename = explode(" ", strtolower($this->texte));
+			$new_filename = "assets/generate/kitten_".implode("_", $texte_filename).".png";
+			imagepng($imgImg, $new_filename);
+
 			// imagepng($imgImg);
 			imagedestroy($imgImg);
-			return "assets/generate/".$this->id_image.".png";
+			return $new_filename;
 		}else{
 			return false;
 		}
@@ -279,6 +282,19 @@ class Image{
     		}
     	}else{
     		return false;
+    	}
+    }
+
+    public function getRandomKitten(){
+    	global $pdo;
+
+    	$sql = "SELECT * FROM kitten_image ORDER BY likes DESC, RAND() LIMIT 1";
+    	$stmt = $pdo->prepare($sql);
+    	$stmt->execute(array());
+
+    	$res = $stmt->fetch(\PDO::FETCH_ASSOC);
+    	foreach ($res as $k => $v) {
+    		$this->$k = $v;
     	}
     }
 
