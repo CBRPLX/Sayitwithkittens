@@ -20,9 +20,9 @@ class emailController {
         $headers = "MIME-Version: 1.0 \n";
         $headers .= "Content-Transfer-Encoding: 8bit \n";
         $headers .= "Content-type: text/html; charset=UTF-8 \n";
-        $headers .= "From: cbrplx.io <robin.pierrot@gmail.com>  \n";
-        $headers .= "Bcc: cbrplx.io <cyberplix@gmail.com>  \n";
-        $headers .="Reply-To: cbrplx.io <robin.pierrot@gmail.com> \n";
+        $headers .= "From: Say it with kittens <robin.pierrot@gmail.com>  \n";
+        $headers .= "Bcc: Say it with kittens <robin.pierrot@gmail.com>  \n";
+        $headers .="Reply-To: Say it with kittens <robin.pierrot@gmail.com> \n";
 
         $res = mail($destinataire, $sujet, $texte, $headers);
         return $res;
@@ -35,9 +35,7 @@ class emailController {
 
         $image = new \classe\Image();
         $image->getRandomKitten();
-
-        $texte_filename = explode(" ", strtolower($image->get('texte')));
-        $image->set('img', implode("_", $texte_filename));
+        $image->getFilename();
 
         return $template->render(array(
             "contenu" => $contenu,

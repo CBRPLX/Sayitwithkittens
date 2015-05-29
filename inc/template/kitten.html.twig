@@ -7,7 +7,7 @@
 	<meta property="og:title" content="Say it with kittens - {{img.get('texte')}}">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="Say whatever you want with a cuuute kitten ! Free your mind ...">
-	<meta property="og:image" content="http://sayitwithkittens.io/assets/generate/kitten_{{kitten_img}}.png">
+	<meta property="og:image" content="http://sayitwithkittens.io/assets/generate/kitten_{{img.get('filename')}}.png">
 	<meta property="og:url" content="http://sayitwithkittens.io/cat/{{img.get('id_image')}}">
 	<meta property="og:site_name" content="sayitwithkittens.io">
 	<meta property="fb:admins" content="1614882856">
@@ -15,7 +15,7 @@
 	<!-- Google+ -->
 	<meta itemprop="name" content="Say it with kittens - {{img.get('texte')}}">
 	<meta itemprop="description" content="Say whatever you want with a cuuute kitten ! Free your mind ...">
-	<meta itemprop="image" content="http://sayitwithkittens.io/assets/generate/kitten_{{kitten_img}}.png">
+	<meta itemprop="image" content="http://sayitwithkittens.io/assets/generate/kitten_{{img.get('filename')}}.png">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
@@ -23,11 +23,11 @@
 	<meta name="twitter:title" content="Say it with kittens - {{img.get('texte')}}">
 	<meta name="twitter:description" content="Say whatever you want with a cuuute kitten ! Free your mind ...">
 	<meta name="twitter:creator" content="@CBRPLX">
-	<meta name="twitter:image:src" content="http://sayitwithkittens.io/assets/generate/kitten_{{kitten_img}}.png">
+	<meta name="twitter:image:src" content="http://sayitwithkittens.io/assets/generate/kitten_{{img.get('filename')}}.png">
 {% endblock %}
 
 {% block header %}
-	{% if img.get('id_kitten') %}
+	{% if img.get('id_kitten') != "" %}
 		<div class="bloc-header" style="background-image:url('../assets/kittens/kitten_{{img.get('id_kitten')}}.jpg')">
 	{% else %}
 		<div class="bloc-header">
@@ -36,11 +36,11 @@
 			<div class="bloc-header-contenu kitten">
 				<div class="row txtcenter txtmiddle row-mobile">
 					<div class="col txtcenter txtmiddle pas col-mobile">
-						<img src="/assets/generate/kitten_{{kitten_img}}.png"/>
+						<img src="/assets/generate/kitten_{{img.get('filename')}}.png"/>
 						<div class="kitten-options txtcenter proxima-bold row row-mobile h5-like">
 							<div class="kitten-options-left col col-mobile w60">
 								<div class="kitten-options-left-top pointer transition-fast">
-									<a class="inbl w100 pas not-a-like" href="/assets/generate/kitten_{{kitten_img}}.png" download>
+									<a class="inbl w100 pas not-a-like" href="/assets/generate/kitten_{{img.get('filename')}}.png" download>
 										<span class="txtmiddle">Download <span class="tiny-hidden small-hidden">your kitten</span></span> &nbsp; <i class="fa fa-download txtmiddle"></i>
 									</a>
 								</div>

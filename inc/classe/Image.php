@@ -11,6 +11,7 @@ class Image{
 	private $ip_creator;
 	private $pseudo;
 	private $likes;
+	private $filename;
 
 	public function __construct () {
 		
@@ -44,7 +45,8 @@ class Image{
     public function add(){
     	global $pdo;
 
-    	if(!empty($this->id_kitten) && !empty($this->texte) && !empty($this->pseudo) && $this->pseudo != "Sayitwithkittens"){
+    	if((!empty($this->id_kitten) || $this->id_kitten == 0) && !empty($this->texte) 
+    		&& !empty($this->pseudo) && $this->pseudo != "Sayitwithkittens"){
     		$ip = $this->getIPCreator();
 
     		if(strlen($this->texte) > 50){
@@ -213,8 +215,8 @@ class Image{
 			/* Ajout du texte */
 			imagettftext($imgImg, 17, 0, $x+0, 580, $white, $proxima, "#SAYITWITHKITTENS");
 
-			$texte_filename = explode(" ", strtolower($this->texte));
-			$new_filename = "assets/generate/kitten_".implode("_", $texte_filename).".png";
+			$this->getFilename();
+			$new_filename = "assets/generate/kitten_".$this->filename.".png";
 			imagepng($imgImg, $new_filename);
 
 			// imagepng($imgImg);
@@ -296,6 +298,16 @@ class Image{
     	foreach ($res as $k => $v) {
     		$this->$k = $v;
     	}
+    }
+
+    public function getFilename(){
+    	$filename = strtolower($this->texte);
+    	$count = null;
+		$filename = preg_replace('/[^a-z0-9]/i', '_', $filename, -1, $count);
+		$count = null;
+		$filename = preg_replace('/(_)*$/i', '', $filename, -1, $count);
+
+		$this->filename = $filename."_".$this->id_image;
     }
 
 }
