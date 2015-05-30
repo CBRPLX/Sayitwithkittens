@@ -12,7 +12,7 @@ if(!empty($_POST['pseudo']) && !empty($_POST['texte']) && !empty($_POST['kitten'
 	$i->set('pseudo', $_POST['pseudo']);
 
 	$count = null;
-	$kitten = preg_replace('/"/i', '', $_POST['kitten'], -1, $count);
+	$kitten = preg_replace('/"|\\\\/i', '', $_POST['kitten'], -1, $count);
 
 	if($i->add()){
 		$i->generate($kitten);
