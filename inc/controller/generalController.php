@@ -53,7 +53,6 @@ class generalController {
         $next = $i->getNextKitten();
 
         $like = $i->verifCookie($id_image);
-        var_dump($_COOKIE['Kitten_'.sha1($id_image)]);
 
         // if(isset($_SESSION['kitten_img']))
         //     unset($_SESSION['kitten_img']);

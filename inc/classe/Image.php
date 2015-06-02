@@ -240,8 +240,15 @@ class Image{
     }
 
     public function setCookie($id_image){
-    	if(!empty($id_image))
-    		setcookie('Kitten_'.sha1($id_image) , sha1($id_image), time() + 3600 * 24 * 7 * 4 , '' , '' , false , true);
+    	global $dev;
+
+    	if(!empty($id_image)){
+    		if($dev){
+    			setcookie('Kitten_'.sha1($id_image) , sha1($id_image), time() + 3600 * 24 * 7 * 4 , '/' , '.sayitwithkittens.localhost' , false , true);
+    		}else{
+    			setcookie('Kitten_'.sha1($id_image) , sha1($id_image), time() + 3600 * 24 * 7 * 4 , '/' , '.sayitwithkittens.io' , false , true);
+    		}
+    	}
     }
 
     public function verifCookie($id_image){
