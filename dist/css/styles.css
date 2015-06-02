@@ -4957,7 +4957,7 @@ img {
   border-right: 2px solid #ffffff;
   background-color: rgba(207, 46, 64, 0);
 }
-.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .like:hover {
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .like:hover, .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .like.liked {
   background-color: #cf2e40;
 }
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-left .kitten-options-left-bottom .facebook {

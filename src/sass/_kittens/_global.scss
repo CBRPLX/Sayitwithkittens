@@ -161,25 +161,6 @@ img{
 	line-height: 1em;
 }
 
-.preview-photo{
-	border: 1px dashed $gris-border;
-	padding: 5px;
-	min-height: 50px;
-	position: relative;
-
-	.preview-photo-options{
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		left: 0;
-		background-color: rgba(0,0,0,0.6);
-
-		[class^='icone-cross']{
-			cursor: pointer;
-		}
-	}
-}
-
 .pointer{
 	cursor: pointer;
 }

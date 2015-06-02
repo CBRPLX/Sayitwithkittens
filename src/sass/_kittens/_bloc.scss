@@ -226,6 +226,7 @@
 
 		&.kitten{
 			height: 100%;
+			position: relative;
 
 			&>.row{
 
@@ -273,12 +274,24 @@
 
 						.kitten-options-left{
 							border-right: 2px solid $white;
+							width: 60% !important;
 
 							.kitten-options-left-top{
 								border-bottom: 2px solid $white;
 							}
 
 							.kitten-options-left-bottom{
+
+
+								.like{
+									border-right: 2px solid $white;
+									background-color: rgba(207, 46, 64, 0);
+
+									&:hover, &.liked{
+										background-color: rgba(207, 46, 64, 1);
+									}
+								}
+
 								.facebook{
 									border-right: 2px solid $white;
 									background-color: rgba(59, 89, 152, 0);
@@ -299,6 +312,7 @@
 						}
 
 						.kitten-options-right{
+							width: 40% !important;
 						}
 					}
 				}
@@ -307,82 +321,34 @@
 					height: 100%;
 				}
 			}
+
+			.previous-kitten, .next-kitten{
+				position: absolute;
+				display: block;
+				top: 48%;
+
+				a{
+					background-color: transparent !important;
+					border: none !important;
+
+					@include text-shadow(rgba(0,0,0,0.82) 1px 1px 2px);
+				}
+
+				@media (max-width: $small-screen){
+					font-size: 2.2em;
+					top: 40%;
+				}
+			}
+
+			.previous-kitten{
+				left: 0px;
+			}
+
+			.next-kitten{
+				right: 0px;
+			}
 		}
 	}
-
-	// .bloc-header-contenu{
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	background-color: rgba(0,0,0,0.67);
-	// 	padding-top: 20px;
-
-	// 	.row{
-	// 		// height: 50%;
-
-	// 		&:first-of-type{
-	// 			padding-top: 10%;
-	// 			@media (max-width: $small-screen) {
-	// 				padding: 0;
-	// 			}
-	// 		}
-
-	// 		.col{
-	// 			height: 100%;
-
-	// 			&.w50{
-	// 				@media (max-width: $small-screen) {
-	// 					width: 100%;
-	// 					height: auto;
-	// 					display: block;
-	// 				}
-	// 			}
-
-	// 			&.txtright{
-	// 				padding-right: 150px !important;
-
-	// 				@media (max-width: $small-screen) {
-	// 					padding: 1em !important;
-	// 					text-align: center;
-	// 				}
-	// 			}
-
-	// 			&.txtleft{
-	// 				line-height: 30px;
-
-	// 				@media (max-width: $small-screen) {
-	// 					padding: 1em;
-	// 				}
-	// 			}
-
-	// 			.photo-profil{
-	// 				width: 150px;
-	// 				height: 150px;
-	// 				background-image: url("/dist/images/photo-profil.jpg");
-	// 				background-size: 150px 150px;
-	// 			}
-	// 		}
-
-	// 		&+.row{
-	// 			padding-top: 8%;
-	// 		}
-
-	// 		&:last-of-type{
-	// 			padding: 0 0 1em 0;
-	// 			position: absolute;
-	// 			width: 100%;
-	// 			bottom: 0;
-
-	// 			@media (max-height: 465px) {
-	// 				position: relative;
-	// 				padding-top: 2em;
-	// 			}
-
-	// 			.icone-fleche-bas{
-	// 				cursor: pointer;
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
 
 .bloc-rond {
@@ -407,7 +373,6 @@
 	.bloc-footer-contenu{
 		width: 100%;
 		height: 100%;
-		// background-color: rgba(0,0,0,0.67);
 		padding: 0 0 140px 0;
 	}
 }

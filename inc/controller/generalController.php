@@ -52,6 +52,9 @@ class generalController {
         $previous = $i->getPreviousKitten();
         $next = $i->getNextKitten();
 
+        $like = $i->verifCookie($id_image);
+        var_dump($_COOKIE['Kitten_'.sha1($id_image)]);
+
         // if(isset($_SESSION['kitten_img']))
         //     unset($_SESSION['kitten_img']);
 
@@ -59,7 +62,8 @@ class generalController {
         $contenu = $template->render(array(
             'img' => $i,
             'previous' => $previous,
-            'next' => $next
+            'next' => $next,
+            'like' => $like
         ));
 
         return $contenu;

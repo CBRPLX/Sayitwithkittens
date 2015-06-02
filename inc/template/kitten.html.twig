@@ -57,8 +57,9 @@
 									</a>
 								</div>
 								<div class="kitten-options-left-bottom clearfix">
-									<div class="like w33 left inbl pointer transition-fast">
-										<a class="inbl w100 pas not-a-like" href="https://www.facebook.com/dialog/share?app_id=1569268633335610&display=page&href=http://sayitwithkittens.io/cat/{{img.get('id_image')}}&redirect_uri=http://sayitwithkittens.io/cat/{{img.get('id_image')}}" target="_blank">
+									<div class="like {% if like %} liked {% endif %}
+												w33 left inbl pointer transition-fast">
+										<a class="inbl w100 pas not-a-like" href="#">
 											<i class="fa fa-heart"></i>&nbsp;
 										</a>
 									</div>
@@ -104,8 +105,14 @@
 </div>
 
 <script type="text/javascript">
-// $('.kitten-options-left-top').click(function(){
-// 	window.location = "/assets/generate/kitten_{{kitten_img}}.png";
-// });
+	$(".like a").click(function(e){
+		e.preventDefault();
+
+		if(!$(this).parent().hasClass('liked')){
+			var retour = file("/inc/ajax/like_kitten.php", "id_image={{img.get('id_image')}}");
+			console.log(retour);
+			$(this).parent().addClass('liked');
+		}
+	});
 </script>
 {% endblock %}

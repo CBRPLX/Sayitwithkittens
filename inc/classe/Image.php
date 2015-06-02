@@ -247,9 +247,9 @@ class Image{
     public function verifCookie($id_image){
     	if(!empty($id_image)){
     		if(isset($_COOKIE['Kitten_'.sha1($id_image)])){
-    			return false;
-    		}else{
     			return true;
+    		}else{
+    			return false;
     		}
     	}else{
     		return false;
@@ -260,7 +260,7 @@ class Image{
     	global $pdo;
 
     	if(!empty($id_image)){
-    		if($this->verifCookie($id_image)){
+    		if(!$this->verifCookie($id_image)){
     			$this->setCookie($id_image);
 
     			$sql = "SELECT likes FROM kitten_image WHERE id_image = ?";
