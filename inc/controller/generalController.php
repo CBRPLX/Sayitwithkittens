@@ -49,12 +49,17 @@ class generalController {
         $i->load();
         $i->getFilename();
 
+        $previous = $i->getPreviousKitten();
+        $next = $i->getNextKitten();
+
         // if(isset($_SESSION['kitten_img']))
         //     unset($_SESSION['kitten_img']);
 
         $template = $twig->loadTemplate('kitten.html.twig');
         $contenu = $template->render(array(
-            'img' => $i
+            'img' => $i,
+            'previous' => $previous,
+            'next' => $next
         ));
 
         return $contenu;

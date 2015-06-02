@@ -36,6 +36,18 @@
 			<div class="bloc-header-contenu kitten">
 				<div class="row txtcenter txtmiddle row-mobile">
 					<div class="col txtcenter txtmiddle pas col-mobile">
+						{# <div class="row row-mobile txtcenter" style="max-width:50%;margin:auto;border-top:2px solid white;border-left:2px solid white;border-right:2px solid white;border-top-left-radius:5px;">
+							<div class="col col-mobile txtleft">
+								<span href="#" class="pas inbl h5-like">
+									<i class="fa fa-chevron-left"></i>
+								</span>
+							</div>
+							<div class="col col-mobile txtright">
+								<span href="#" class="pas inbl h5-like">
+									<i class="fa fa-chevron-right"></i>
+								</span>
+							</div>
+						</div> #}
 						<img src="/assets/generate/kitten_{{img.get('filename')}}.png"/>
 						<div class="kitten-options txtcenter proxima-bold row row-mobile h5-like">
 							<div class="kitten-options-left col col-mobile w60">
@@ -45,12 +57,17 @@
 									</a>
 								</div>
 								<div class="kitten-options-left-bottom clearfix">
-									<div class="facebook w50 left inbl pointer transition-fast">
+									<div class="like w33 left inbl pointer transition-fast">
+										<a class="inbl w100 pas not-a-like" href="https://www.facebook.com/dialog/share?app_id=1569268633335610&display=page&href=http://sayitwithkittens.io/cat/{{img.get('id_image')}}&redirect_uri=http://sayitwithkittens.io/cat/{{img.get('id_image')}}" target="_blank">
+											<i class="fa fa-heart"></i>&nbsp;
+										</a>
+									</div>
+									<div class="facebook w33 left inbl pointer transition-fast">
 										<a class="inbl w100 pas not-a-like" href="https://www.facebook.com/dialog/share?app_id=1569268633335610&display=page&href=http://sayitwithkittens.io/cat/{{img.get('id_image')}}&redirect_uri=http://sayitwithkittens.io/cat/{{img.get('id_image')}}" target="_blank">
 											<i class="fa fa-facebook"></i>&nbsp;
 										</a>
 									</div>
-									<div class="twitter w50 right inbl pointer transition-fast">
+									<div class="twitter w33 right inbl pointer transition-fast">
 										<a class="inbl w100 pas not-a-like" href="https://twitter.com/intent/tweet?original_referer=http://sayitwithkittens.io/cat/{{img.get('id_image')}}&tw_p=tweetbutton&url=http://sayitwithkittens.io/cat/{{img.get('id_image')}}" target="_blank">
 											<i class="fa fa-twitter"></i>&nbsp;
 										</a>
@@ -60,12 +77,28 @@
 							<div class="kitten-options-right col col-mobile w40 txtmiddle pas pointer transition-fast">
 								<a class="inbl w100 pas not-a-like" href="/generate/">
 									<i class="fa fa-refresh fa-lg"></i>
-									<div class="pts">Create another<span class="tiny-hidden small-hidden"> kitten</span></div>
+									<div class="pts tiny-hidden small-hidden">Create another kitten</div>
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				{% if previous %}
+					<div class="previous-kitten h4-like">
+						<a href="/cat/{{previous.get('id_image')}}" class="pal">
+							<i class="fa fa-chevron-left"></i>
+						</a>
+					</div>
+				{% endif %}
+
+				{% if next %}
+					<div class="next-kitten h4-like">
+						<a href="/cat/{{next.get('id_image')}}" class="pal">
+							<i class="fa fa-chevron-right"></i>
+						</a>
+					</div>
+				{% endif %}
 			</div>
 		</div>
 </div>

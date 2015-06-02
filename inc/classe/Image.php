@@ -309,4 +309,42 @@ class Image{
 		$this->filename = $filename."_".$this->id_image;
     }
 
+    public function getPreviousKitten(){
+    	global $pdo;
+
+    	$sql = "SELECT * FROM kitten_image WHERE id_image < ? ORDER BY id_image DESC LIMIT 0,1";
+    	$stmt = $pdo->prepare($sql);
+    	$stmt->execute(array($this->id_image));
+
+    	if($stmt->rowCount() > 0){
+    		$res = $stmt->fetch(\PDO::FETCH_ASSOC);
+    		$previous = new \classe\Image();
+	    	foreach ($res as $k => $v) {
+	    		$previous->$k = $v;
+	    	}
+	    	return $previous;
+    	}else{
+    		return false;
+    	}
+    }
+
+    public function getNextKitten(){
+    	global $pdo;
+
+    	$sql = "SELECT * FROM kitten_image WHERE id_image > ? ORDER BY id_image ASC LIMIT 0,1";
+    	$stmt = $pdo->prepare($sql);
+    	$stmt->execute(array($this->id_image));
+
+    	if($stmt->rowCount() > 0){
+    		$res = $stmt->fetch(\PDO::FETCH_ASSOC);
+    		$next = new \classe\Image();
+	    	foreach ($res as $k => $v) {
+	    		$next->$k = $v;
+	    	}
+	    	return $next;
+    	}else{
+    		return false;
+    	}
+    }
+
 }
