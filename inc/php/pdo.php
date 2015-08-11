@@ -7,7 +7,7 @@ try{
 	if($dev){
 		$pdo = new PDO('mysql:host=127.0.0.1;dbname=kittens', 'root', 'root');
 	}else{
-		$pdo = new PDO('mysql:host=mysql51-77.perso;dbname=robinpieappart', 'robinpieappart', 'KAC000762');
+		$pdo = new PDO('mysql:host=127.0.0.1;dbname=sayitwithkittens', 'root', 'KAC381381521cbrplx');
 	}
 	$pdo->query('SET NAMES UTF8');
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
