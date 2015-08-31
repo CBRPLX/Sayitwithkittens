@@ -1,10 +1,11 @@
 <?php
 
-include 'inc/php/config.php';
+echo "pas ok";
+// include 'inc/php/config.php';
 
-$e = new \controller\emailController();
+// $e = new \controller\emailController();
 
-echo $e->genererInscriptionNews("Robert");
+// echo $e->genererInscriptionNews("Robert");
 
 // $i = new \classe\Image();
 // $i->getRandomKitten();
