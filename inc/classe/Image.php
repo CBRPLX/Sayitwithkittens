@@ -216,7 +216,7 @@ class Image{
 
 			$this->getFilename();
 			$new_filename = "assets/generate/kitten_".$this->filename.".png";
-			imagepng($imgImg, $new_filename);
+			imagepng($imgImg, $new_filename, 9);
 
 			// imagepng($imgImg);
 			imagedestroy($imgImg);
