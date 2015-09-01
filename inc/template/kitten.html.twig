@@ -1,7 +1,7 @@
 {% extends 'squelette.html.twig' %}
 
 {% block meta %}
-	<title>Say it with kittens - {{img.get('texte')}}</title>
+	<title>{{img.get('texte')|upper}} - Say it with kittens</title>
 
 	<!-- Facebook -->
 	<meta property="og:title" content="Say it with kittens - {{img.get('texte')}}">
