@@ -319,39 +319,60 @@ class Image{
     public function getPreviousKitten(){
     	global $pdo;
 
-    	$sql = "SELECT * FROM kitten_image WHERE id_image < ? ORDER BY id_image DESC LIMIT 0,1";
-    	$stmt = $pdo->prepare($sql);
-    	$stmt->execute(array($this->id_image));
+        if($this->id_image > 1){
 
-    	if($stmt->rowCount() > 0){
-    		$res = $stmt->fetch(\PDO::FETCH_ASSOC);
-    		$previous = new \classe\Image();
-	    	foreach ($res as $k => $v) {
-	    		$previous->$k = $v;
-	    	}
-	    	return $previous;
-    	}else{
-    		return false;
-    	}
+            $id_pre = $this->id_image -1;
+            $img_pre = glob('assets/generate/kitten_*_'.$id_pre.'.*');
+
+            while(count($img_pre) == 0 && $id_pre > 0){
+                $id_pre--;
+                $img_pre = glob('assets/generate/kitten_*_'.$id_pre.'.*');
+            }
+
+            $img_pre = new \classe\Image();
+            $img_pre->set('id_image', $id_pre);
+            $img_pre->load();
+
+            return $img_pre;
+        }
     }
 
     public function getNextKitten(){
     	global $pdo;
 
-    	$sql = "SELECT * FROM kitten_image WHERE id_image > ? ORDER BY id_image ASC LIMIT 0,1";
-    	$stmt = $pdo->prepare($sql);
-    	$stmt->execute(array($this->id_image));
+        $id_last = $this->getIdLastKitten();
 
-    	if($stmt->rowCount() > 0){
-    		$res = $stmt->fetch(\PDO::FETCH_ASSOC);
-    		$next = new \classe\Image();
-	    	foreach ($res as $k => $v) {
-	    		$next->$k = $v;
-	    	}
-	    	return $next;
-    	}else{
-    		return false;
-    	}
+        if($this->id_image < $id_last){
+
+            $id_next = $this->id_image +1;
+            $img_next = glob('assets/generate/kitten_*_'.$id_next.'.*');
+
+            while(count($img_next) == 0 && $id_next < $id_last){
+                $id_next++;
+                $img_next = glob('assets/generate/kitten_*_'.$id_next.'.*');
+            }
+
+            $img_next = new \classe\Image();
+            $img_next->set('id_image', $id_next);
+            $img_next->load();
+
+            return $img_next;
+        }
+    }
+
+    public function getIdLastKitten(){
+        global $pdo;
+
+        $sql = "SELECT id_image FROM kitten_image ORDER BY id_image DESC LIMIT 0,1";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            $res = $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $res['id_image'];
+        }else{
+            return false;
+        }
     }
 
 }
