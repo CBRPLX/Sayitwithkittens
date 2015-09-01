@@ -32,9 +32,9 @@
 }
 
 .rotating-droite {
-  -webkit-animation: rotating-droite 0.3s linear;
-  -moz-animation: rotating-droite 0.3s linear;
-  -ms-animation: rotating-droite 0.3s linear;
-  -o-animation: rotating-droite 0.3s linear;
-  animation: rotating-droite 0.3s linear;
+  -webkit-animation: rotating-droite 0.3s linear infinite;
+  -moz-animation: rotating-droite 0.3s linear infinite;
+  -ms-animation: rotating-droite 0.3s linear infinite;
+  -o-animation: rotating-droite 0.3s linear infinite;
+  animation: rotating-droite 0.3s linear infinite;
 }

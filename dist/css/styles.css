@@ -5529,6 +5529,6 @@ img {
   }
 }
 .rotating-droite {
-  -webkit-animation: rotating-droite 0.3s linear;
-  animation: rotating-droite 0.3s linear;
+  -webkit-animation: rotating-droite 0.3s linear infinite;
+  animation: rotating-droite 0.3s linear infinite;
 }

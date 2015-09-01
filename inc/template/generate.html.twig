@@ -48,7 +48,8 @@ var loop = function(){
 
 
 $('.regenerate').click(function(){
-	loop();
+	$('.icone-loop').addClass('rotating-droite');
+
 	var bg = $('.bloc-header').css('background-image');
 	bg = bg.split("/");
 	bg = bg[bg.length-3]+'/'+bg[bg.length-2]+'/'+bg[bg.length-1];
@@ -60,6 +61,7 @@ $('.regenerate').click(function(){
 
     img.onload = function() {
         $('.bloc-header').css('background-image', 'url("'+img.src+'")');
+        $('.icone-loop').removeClass('rotating-droite');
     };
 
     img.src = "/"+retour+ "?_=" + (+new Date());
