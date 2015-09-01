@@ -186,3 +186,26 @@ img{
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
+.relative{
+	position: relative;
+}
+
+.loading-paws{
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	top: 40%;
+
+	i{
+		display: block;
+
+		&:nth-child(even){
+			padding-left:12px;
+		}
+
+		&:nth-child(odd){
+			padding-right:12px;
+		}
+	}
+}
