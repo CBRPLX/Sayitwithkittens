@@ -38,15 +38,6 @@
 </div>
 
 <script>
-
-var loop = function(){
-	$('.icone-loop').addClass('rotating-droite');
-	setTimeout(function(){
-		$('.icone-loop').removeClass('rotating-droite');
-	}, 500);
-};
-
-
 $('.regenerate').click(function(){
 	$('.icone-loop').addClass('rotating-droite');
 
@@ -68,6 +59,17 @@ $('.regenerate').click(function(){
 });
 
 $('#generate_it').click(function(){
+
+	$('#generate_it').text("Generating");
+
+	$('#generate_it').append('<span class="typed-text proxima-bold h3-like"></span>');
+
+	$(".typed-text").typed({
+        strings: ["^3..."],
+        typeSpeed: 300,
+        loop: true
+      });
+
 	var bg = $('.bloc-header').css('background-image');
 	bg = bg.split("/");
 	bg = bg[bg.length-3]+'/'+bg[bg.length-2]+'/'+bg[bg.length-1];
