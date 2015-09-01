@@ -38,14 +38,31 @@
 </div>
 
 <script>
+
+var loop = function(){
+	$('.icone-loop').addClass('rotating-droite');
+	setTimeout(function(){
+		$('.icone-loop').removeClass('rotating-droite');
+	}, 300);
+};
+
+
 $('.regenerate').click(function(){
+	loop();
 	var bg = $('.bloc-header').css('background-image');
 	bg = bg.split("/");
 	bg = bg[bg.length-3]+'/'+bg[bg.length-2]+'/'+bg[bg.length-1];
 	bg = bg.split(')')[0];
 
 	var retour = file('/inc/ajax/change_kitten.php', 'bg='+bg);
-	$('.bloc-header').css('background-image', 'url("/'+retour+'")');
+
+	var img = new Image();
+
+    img.onload = function() {
+        $('.bloc-header').css('background-image', 'url("'+img.src+'")');
+    };
+
+    img.src = "/"+retour+ "?_=" + (+new Date());
 });
 
 $('#generate_it').click(function(){
