@@ -5288,6 +5288,22 @@ img {
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options .kitten-options-right {
   width: 40% !important;
 }
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview {
+  margin-bottom: 49px;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview .kitten-preview-left {
+  border-right: 2px solid #ffffff;
+  width: 50% !important;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview .kitten-preview-left .kitten-cancel:hover {
+  background-color: #cf2e40;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview .kitten-preview-right {
+  width: 50% !important;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview .kitten-preview-right .kitten-validate:hover {
+  background-color: #29A22D;
+}
 .bloc-header .bloc-header-contenu.kitten > .row:first-of-type {
   height: 100%;
 }

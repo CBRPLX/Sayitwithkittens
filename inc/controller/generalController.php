@@ -40,6 +40,28 @@ class generalController {
         return $contenu;
     }
 
+    public function genererPreview($id_image){
+        global $twig;
+        global $dev;
+
+        $i = new \classe\Image();
+        $i->set('id_image', $id_image);
+
+        if($i->load() && $i->isPreviewExist()){
+
+            $i->getFilename();
+
+            $template = $twig->loadTemplate('preview.html.twig');
+            $contenu = $template->render(array(
+                'img' => $i
+            ));
+
+            return $contenu;
+        }else{
+            header('Location:/generate/');
+        }
+    }
+
     public function genererKitten($id_image){
         global $twig;
         global $dev;

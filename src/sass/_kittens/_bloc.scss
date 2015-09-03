@@ -314,6 +314,31 @@
 						.kitten-options-right{
 							width: 40% !important;
 						}
+
+						&.kitten-preview{
+							margin-bottom: 49px;
+							
+							.kitten-preview-left{
+								border-right: 2px solid $white;
+								width: 50% !important;
+
+								.kitten-cancel{
+									&:hover{
+										background-color: rgba(207, 46, 64, 1);
+									}
+								}
+							}
+
+							.kitten-preview-right{
+								width: 50% !important;
+
+								.kitten-validate{
+									&:hover{
+										background-color: #29A22D;
+									}
+								}
+							}
+						}
 					}
 				}
 

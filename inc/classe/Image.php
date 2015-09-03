@@ -58,11 +58,11 @@ class Image{
     			$this->pseudo = substr($this->pseudo, 0, 15);
     		}
     		
-    		$sql = "INSERT INTO kitten_image (id_kitten, texte, date_creation, ip_creator, pseudo, likes)
-    				VALUES (?,?,?,?,?,?)";
+    		$sql = "INSERT INTO kitten_image (id_kitten, texte, date_creation, ip_creator, pseudo, likes, file_exist)
+    				VALUES (?,?,?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($sql);
-    		$stmt->execute(array($this->id_kitten, $this->texte, time(), $ip, $this->pseudo, 0));
+    		$stmt->execute(array($this->id_kitten, $this->texte, time(), $ip, $this->pseudo, 0, 0));
 
     		if($stmt->rowCount() > 0){
     			$this->id_image = $pdo->lastInsertId();
@@ -216,7 +216,7 @@ class Image{
 			imagettftext($imgImg, 17, 0, $x+0, 580, $white, $proxima, "#SAYITWITHKITTENS");
 
 			$this->getFilename();
-			$new_filename = "assets/generate/kitten_".$this->filename.".png";
+			$new_filename = "assets/preview/kitten_".$this->filename.".png";
 			imagepng($imgImg, $new_filename, 9);
 
 			// imagepng($imgImg);
@@ -333,6 +333,16 @@ class Image{
         $sql = "UPDATE kitten_image SET file_exist = '1' WHERE id_image = ?;";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(array($this->id_image));
+    }
+
+    public function isPreviewExist(){
+        $img = glob('assets/preview/kitten_*_'.$this->id_image.'.*');
+
+        if(count($img) > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function getPreviousKitten(){

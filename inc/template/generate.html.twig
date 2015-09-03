@@ -38,6 +38,21 @@
 </div>
 
 <script>
+preloadFields = function(){
+	var txt = "";
+	txt = sessionStorage.getItem("kitten_txt");
+
+	var pseudo = "";
+	pseudo = sessionStorage.getItem('kitten_pseudo');
+
+	if(txt != "" && pseudo != ""){
+		$('#texte').val(txt);
+		$('#pseudo').val(pseudo);
+	}
+};
+
+preloadFields();
+
 $('.regenerate').click(function(){
 	$('.icone-loop').addClass('rotating-droite');
 
@@ -80,9 +95,12 @@ $('#generate_it').click(function(){
 
 	if(pseudo != "" && texte != ""){
 		var retour = file('/inc/ajax/generate_image.php', 'kitten='+bg+'&pseudo='+pseudo+'&texte='+texte);
-		// alert(retour);
+		alert(retour);
 		if(retour != 'false'){
-			window.location.href = "/cat/"+retour;
+			sessionStorage.removeItem("kitten_txt");
+			sessionStorage.removeItem("kitten_pseudo");
+			// setTimeout(function(){ window.location.href = "/preview/"+retour; }, 1000);
+			window.location.href = "/preview/"+retour;
 		}
 	}
 });
