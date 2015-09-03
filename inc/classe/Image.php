@@ -11,6 +11,7 @@ class Image{
 	private $ip_creator;
 	private $pseudo;
 	private $likes;
+    private $file_exist;
 	private $filename;
 
 	public function __construct () {
