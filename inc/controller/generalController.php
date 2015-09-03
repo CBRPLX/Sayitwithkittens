@@ -46,25 +46,31 @@ class generalController {
 
         $i = new \classe\Image();
         $i->set('id_image', $id_image);
-        $i->load();
-        $i->getFilename();
 
-        $previous = $i->getPreviousKitten();
-        $next = $i->getNextKitten();
+        if($i->load() && $i->isFileExist()){
 
-        $like = $i->verifCookie($id_image);
+            $i->setFileExist();
+            $i->getFilename();
 
-        // if(isset($_SESSION['kitten_img']))
-        //     unset($_SESSION['kitten_img']);
+            $previous = $i->getPreviousKitten();
+            $next = $i->getNextKitten();
 
-        $template = $twig->loadTemplate('kitten.html.twig');
-        $contenu = $template->render(array(
-            'img' => $i,
-            'previous' => $previous,
-            'next' => $next,
-            'like' => $like
-        ));
+            $like = $i->verifCookie($id_image);
 
-        return $contenu;
+            // if(isset($_SESSION['kitten_img']))
+            //     unset($_SESSION['kitten_img']);
+
+            $template = $twig->loadTemplate('kitten.html.twig');
+            $contenu = $template->render(array(
+                'img' => $i,
+                'previous' => $previous,
+                'next' => $next,
+                'like' => $like
+            ));
+
+            return $contenu;
+        }else{
+            header('Location:/generate/');
+        }
     }
 }

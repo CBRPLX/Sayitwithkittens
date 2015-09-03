@@ -316,6 +316,24 @@ class Image{
 		$this->filename = $filename."_".$this->id_image;
     }
 
+    public function isFileExist(){
+        $img = glob('assets/generate/kitten_*_'.$this->id_image.'.*');
+
+        if(count($img) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function setFileExist(){
+        global $pdo;
+
+        $sql = "UPDATE kitten_image SET file_exist = '1' WHERE id_image = ?;";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array($this->id_image));
+    }
+
     public function getPreviousKitten(){
     	global $pdo;
 
