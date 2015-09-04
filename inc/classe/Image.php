@@ -77,8 +77,14 @@ class Image{
     	}
     }
 
-    public function chooseKitten($nb_kitten){
-    	$files = glob('assets/kittens/kitten_*.*');
+    public function chooseKitten($nb_kitten, $left = false){
+    	$files_tmp = glob('assets/kittens/kitten_*.*');
+        natsort($files_tmp);
+
+        $files = array();
+        foreach ($files_tmp as $k => $v) {
+            array_push($files, $v);
+        }
     	// asort($files);
 
 		if ($files !== false){
@@ -86,13 +92,24 @@ class Image{
 		}else{
 		    $nb_kittens = 0;
 		}
+
+        // if($nb_kitten)
+
 		$key = array_search("assets/kittens/kitten_".$nb_kitten.".jpg", $files);
 		
-		if($key == ($nb_kittens - 1)){
-			$key = 0;
-		}else{
-			$key++;
-		}
+        if(!$left){
+    		if($key == ($nb_kittens - 1)){
+    			$key = 0;
+    		}else{
+                $key++;
+    		}
+        }else{
+            if($key == 0){
+                $key = $nb_kittens -1;
+            }else{
+                $key--;
+            }
+        }
 
 		$_SESSION['kitten_img'] = $files[$key];
 

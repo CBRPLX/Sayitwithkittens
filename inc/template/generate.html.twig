@@ -22,7 +22,10 @@
 		<div class="row txtcenter pts">
 			<div class="col txtcenter pas bloc-mobile proxima-bold">
 				<div class="regenerate inbl">
-					<i class="icone-loop block"></i>
+					<div>
+						<i class="icone-loop-left inbl"></i>
+						<i class="icone-loop-right inbl"></i>
+					</div>
 					<div class="mts h4-like">Change the kitten</div>
 				</div>
 			</div>
@@ -53,8 +56,8 @@ preloadFields = function(){
 
 preloadFields();
 
-$('.regenerate').click(function(){
-	$('.icone-loop').addClass('rotating-droite');
+$('.icone-loop-right').click(function(){
+	$('.icone-loop-right').addClass('rotating-droite');
 
 	var bg = $('.bloc-header').css('background-image');
 	bg = bg.split("/");
@@ -62,12 +65,31 @@ $('.regenerate').click(function(){
 	bg = bg.split(')')[0];
 
 	var retour = file('/inc/ajax/change_kitten.php', 'bg='+bg);
+	var img = new Image();
+
+    img.onload = function() {
+        $('.bloc-header').css('cssText', 'background-image:url("'+img.src+'");');
+        $('.icone-loop-right').removeClass('rotating-droite');
+    };
+
+    img.src = "/"+retour+ "?_=" + (+new Date());
+});
+
+$('.icone-loop-left').click(function(){
+	$('.icone-loop-left').addClass('rotating-gauche');
+
+	var bg = $('.bloc-header').css('background-image');
+	bg = bg.split("/");
+	bg = bg[bg.length-3]+'/'+bg[bg.length-2]+'/'+bg[bg.length-1];
+	bg = bg.split(')')[0];
+
+	var retour = file('/inc/ajax/change_kitten_left.php', 'bg='+bg);
 
 	var img = new Image();
 
     img.onload = function() {
         $('.bloc-header').css('cssText', 'background-image:url("'+img.src+'");');
-        $('.icone-loop').removeClass('rotating-droite');
+        $('.icone-loop-left').removeClass('rotating-gauche');
     };
 
     img.src = "/"+retour+ "?_=" + (+new Date());

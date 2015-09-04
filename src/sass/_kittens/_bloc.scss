@@ -210,10 +210,11 @@
 					}
 
 					.regenerate{
-						cursor: pointer;
 
 						i{
 							opacity: 0.9;
+							cursor: pointer;
+							margin:0 20px;
 						}
 					}
 				}
