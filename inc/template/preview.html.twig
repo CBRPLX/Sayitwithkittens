@@ -99,6 +99,8 @@
 
 		sessionStorage.setItem("kitten_txt","{{img.get('texte')}}");
 		sessionStorage.setItem("kitten_pseudo","{{img.get('pseudo')}}");
+		
+		file("/inc/ajax/load_kitten_bg.php", "id_kitten={{img.get('id_kitten')}}");
 
 		window.location.href = "/generate/";
 	});
