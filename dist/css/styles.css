@@ -5234,6 +5234,11 @@ img {
     max-width: 75%;
   }
 }
+@media (min-width: 1846px) {
+  .bloc-header .bloc-header-contenu.kitten > .row .col img, .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options {
+    max-width: 904px;
+  }
+}
 .bloc-header .bloc-header-contenu.kitten > .row .col img {
   border: 2px solid #ffffff;
   border-top-left-radius: 5px;

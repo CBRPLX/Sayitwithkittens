@@ -242,6 +242,10 @@
 						@media (min-width: $small-screen + 1) and (max-width: $medium-screen){
 							max-width: 75%;
 						}
+
+						@media (min-width: 1846px){
+							max-width: 904px;
+						}
 					}
 
 					img{
@@ -257,6 +261,8 @@
 						border-bottom-left-radius: 5px;
 						border-bottom-right-radius: 5px;
 						vertical-align: middle !important;
+						// width: 900px;
+
 						@include word-break(keep-all !important);
 
 						a{
