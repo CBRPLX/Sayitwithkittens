@@ -345,6 +345,12 @@ class Image{
         }
     }
 
+    public function moveFileFromPreview(){
+        $this->getFilename();
+
+        return rename('assets/preview/kitten_'.$this->filename.'.png', 'assets/generate/kitten_'.$this->filename.'.png');
+    }
+
     public function getPreviousKitten(){
     	global $pdo;
 

@@ -67,7 +67,7 @@
 							</div>
 							<div class="kitten-preview-right col col-mobile w50">
 								<div class="kitten-validate pointer transition-fast">
-									<a class="inbl w100 pas not-a-like" href="/assets/preview/kitten_{{img.get('filename')}}.png" download>
+									<a class="inbl w100 pas not-a-like btn-validate" href="/cat/{{img.get('id_image')}}">
 										<span class="txtmiddle">Validate</span> &nbsp; <i class="fa fa-check txtmiddle"></i>
 									</a>
 								</div>
@@ -79,7 +79,7 @@
 		</div>
 </div>
 
-<script type="text/javascript">
+<script>
 	function LoadImage() {
 	    var img = new Image(),
 	        x = document.getElementById("the-kitten");
@@ -103,15 +103,21 @@
 		window.location.href = "/generate/";
 	});
 
-	// $(".like a").click(function(e){
-	// 	e.preventDefault();
+	$('.btn-validate').click(function(e){
+		e.preventDefault();
+		var retour = file("/inc/ajax/validate_kitten.php", "id_image={{img.get('id_image')}}");
 
-	// 	if(!$(this).parent().hasClass('liked')){
-	// 		var retour = file("/inc/ajax/like_kitten.php", "id_image={{img.get('id_image')}}");
-	// 		console.log(retour);
-	// 		$(this).parent().addClass('liked');
-	// 	}
-	// });
+		if(retour == ""){
+			sessionStorage.removeItem("kitten_txt");
+			sessionStorage.removeItem("kitten_pseudo");
+
+			window.location.href = "/cat/{{img.get('id_image')}}";
+		}else{
+			alert("Error, please try again");
+
+			$('.btn-modify').trigger('click');
+		}
+	});
 
 	$(function(){
 	      $(".typed-text").typed({
@@ -120,5 +126,6 @@
 	        loop: true
 	      });
 	  });
+
 </script>
 {% endblock %}
