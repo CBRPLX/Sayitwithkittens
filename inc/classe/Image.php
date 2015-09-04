@@ -35,6 +35,8 @@ class Image{
     	if($stmt->rowCount() > 0){
     		$res = $stmt->fetch(\PDO::FETCH_ASSOC);
     		foreach ($res as $k => $v) {
+                if($k == "texte")
+                    $v = str_replace("\n", " ", $v);
     			$this->$k = $v;
     		}
     		return true;
