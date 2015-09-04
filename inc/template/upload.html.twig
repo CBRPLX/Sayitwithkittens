@@ -1,0 +1,55 @@
+{% extends 'squelette.html.twig' %}
+
+{% block header %}
+	
+<div class="bloc-header upload">
+	{# <div class="bloc-header-contenu">
+		<div class="row txtcenter">
+			<div class="col txtcenter pas bloc-mobile example-text proxima-bold h2-like">
+				You have a pretty cat photo ?
+			</div>
+		</div>
+	</div> #}
+</div>
+{% endblock %}
+
+{% block article %}
+	<div class="bloc-contenu" id="bloc-contenu">
+		<div class="bloc-article upload">
+			<div class="bloc-article-container">
+				<h1 class="proxima-bold txtcenter ptl pbn man">You have a pretty cat photo ?</h1>
+				<h3 class="proxima txtcenter ptn pbl man">You can now upload it !</h3>
+
+				<div class="row ptl pbl">
+					<div class="col txtcenter prl pll">
+						<div class="bloc-rond upload txtcenter txt-middle">
+							<i class="fa fa-paper-plane-o fa-2x"></i>
+						</div>
+						<h4 class="proxima pan man pts"><b>SEND</b></h4>
+						<div class="justify pts">
+							Choose the nicest photo of your cat and send it to us. It just have to be good quality and at least 1000 pixels wide.
+						</div>
+					</div>
+					<div class="col txtcenter prl pll">
+						<div class="bloc-rond upload txtcenter txt-middle">
+							<i class="fa fa-check-square-o fa-2x"></i>
+						</div>
+						<h4 class="proxima pan man pts"><b>CHECK</b></h4>
+						<div class="justify pts">
+							Your photo will be verified and accepted by our team if the content is appropriate and is not a duplicate.
+						</div>
+					</div>
+					<div class="col txtcenter prl pll">
+						<div class="bloc-rond upload txtcenter txt-middle">
+							<i class="fa fa-heart-o fa-2x"></i>
+						</div>
+						<h4 class="proxima pan man pts"><b>ENJOY</b></h4>
+						<div class="justify pts">
+							Now your photo is live and all the world can share some words on your cute cat's face. :)
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

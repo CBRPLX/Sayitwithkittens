@@ -40,6 +40,17 @@ class generalController {
         return $contenu;
     }
 
+    public function genererUpload(){
+        global $twig;
+        global $dev;
+
+        $template = $twig->loadTemplate('upload.html.twig');
+        $contenu = $template->render(array(
+        ));
+
+        return $contenu;
+    }
+
     public function genererPreview($id_image){
         global $twig;
         global $dev;

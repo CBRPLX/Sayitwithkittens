@@ -135,16 +135,25 @@ ________________________________________________________________________________
 						<span class="txtsub">Say it with Kittens</span>
 					</a>
 				</div>
-				<div class="menu-barre-search inbl right proxima-bold h4-like pam transition-fast dnone">
-					<a class="not-a-like" id="search-button">Search <i class="fa fa-search pls"></i></a>
+
+				<div class="menu-barre-search menu-sharing-photo inbl right proxima h6-like pam transition-fast">
+					<a class="not-a-like" href="/upload/">
+						<span class="small-hidden tiny-hidden">Share your cat photo </span>
+						<i class="fa fa-camera-retro pls"></i>
+					</a>
 				</div>
+
+				{# <div class="menu-barre-search inbl right proxima-bold h4-like pam transition-fast dnone">
+					<a class="not-a-like" id="search-button">Search <i class="fa fa-search pls"></i></a>
+				</div> #}
 			</div>
 		</div>
 
 		{% block header %}
 		{% endblock %}
 
-		<div class="bloc-contenu" id="bloc-contenu"><div class="bloc-article"></div></div>
+		{% block article %}
+		{% endblock %}
 
 		{% include 'footer.html.twig' %}
 

@@ -13,6 +13,7 @@ RewriteEngine on
 RewriteRule ^404/$  404.php
 RewriteRule ^403/$  403.php
 RewriteRule ^generate/$  generate.php
+RewriteRule ^upload/$  upload.php
 RewriteRule ^cat/(.*)$  kitten.php?id_image=$1
 RewriteRule ^preview/(.*)$  preview.php?id_image=$1
 
