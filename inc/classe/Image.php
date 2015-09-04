@@ -389,7 +389,7 @@ class Image{
                 $img_next = glob('assets/generate/kitten_*_'.$id_next.'.*');
             }
 
-            if($id_next != $id_last){
+            if($id_next <= $id_last){
                 $img_next = new \classe\Image();
                 $img_next->set('id_image', $id_next);
                 $img_next->load();
