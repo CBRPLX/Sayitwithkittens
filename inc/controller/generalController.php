@@ -51,6 +51,8 @@ class generalController {
 
             $i->getFilename();
 
+            var_dump(file_exists ('assets/preview/kitten_'.$i->get('filename').'.png'));
+
             $template = $twig->loadTemplate('preview.html.twig');
             $contenu = $template->render(array(
                 'img' => $i
