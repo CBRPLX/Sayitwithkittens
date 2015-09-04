@@ -15,8 +15,11 @@ if(!empty($_POST['pseudo']) && !empty($_POST['texte']) && !empty($_POST['kitten'
 	$kitten = preg_replace('/"|\\\\/i', '', $_POST['kitten'], -1, $count);
 
 	if($i->add()){
-		$i->generate($kitten);
-		echo $i->get('id_image');
+		if($i->generate($kitten) !== false){
+			echo $i->get('id_image');
+		}else{
+			echo 'false';
+		}
 	}else{
 		echo 'false';
 	}
