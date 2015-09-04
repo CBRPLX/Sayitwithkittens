@@ -20,6 +20,7 @@ inc/php/pdo.php
 
 ### images ###
 assets/generate/
+assets/preview/
 
 ### fonts ###
 dist/fonts/
