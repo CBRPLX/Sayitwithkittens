@@ -108,16 +108,16 @@
 	$('.btn-validate').click(function(e){
 		e.preventDefault();
 		var retour = file("/inc/ajax/validate_kitten.php", "id_image={{img.get('id_image')}}");
-
+		console.log(retour);
 		if(retour == ""){
 			sessionStorage.removeItem("kitten_txt");
 			sessionStorage.removeItem("kitten_pseudo");
 
-			window.location.href = "/cat/{{img.get('id_image')}}";
+			// window.location.href = "/cat/{{img.get('id_image')}}";
 		}else{
 			alert("Error, please try again");
 
-			$('.btn-modify').trigger('click');
+			// $('.btn-modify').trigger('click');
 		}
 	});
 

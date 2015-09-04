@@ -348,6 +348,8 @@ class Image{
     public function moveFileFromPreview(){
         $this->getFilename();
 
+        var_dump(file_exists ('assets/preview/kitten_'.$this->filename.'.png'));
+
         return rename('assets/preview/kitten_'.$this->filename.'.png', 'assets/generate/kitten_'.$this->filename.'.png');
     }
 
