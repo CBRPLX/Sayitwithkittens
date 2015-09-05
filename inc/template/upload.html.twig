@@ -76,13 +76,13 @@
 					</div>
 				</div>
 
-				<form id="upload_photo" class="pbl">
+				<form id="upload_photo" class="pbl" enctype="multipart/form-data" novalidate>
 					<div class="row">
 						<div class="col prl pll pbs">
-							<input type="text" name="nom_upload" id="nom_upload" placeholder="Last & First name" class="pas proxima-bold inbl w100" />
+							<input type="text" name="nom_upload" id="nom_upload" placeholder="Last & First name" class="pas proxima-bold inbl w100" required />
 						</div>
 						<div class="col prl pll pbl">
-							<input type="email" name="email_upload" id="email_upload" placeholder="Email" class="pas proxima-bold inbl w100" />
+							<input type="email" name="email_upload" id="email_upload" placeholder="Email" class="pas proxima-bold inbl w100" required />
 						</div>
 					</div>
 
@@ -97,7 +97,8 @@
 									</div>
 									<img src="" class="pal ptn dnone" id="img_thumb"/>
 								</div>
-								<input type="file" name="input_photo" id="input_photo" class="dnone" />
+								<input type="file" name="input_photo" id="input_photo" class="dnone" 
+								accept="image/*" required />
 							</label>
 						</div>
 					</div>
@@ -106,7 +107,7 @@
 						<div class="col prl pll">
 							<button type="submit" name="upload_submit" id="upload_submit" 
 							class="pas proxima-bold inbl w100 transition">
-								<span id="submit-msg">Subscribe</span> <i class="fa fa-paw mls"></i>
+								<span id="submit-upload-msg">Send it</span> <i id="upload-icon" class="fa fa-paw mls"></i>
 							</button>
 						</div>
 					</div>
@@ -132,6 +133,47 @@
 
 		$("#input_photo").change(function(){
 		    readURL(this);
+		});
+
+		$('#upload_photo').submit(function(e){
+			e.preventDefault();
+
+			if(document.getElementById("nom_upload").value != "" && document.getElementById("email_upload").value != "" && document.getElementById("input_photo").value != ""){
+
+				var $form = $(this);
+				var formdata = (window.FormData) ? new FormData($form[0]) : null;
+	        	var data = (formdata !== null) ? formdata : $form.serialize();
+
+				$.ajax({
+			       url : '/inc/ajax/upload_photo.php',
+			       type : 'POST',
+			       contentType: false,
+			       processData: false,
+			       data: data,
+			       success: function (response) {
+		                console.log(response);
+		                if(response == "true"){
+			                $("#upload_submit").addClass("news-deal");
+							document.getElementById("upload-icon").setAttribute("class", "fa fa-check mls");
+							document.getElementById("submit-upload-msg").innerHTML = "Thank you";
+						}else{
+							$("#upload_submit").addClass("news-error");
+							document.getElementById("upload-icon").setAttribute("class", "fa fa-times mls");
+							document.getElementById("submit-upload-msg").innerHTML = "Error";
+						}
+		            },
+		            error : function(resultat, statut, erreur){
+			            $("#upload_submit").addClass("news-error");
+						document.getElementById("upload-icon").setAttribute("class", "fa fa-times mls");
+						document.getElementById("submit-upload-msg").innerHTML = "Error";
+					}
+
+			    });
+			}else{
+				$("#upload_submit").addClass("news-error");
+				document.getElementById("upload-icon").setAttribute("class", "fa fa-times mls");
+				document.getElementById("submit-upload-msg").innerHTML = "Error";
+			}
 		});
 	</script>
 {% endblock %}
