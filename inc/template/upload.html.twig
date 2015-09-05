@@ -47,7 +47,7 @@
 				<h3 class="proxima txtcenter ptn pbl man">You can now upload it !</h3>
 
 				<div class="row ptl pbl">
-					<div class="col txtcenter prl pll">
+					<div class="col txtcenter prl pll pbl">
 						<div class="bloc-rond upload txtcenter txt-middle">
 							<i class="fa fa-paper-plane-o fa-2x"></i>
 						</div>
@@ -56,7 +56,7 @@
 							Choose the nicest photo of your cat and send it to us. It just have to be good quality and at least 1000 pixels wide.
 						</div>
 					</div>
-					<div class="col txtcenter prl pll">
+					<div class="col txtcenter prl pll pbl">
 						<div class="bloc-rond upload txtcenter txt-middle">
 							<i class="fa fa-check-square-o fa-2x"></i>
 						</div>
@@ -65,7 +65,7 @@
 							Your photo will be verified and accepted by our team if the content is appropriate and is not a duplicate.
 						</div>
 					</div>
-					<div class="col txtcenter prl pll">
+					<div class="col txtcenter prl pll pbl">
 						<div class="bloc-rond upload txtcenter txt-middle">
 							<i class="fa fa-heart-o fa-2x"></i>
 						</div>
@@ -75,7 +75,63 @@
 						</div>
 					</div>
 				</div>
+
+				<form id="upload_photo" class="pbl">
+					<div class="row">
+						<div class="col prl pll pbs">
+							<input type="text" name="nom_upload" id="nom_upload" placeholder="Last & First name" class="pas proxima-bold inbl w100" />
+						</div>
+						<div class="col prl pll pbl">
+							<input type="email" name="email_upload" id="email_upload" placeholder="Email" class="pas proxima-bold inbl w100" />
+						</div>
+					</div>
+
+					<div class="row pbl">
+						<div class="col prl pll">
+							<label class="block">
+								<div class="photo-area txtcenter pointer">
+									<div class="pal">
+										<div class="txtcenter proxima-bold inbl pam pts pbs">
+											<i class="fa fa-file-image-o mrs"></i>Choose your photo
+										</div>
+									</div>
+									<img src="" class="pal ptn dnone" id="img_thumb"/>
+								</div>
+								<input type="file" name="input_photo" id="input_photo" class="dnone" />
+							</label>
+						</div>
+					</div>
+
+					<div class="row pbl">
+						<div class="col prl pll">
+							<button type="submit" name="upload_submit" id="upload_submit" 
+							class="pas proxima-bold inbl w100 transition">
+								<span id="submit-msg">Subscribe</span> <i class="fa fa-paw mls"></i>
+							</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
+
+	<script>
+		function readURL(input) {
+
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+
+		        reader.onload = function (e) {
+		            $('#img_thumb').attr('src', e.target.result);
+		            $("#img_thumb").removeClass('dnone');
+		        }
+
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+
+		$("#input_photo").change(function(){
+		    readURL(this);
+		});
+	</script>
 {% endblock %}

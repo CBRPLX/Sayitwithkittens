@@ -502,11 +502,11 @@
 
 		h1{
 			font-size: 3em;
-			color: #4C4C4C;
+			color: $gris-upload;
 		}
 
 		h4{
-			color: #4C4C4C;
+			color: $gris-upload;
 		}
 
 		&.upload{
@@ -519,8 +519,8 @@
 					width: 70px;
 					height: 70px;
 					background-color: transparent;
-					color: #4C4C4C;
-					border: 2px solid #4C4C4C;
+					color: $gris-upload;
+					border: 2px solid $gris-upload;
 
 					i{
 						&.fa-paper-plane-o{
@@ -539,6 +539,68 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+form{
+	&#upload_photo{
+		input{
+			border: 2px solid $gris-upload !important;
+			border-radius: 3px;
+			color: $gris-upload;
+			background-color: transparent;
+			font-size: 1em;
+
+			@include input-placeholder{
+				color: $gris-upload;
+			}
+		}
+
+		button{
+			background-color: transparent;
+			color: $gris-upload;
+			width: 100%;
+			border-radius: 3px;
+			font-size: 1em;
+			border: 2px solid $gris-upload !important;
+			border-bottom: 3px solid $gris-upload !important;
+
+			&:hover{
+				background-color: $gris-upload;
+				color: $white;
+			}
+
+			&.news-error{
+				color: $white;
+				background-color: $rouge !important;
+				border-color: $rouge !important;
+			}
+
+			&.news-deal{
+				color: $white;
+				background-color: rgba(60, 216, 35, 0.87) !important;
+				border-color: rgba(60, 216, 35, 0.87) !important;
+			}
+		}
+
+		.photo-area{
+			background-color: transparent;
+			color: $gris-upload;
+			width: 100%;
+			border-radius: 3px;
+			font-size: 1em;
+			border: 2px dashed $gris-upload !important;
+
+			background-size: cover;
+			background-position: center;
+
+			div{
+				// color: $white;
+				// background-color: $gris-upload;
+				// max-width: 200px;
+				margin: auto;
 			}
 		}
 	}
