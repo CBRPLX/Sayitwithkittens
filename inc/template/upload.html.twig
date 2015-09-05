@@ -1,5 +1,31 @@
 {% extends 'squelette.html.twig' %}
 
+{% block meta %}
+	<title>Upload your photo - Say it with kittens</title>
+
+	<!-- Facebook -->
+	<meta property="og:title" content="Upload your photo - Say it with kittens">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="You want to see you cat's face on Sayitwithkittens ? Click here :)">
+	<meta property="og:image" content="http://sayitwithkittens.io/dist/images/share-upload.jpg">
+	<meta property="og:url" content="http://sayitwithkittens.io/upload/">
+	<meta property="og:site_name" content="sayitwithkittens.io">
+	<meta property="fb:admins" content="1614882856">
+
+	<!-- Google+ -->
+	<meta itemprop="name" content="Upload your photo - Say it with kittens">
+	<meta itemprop="description" content="You want to see you cat's face on Sayitwithkittens ? Click here :)">
+	<meta itemprop="image" content="http://sayitwithkittens.io/dist/images/share-upload.jpg">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@CBRPLX">
+	<meta name="twitter:title" content="Upload your photo - Say it with kittens">
+	<meta name="twitter:description" content="You want to see you cat's face on Sayitwithkittens ? Click here :)">
+	<meta name="twitter:creator" content="@CBRPLX">
+	<meta name="twitter:image:src" content="http://sayitwithkittens.io/dist/images/share-upload.jpg">
+{% endblock %}
+
 {% block header %}
 	
 <div class="bloc-header upload">
