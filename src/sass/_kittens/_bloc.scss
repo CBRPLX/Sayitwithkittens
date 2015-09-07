@@ -523,22 +523,9 @@
 					color: $gris-upload;
 					border: 2px solid $gris-upload;
 
-					// i{
-					// 	&.fa-paper-plane-o{
-					// 		padding-top:19px;
-					// 		margin-left:-4px;
-					// 	}
-
-					// 	&.fa-check-square-o{
-					// 		padding-top:20px;
-					// 		margin-left:4px;
-					// 	}
-
-					// 	&.fa-heart-o{
-					// 		padding-top:20px;
-					// 		margin-left:2px;
-					// 	}
-					// }
+					i{
+						vertical-align: middle !important;
+					}
 				}
 			}
 		}
