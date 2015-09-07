@@ -512,6 +512,59 @@
 		&.upload{
 			background-color: rgb(226, 226, 226);
 
+			&.index{
+				color: $gris-upload;
+
+				h2{
+					font-size: 40px;
+				}
+
+				.logo-txt{
+					border-left: 4px solid #4C4C4C;
+				}
+
+				a{
+					border: 2px solid $gris-upload !important;
+					border-radius: 3px;
+					color: $gris-upload;
+					background-color: transparent;
+					font-size: 1em;
+					margin: auto;
+					border-bottom: 3px solid $gris-upload !important;
+
+					&:hover{
+						background-color: $gris-upload;
+						color: $white;
+					}
+				}
+
+				h3{
+					color: $gris-font;
+				}
+
+				@media (max-width: $small-screen) {
+					.w60, .w40{
+						width: 100%;
+					}
+
+					.col.prl{
+						padding-right:0 !important;
+					}
+
+					.col.pll{
+						padding-left:0 !important;
+					}
+
+					.txtright{
+						text-align: center;
+					}
+
+					a{
+						width: 100%;
+					}
+				}
+			}
+
 			.bloc-rond{
 				margin: auto;
 
@@ -598,4 +651,8 @@ form{
 			}
 		}
 	}
+}
+
+.bloc-upload{
+	// background-color: $gris-upload;
 }

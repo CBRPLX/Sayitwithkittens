@@ -5454,6 +5454,48 @@ img {
 .bloc-contenu .bloc-article.upload {
   background-color: #e2e2e2;
 }
+.bloc-contenu .bloc-article.upload.index {
+  color: #4C4C4C;
+}
+.bloc-contenu .bloc-article.upload.index h2 {
+  font-size: 40px;
+}
+.bloc-contenu .bloc-article.upload.index .logo-txt {
+  border-left: 4px solid #4C4C4C;
+}
+.bloc-contenu .bloc-article.upload.index a {
+  border: 2px solid #4C4C4C !important;
+  border-radius: 3px;
+  color: #4C4C4C;
+  background-color: transparent;
+  font-size: 1em;
+  margin: auto;
+  border-bottom: 3px solid #4C4C4C !important;
+}
+.bloc-contenu .bloc-article.upload.index a:hover {
+  background-color: #4C4C4C;
+  color: #ffffff;
+}
+.bloc-contenu .bloc-article.upload.index h3 {
+  color: #858383;
+}
+@media (max-width: 768px) {
+  .bloc-contenu .bloc-article.upload.index .w60, .bloc-contenu .bloc-article.upload.index .w40 {
+    width: 100%;
+  }
+  .bloc-contenu .bloc-article.upload.index .col.prl {
+    padding-right: 0 !important;
+  }
+  .bloc-contenu .bloc-article.upload.index .col.pll {
+    padding-left: 0 !important;
+  }
+  .bloc-contenu .bloc-article.upload.index .txtright {
+    text-align: center;
+  }
+  .bloc-contenu .bloc-article.upload.index a {
+    width: 100%;
+  }
+}
 .bloc-contenu .bloc-article.upload .bloc-rond {
   margin: auto;
 }
