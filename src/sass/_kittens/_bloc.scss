@@ -517,27 +517,28 @@
 
 				&.upload{
 					width: 70px;
+					max-width: 70px;
 					height: 70px;
 					background-color: transparent;
 					color: $gris-upload;
 					border: 2px solid $gris-upload;
 
-					i{
-						&.fa-paper-plane-o{
-							padding-top:19px;
-							margin-left:-4px;
-						}
+					// i{
+					// 	&.fa-paper-plane-o{
+					// 		padding-top:19px;
+					// 		margin-left:-4px;
+					// 	}
 
-						&.fa-check-square-o{
-							padding-top:20px;
-							margin-left:4px;
-						}
+					// 	&.fa-check-square-o{
+					// 		padding-top:20px;
+					// 		margin-left:4px;
+					// 	}
 
-						&.fa-heart-o{
-							padding-top:20px;
-							margin-left:2px;
-						}
-					}
+					// 	&.fa-heart-o{
+					// 		padding-top:20px;
+					// 		margin-left:2px;
+					// 	}
+					// }
 				}
 			}
 		}

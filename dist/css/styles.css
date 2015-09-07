@@ -5459,22 +5459,11 @@ img {
 }
 .bloc-contenu .bloc-article.upload .bloc-rond.upload {
   width: 70px;
+  max-width: 70px;
   height: 70px;
   background-color: transparent;
   color: #4C4C4C;
   border: 2px solid #4C4C4C;
-}
-.bloc-contenu .bloc-article.upload .bloc-rond.upload i.fa-paper-plane-o {
-  padding-top: 19px;
-  margin-left: -4px;
-}
-.bloc-contenu .bloc-article.upload .bloc-rond.upload i.fa-check-square-o {
-  padding-top: 20px;
-  margin-left: 4px;
-}
-.bloc-contenu .bloc-article.upload .bloc-rond.upload i.fa-heart-o {
-  padding-top: 20px;
-  margin-left: 2px;
 }
 
 form#upload_photo input {
