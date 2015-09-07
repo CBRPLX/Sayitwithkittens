@@ -523,6 +523,12 @@
 					color: $gris-upload;
 					border: 2px solid $gris-upload;
 
+					@media (max-width: $small-screen) {
+						width: 60px;
+						max-width: 60px;
+						height: 60px;
+					}
+
 					i{
 						vertical-align: middle !important;
 					}
