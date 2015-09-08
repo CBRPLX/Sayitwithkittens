@@ -31,8 +31,11 @@ class emailController {
     public function genererSquelette($contenu, $last = false){
     	global $twig;
     	global $dev;
-        $template = $twig->loadTemplate('email/email_squelette.html.twig');
+        global $host;
 
+        $template = $twig->loadTemplate('email/email_squelette.html.twig');
+        $twig->addGlobal('host', $host);
+        
         $image = new \classe\Image();
         $image->getRandomKitten();
         $image->getFilename();
@@ -67,5 +70,29 @@ class emailController {
         ));
 
         return $this->genererSquelette($contenu);
+    }
+
+    public function genererPostUpload($email){
+        global $twig;
+        global $dev;
+        global $host;
+
+        $template = $twig->loadTemplate('email/post_upload.html.twig');
+        $twig->addGlobal('host', $host);
+
+        $upload = new \classe\Upload();
+        $upload->set('email_upload', $email);
+        $upload->load();
+        $upload->getFilename();
+        
+        if(!$upload->isFileExist()){
+            $upload = false;
+        }
+
+        $contenu = $template->render(array(
+            'upload' => $upload
+        ));
+
+        return $this->genererSquelette($contenu, true);
     }
 }

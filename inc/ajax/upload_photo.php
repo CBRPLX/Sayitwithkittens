@@ -28,6 +28,12 @@ if(!empty($_POST["nom_upload"]) && !empty($_POST["email_upload"])){
 
 					if(move_uploaded_file($file['tmp_name'], $uploaddir ."/upload-".$_POST["email_upload"]."-".$last_insert.".".strtolower($file_name['extension']))){
 
+
+						//Envoie du mail
+						$e = new \controller\emailController();
+						$contenu = $e->genererPostUpload($_POST['email_upload']);
+						$e->envoyerEmail('Say it with kittens <robin.pierrot@gmail.com>', "Photo uploaded on Sayitwithkittens.io", $contenu);
+
 						echo "true";
 					}
 				}else{

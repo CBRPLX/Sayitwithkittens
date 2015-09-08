@@ -5619,13 +5619,13 @@ form#upload_photo .photo-area div {
 }
 
 [class^="icone-"] {
-  background: url('../images/icone-sb897670c9c.png');
+  background: url('../images/icone-s0d4f57474c.png');
   display: inline-block;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min—moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   [class^="icone-"] {
-    background: url('../images/icone-2x-sec2322f76d.png');
-    background-size: 62px 353px;
+    background: url('../images/icone-2x-s87cb9e24fe.png');
+    background-size: 62px 420px;
   }
 }
 
@@ -5647,20 +5647,26 @@ form#upload_photo .photo-area div {
   width: 62px;
 }
 
-.icone-logo {
+.icone-email-photo {
   background-position: 0 -201px;
+  height: 62px;
+  width: 62px;
+}
+
+.icone-logo {
+  background-position: 0 -268px;
   height: 30px;
   width: 47px;
 }
 
 .icone-loop-left {
-  background-position: 0 -236px;
+  background-position: 0 -303px;
   height: 56px;
   width: 49px;
 }
 
 .icone-loop-right {
-  background-position: 0 -297px;
+  background-position: 0 -364px;
   height: 56px;
   width: 49px;
 }
@@ -5678,16 +5684,20 @@ form#upload_photo .photo-area div {
     background-position: 0 -134px;
   }
 
-  .icone-logo {
+  .icone-email-photo {
     background-position: 0 -201px;
   }
 
+  .icone-logo {
+    background-position: 0 -268px;
+  }
+
   .icone-loop-left {
-    background-position: 0 -236px;
+    background-position: 0 -303px;
   }
 
   .icone-loop-right {
-    background-position: 0 -297px;
+    background-position: 0 -364px;
   }
 }
 @keyframes rotating-droite {
