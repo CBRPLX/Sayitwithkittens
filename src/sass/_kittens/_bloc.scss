@@ -593,6 +593,8 @@
 
 form{
 	&#upload_photo{
+		color: $gris-upload;
+		
 		input{
 			border: 2px solid $gris-upload !important;
 			border-radius: 3px;

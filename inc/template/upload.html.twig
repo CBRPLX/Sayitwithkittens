@@ -104,6 +104,14 @@
 					</div>
 
 					<div class="row pbl">
+						<div class="col prl pll custom-checkbox">
+							<input id="input_license" type="checkbox" />
+							<label class="grey-background man txtmiddle" for="input_license"></label>
+							<span class="txtmiddle proxima-bold pls pointer" id="label_input_license">I agree to let Sayitwithkittens.io to use my photo</span>
+						</div>
+					</div>
+
+					<div class="row pbl">
 						<div class="col prl pll">
 							<button type="submit" name="upload_submit" id="upload_submit" 
 							class="pas proxima-bold inbl w100 transition">
@@ -131,6 +139,11 @@
 		    }
 		}
 
+		$('#label_input_license').click(function(e){
+			e.preventDefault();
+			$('label.grey-background').trigger('click');
+		});
+
 		$("#input_photo").change(function(){
 		    readURL(this);
 		});
@@ -138,7 +151,7 @@
 		$('#upload_photo').submit(function(e){
 			e.preventDefault();
 
-			if(document.getElementById("nom_upload").value != "" && document.getElementById("email_upload").value != "" && document.getElementById("input_photo").value != ""){
+			if(document.getElementById("nom_upload").value != "" && document.getElementById("email_upload").value != "" && document.getElementById("input_photo").value != "" && $('#input_license').is(':checked')){
 
 				var $form = $(this);
 				var formdata = (window.FormData) ? new FormData($form[0]) : null;

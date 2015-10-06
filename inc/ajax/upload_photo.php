@@ -5,6 +5,8 @@ if(!empty($_POST["nom_upload"]) && !empty($_POST["email_upload"])){
 
 	if(filter_var($_POST["email_upload"], FILTER_VALIDATE_EMAIL)){
 
+		var_dump($_POST);
+
 		global $pdo;
 
 		$sql = "INSERT INTO kitten_upload (nom_upload, email_upload) 
