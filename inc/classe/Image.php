@@ -336,11 +336,15 @@ class Image{
 		$this->filename = $filename."_".$this->id_image;
     }
 
-    public function isFileExist(){
+    public function isFileExist($get_path = false){
         $img = glob('assets/generate/kitten_*_'.$this->id_image.'.*');
 
         if(count($img) > 0){
-            return true;
+            if($get_path){
+                return $img[0];
+            }else{
+                return true;
+            }
         }else{
             return false;
         }
@@ -429,6 +433,14 @@ class Image{
         }else{
             return false;
         }
+    }
+
+    public function getSize(){
+        $img = $this->isFileExist(true);
+        $img = getimagesize($img);
+        $this->set('width', $img[0]);
+        $this->set('height', $img[1]);
+        $this->set('mime', $img['mime']);
     }
 
 }

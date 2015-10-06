@@ -84,6 +84,7 @@ class generalController {
 
             $i->setFileExist();
             $i->getFilename();
+            $i->getSize();
 
             $previous = $i->getPreviousKitten();
             $next = $i->getNextKitten();
