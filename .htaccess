@@ -16,6 +16,7 @@ RewriteRule ^generate/$  generate.php
 RewriteRule ^upload/$  upload.php
 RewriteRule ^cat/(.*)$  kitten.php?id_image=$1
 RewriteRule ^preview/(.*)$  preview.php?id_image=$1
+RewriteRule ^verify/(.*)$  validate.php?id_upload=$1
 
 ErrorDocument 404 /404/
 ErrorDocument 403 /403/
