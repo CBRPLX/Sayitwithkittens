@@ -21,7 +21,23 @@ class Upload{
     }
 
     public function load(){
-        if(!empty($this->email_upload)){
+        if(!empty($this->id_upload)){
+            global $pdo;
+
+            $sql = "SELECT * FROM kitten_upload WHERE id_upload = ? LIMIT 0,1";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array($this->id_upload));
+
+            if($stmt->rowCount() > 0){
+                $res = $stmt->fetch(\PDO::FETCH_OBJ);
+
+                foreach ($res as $k => $v) {
+                    $this->$k = $v;
+                }
+            }else{
+                return false;
+            }
+        }elseif(!empty($this->email_upload)){
             global $pdo;
 
             $sql = "SELECT * FROM kitten_upload WHERE email_upload = ? ORDER BY id_upload DESC LIMIT 0,1";

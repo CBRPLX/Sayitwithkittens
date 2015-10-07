@@ -313,10 +313,23 @@ class Image{
     	}
     }
 
+    public function getMostLikedKitten(){
+        global $pdo;
+
+        $sql = "SELECT * FROM kitten_image WHERE file_exist = 1 ORDER BY likes DESC, RAND() LIMIT 1";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array());
+
+        $res = $stmt->fetch(\PDO::FETCH_ASSOC);
+        foreach ($res as $k => $v) {
+            $this->$k = $v;
+        }
+    }
+
     public function getRandomKitten(){
     	global $pdo;
 
-    	$sql = "SELECT * FROM kitten_image ORDER BY likes DESC, RAND() LIMIT 1";
+    	$sql = "SELECT * FROM kitten_image WHERE file_exist = 1 ORDER BY RAND() LIMIT 1";
     	$stmt = $pdo->prepare($sql);
     	$stmt->execute(array());
 
