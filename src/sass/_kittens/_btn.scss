@@ -118,3 +118,48 @@
 		}
 	}
 }
+
+//Custom select
+.form-custom-select{
+	@include user-select(none);
+    overflow: hidden;
+}
+
+select {
+    position: relative;
+    background: transparent;
+    background-image: none;
+    display: block;
+    width: 100%;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 2;
+    border: none;
+    padding: 10px 10px 10px 5px;
+    // This is so hacky.. (for Firefox)
+    // Removes the default select arrow.
+    text-overflow: '';
+    text-indent: 10px;
+    // End of brutal hack
+
+    @include appearance(none);
+
+    &[multiple=multiple] {
+        height: auto;
+    }
+
+    option[disabled] {
+        color: #eeeeee;
+        text-shadow: none;
+        border: none;
+    }
+}
+
+select:-moz-focusring {
+    color: transparent;
+}
+
+select::-ms-expand {
+    display: none;
+}

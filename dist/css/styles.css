@@ -5083,6 +5083,48 @@ img {
   animation: boom 0.5s ease;
 }
 
+.form-custom-select {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+select {
+  position: relative;
+  background: transparent;
+  background-image: none;
+  display: block;
+  width: 100%;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  padding: 10px 10px 10px 5px;
+  text-overflow: '';
+  text-indent: 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+select[multiple=multiple] {
+  height: auto;
+}
+select option[disabled] {
+  color: #eeeeee;
+  text-shadow: none;
+  border: none;
+}
+
+select:-moz-focusring {
+  color: transparent;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .bloc-tablette {
     width: auto !important;
@@ -5378,6 +5420,12 @@ img {
 }
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview {
   margin-bottom: 49px;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview.kitten-validate {
+  margin-bottom: 0;
+}
+.bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview.kitten-validate .form-custom-select {
+  border-bottom: 2px solid #ffffff;
 }
 .bloc-header .bloc-header-contenu.kitten > .row .col .kitten-options.kitten-preview .kitten-preview-left {
   border-right: 2px solid #ffffff;
