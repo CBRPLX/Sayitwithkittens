@@ -37,7 +37,7 @@ class emailController {
         $twig->addGlobal('host', $host);
         
         $image = new \classe\Image();
-        $image->getRandomKitten();
+        $image->getMostLikedKitten();
         $image->getFilename();
 
         return $template->render(array(
@@ -94,5 +94,32 @@ class emailController {
         ));
 
         return $this->genererSquelette($contenu, true);
+    }
+
+    public function genererVerify($id_upload, $accept = true, $reason = ""){
+        global $twig;
+        global $dev;
+        global $host;
+
+        $template = $twig->loadTemplate('email/verify.html.twig');
+        $twig->addGlobal('host', $host);
+
+        $i = new \classe\Upload();
+        $i->set('id_upload', $id_upload);
+        $i->load();
+        $i->getFilename();
+
+        if($i->isFileExist()){
+
+            $contenu = $template->render(array(
+                'upload' => $i,
+                'accept' => $accept,
+                'reason' => $reason
+            ));
+
+            return $this->genererSquelette($contenu, true);
+        }
+
+        
     }
 }

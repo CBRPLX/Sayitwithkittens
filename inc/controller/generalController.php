@@ -73,6 +73,28 @@ class generalController {
         }
     }
 
+    public function genererValidate($id_upload){
+        global $twig;
+        global $dev;
+
+        $i = new \classe\Upload();
+        $i->set('id_upload', $id_upload);
+        $i->load();
+        $i->getFilename();
+
+        if($i->isFileExist()){
+
+            $template = $twig->loadTemplate('validate.html.twig');
+            $contenu = $template->render(array(
+                'img' => $i
+            ));
+
+            return $contenu;
+        }else{
+            header('Location:/generate/');
+        }
+    }
+
     public function genererKitten($id_image){
         global $twig;
         global $dev;
