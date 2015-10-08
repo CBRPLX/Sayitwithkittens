@@ -3,7 +3,7 @@
 include 'inc/php/config.php';
 
 $e = new \controller\emailController();
-echo $e->genererVerify(2, false, "Pornography");
+echo $e->genererVerify(5);
 
 // $i = new \classe\Image();
 // $i->getRandomKitten();

@@ -62,15 +62,16 @@
 								<div class="form-custom-select">
 									<select name="reject-reason" id="reject-reason" class="proxima-bold h5-like txtcenter">
 										<option value="" disabled="disabled" selected="selected">Choose a reason</option>
-										<option>Pornography</option>
-										<option>Racism</option>
+										<option>Bad quality</option>
+										<option>Too small</option>
+										<option>Inappropriate</option>
 										<option>Not a kitten</option>
 									</select>
 								</div>
 								<div class="row row-mobile">
 									<div class="kitten-preview-left col col-mobile w50">
 										<div class="kitten-cancel pointer transition-fast">
-											<a class="inbl w100 pas not-a-like btn-modify" href="#">
+											<a class="inbl w100 pas not-a-like btn-reject" href="#">
 												<span class="txtmiddle">Reject</span> &nbsp; <i class="fa fa-times txtmiddle"></i>
 											</a>
 										</div>
@@ -109,9 +110,21 @@
 	$('.btn-validate').click(function(e){
 		e.preventDefault();
 		var retour = file("/inc/ajax/validate_kitten.php", "id_image={{img.get('id_upload')}}");
-		
+
 		if(retour != ""){
 			window.location.href = "/?bg="+retour;
+		}else{
+			alert("Error, please try again");
+		}
+	});
+
+	$('.btn-reject').click(function(e){
+		e.preventDefault();
+		var reason = $( "#reject-reason option:selected" ).text();
+		var retour = file("/inc/ajax/reject_kitten.php", "id_image={{img.get('id_upload')}}&reason="+reason);
+		
+		if(retour != ""){
+			window.location.href = "/";
 		}else{
 			alert("Error, please try again");
 		}

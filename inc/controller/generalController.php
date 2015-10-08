@@ -82,7 +82,7 @@ class generalController {
         $i->load();
         $i->getFilename();
 
-        if($i->isFileExist()){
+        if($i->isFileExist() && $i->get('validate') != -1){
 
             $template = $twig->loadTemplate('validate.html.twig');
             $contenu = $template->render(array(

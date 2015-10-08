@@ -115,19 +115,24 @@ class Upload{
                     $jpg = imagejpeg($im, "assets/kittens/kitten_".$files.".jpg");
 
                     if($jpg){
-                        $del = unlink($this->path);
+                        // $del = unlink($this->path);
 
-                        if($del){
+                        // if($del){
                             global $pdo;
 
                             $sql = "UPDATE kitten_upload SET validate = 1, id_kitten = ? WHERE id_upload = ?;";
                             $stmt = $pdo->prepare($sql);
                             $stmt->execute(array($files, $this->id_upload));
+                            $this->id_kitten = $files;
+
+                            $e = new \controller\emailController();
+                            $contenu = $e->genererVerify($this->id_upload);
+                            $mail = $e->envoyerEmail($this->email_upload, "Your photo has been accepted", $contenu);
 
                             return $files;
-                        }else{
-                            return false;
-                        }
+                        // }else{
+                        //     return false;
+                        // }
                     }else{
                         return false;
                     }
@@ -137,6 +142,26 @@ class Upload{
             }else{
                 return false;
             }
+        }else{
+            return false;
+        }
+    }
+
+    public function reject($reason){
+        $this->getFilename();
+        if($this->isFileExist()){
+            // $del = unlink($this->path);
+            global $pdo;
+
+            $sql = "UPDATE kitten_upload SET validate = -1 WHERE id_upload = ?;";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array($this->id_upload));
+
+            $e = new \controller\emailController();
+            $contenu = $e->genererVerify($this->id_upload, false, $reason);
+            $mail = $e->envoyerEmail($this->email_upload, "Your photo has been rejected", $contenu);
+
+            // return $del;
         }else{
             return false;
         }
