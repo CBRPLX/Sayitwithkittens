@@ -11,7 +11,7 @@ if($_SERVER["SERVER_NAME"] == "sayitwithkittens.io" || $_SERVER["SERVER_NAME"] =
 
 if($dev){
 	ini_set('display_error', '1');
-	error_reporting(-1);
+	error_reporting(E_ERROR | E_PARSE);
 	$host = "sayitwithkittens.localhost";
 }else{
 	ini_set('display_error', '0');
