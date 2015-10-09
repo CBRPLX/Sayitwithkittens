@@ -18,10 +18,22 @@
                     <tbody>
                         <tr>
                             <td>
-                                Hi {{upload.get('nom_upload')}},<br/><br/>
+                                Hi Robin,<br/><br/>
                                 We received the photo you uploaded on <a href="http://{{host}}/" style="outline:none;text-decoration:none;border-top:none; border-left:none; border-right:none; color:#4bb6d1;">{{host}}</a> :<br/><br/>
                                 <img src="http://{{host}}/{{upload.get('path')}}" style="max-width:444px;" /><br/><br/>
                                 You will be notified of the team's decision about your photo.
+                                <br/>
+                                <table width="100%" style="padding-top:40px;padding-bottom:40px;">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                 <a href="http://{{host}}/verify/{{upload.get('id_upload')}}" style="padding: 6px 20px;color:#f26a94;border: 2px solid #f26a94;background-color: transparent;text-align: center;border-radius: 3px;font-size:14px;text-decoration:none;outline:none;display:block;">
+                                                    Check it
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <br/>
                                 Have a nice day.<br/><br/>
                                 <div style="text-align:right">Say it with kittens team</div>

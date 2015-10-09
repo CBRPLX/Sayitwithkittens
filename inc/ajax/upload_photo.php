@@ -34,6 +34,9 @@ if(!empty($_POST["nom_upload"]) && !empty($_POST["email_upload"])){
 						$contenu = $e->genererPostUpload($_POST['email_upload']);
 						$e->envoyerEmail($_POST['email_upload'], "Photo uploaded on Sayitwithkittens.io", $contenu);
 
+						$contenu = $e->genererCheckUpload($_POST['email_upload']);
+						$e->envoyerEmail('robin.pierrot@gmail.com', "Check the photo uploaded on Sayitwithkittens.io", $contenu);
+
 						echo "true";
 					}
 				}else{

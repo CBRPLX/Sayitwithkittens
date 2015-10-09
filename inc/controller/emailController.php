@@ -96,6 +96,30 @@ class emailController {
         return $this->genererSquelette($contenu, true);
     }
 
+    public function genererCheckUpload($email){
+        global $twig;
+        global $dev;
+        global $host;
+
+        $template = $twig->loadTemplate('email/check_upload.html.twig');
+        $twig->addGlobal('host', $host);
+
+        $upload = new \classe\Upload();
+        $upload->set('email_upload', $email);
+        $upload->load();
+        $upload->getFilename();
+        
+        if(!$upload->isFileExist()){
+            $upload = false;
+        }
+
+        $contenu = $template->render(array(
+            'upload' => $upload
+        ));
+
+        return $this->genererSquelette($contenu, true);
+    }
+
     public function genererVerify($id_upload, $accept = true, $reason = ""){
         global $twig;
         global $dev;
