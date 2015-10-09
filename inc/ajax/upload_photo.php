@@ -32,7 +32,7 @@ if(!empty($_POST["nom_upload"]) && !empty($_POST["email_upload"])){
 						//Envoie du mail
 						$e = new \controller\emailController();
 						$contenu = $e->genererPostUpload($_POST['email_upload']);
-						$e->envoyerEmail('Say it with kittens <robin.pierrot@gmail.com>', "Photo uploaded on Sayitwithkittens.io", $contenu);
+						$e->envoyerEmail($_POST['email_upload'], "Photo uploaded on Sayitwithkittens.io", $contenu);
 
 						echo "true";
 					}
