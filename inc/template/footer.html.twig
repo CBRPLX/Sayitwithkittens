@@ -38,7 +38,7 @@
 				var nom = document.getElementById("nom_news").value;
 				var email = document.getElementById("email_news").value;
 				var retour = file("/inc/ajax/add_newsletter.php", "nom="+nom+"&email="+email);
-
+				console.log(retour);
 				if(retour == true){
 					document.getElementById("news_submit").setAttribute("class", "pas proxima-bold inbl w100 transition news-deal");
 					document.getElementById("news_icon").setAttribute("class", "fa fa-check mls");
