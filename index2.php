@@ -3,7 +3,7 @@
 include 'inc/php/config.php';
 
 $e = new \controller\emailController();
-echo $e->genererVerify(5);
+echo $e->genererInscriptionNews("Paul");
 
 // $i = new \classe\Image();
 // $i->getRandomKitten();
