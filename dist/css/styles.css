@@ -5734,13 +5734,13 @@ form#upload_photo .photo-area div {
 }
 
 [class^="icone-"] {
-  background: url('../images/icone-s0d4f57474c.png');
+  background: url('../images/icone-sf5c7b02ce3.png');
   display: inline-block;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min—moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   [class^="icone-"] {
-    background: url('../images/icone-2x-s87cb9e24fe.png');
-    background-size: 62px 420px;
+    background: url('../images/icone-2x-s51a2f3ef6e.png');
+    background-size: 62px 443px;
   }
 }
 
@@ -5786,6 +5786,12 @@ form#upload_photo .photo-area div {
   width: 49px;
 }
 
+.icone-unsubscribe {
+  background-position: 0 -425px;
+  height: 18px;
+  width: 30px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min—moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icone-email-article-like {
     background-position: 0 0;
@@ -5813,6 +5819,10 @@ form#upload_photo .photo-area div {
 
   .icone-loop-right {
     background-position: 0 -364px;
+  }
+
+  .icone-unsubscribe {
+    background-position: 0 -425px;
   }
 }
 @keyframes rotating-droite {

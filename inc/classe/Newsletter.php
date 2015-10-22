@@ -50,4 +50,23 @@ class Newsletter{
             return false;
         }
     }
+
+    public static function load($email){
+        global $pdo;
+
+        $sql = "SELECT * FROM kitten_newsletter WHERE email = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array($email));
+
+        if($stmt->rowCount() > 0){
+            $res = $stmt->fetch(\PDO::FETCH_ASSOC);
+            $new = new \classe\Newsletter();
+            foreach ($res as $k => $v) {
+                $new->set($k, $v);
+            }
+            return $new;
+        }else{
+            return false;
+        }
+    }
 }
