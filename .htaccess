@@ -17,6 +17,7 @@ RewriteRule ^upload/$  upload.php
 RewriteRule ^cat/(.*)$  kitten.php?id_image=$1
 RewriteRule ^preview/(.*)$  preview.php?id_image=$1
 RewriteRule ^verify/(.*)$  validate.php?id_upload=$1
+#RewriteRule ^unsubscribe/(.*)$  unsubscribe.php
 
 ErrorDocument 404 /404/
 ErrorDocument 403 /403/
