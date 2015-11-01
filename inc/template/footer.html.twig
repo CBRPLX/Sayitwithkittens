@@ -15,6 +15,8 @@
 					</button>
 				</div>
 			</form>
+
+			{% include "mail_warn.html.twig" with {'padding':'prs pls', 'id':'mail-warn-news'} %}
 		</div>
 
 		<script type="text/javascript">
@@ -43,6 +45,7 @@
 					document.getElementById("news_submit").setAttribute("class", "pas proxima-bold inbl w100 transition news-deal");
 					document.getElementById("news_icon").setAttribute("class", "fa fa-check mls");
 					document.getElementById("submit-msg").innerHTML = "Deal";
+					document.getElementById("mail-warn-news").style.display = "block";
 				}else{
 					document.getElementById("news_submit").setAttribute("class", "pas proxima-bold inbl w100 transition news-error");
 					document.getElementById("news_icon").setAttribute("class", "fa fa-times mls");

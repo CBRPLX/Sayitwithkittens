@@ -5689,6 +5689,10 @@ form#upload_photo .photo-area div {
   margin: auto;
 }
 
+.mail_warn {
+  display: none;
+}
+
 @font-face {
   font-family: "grobold";
   src: url('../fonts/grobold.ttf?1432066594') format('truetype'), url('../fonts/grobold.eot?1432066594') format('embedded-opentype'), url('../fonts/grobold.woff?1432066594') format('woff'), url('../fonts/grobold.svg?1432066594') format('svg');

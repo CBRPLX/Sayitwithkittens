@@ -117,6 +117,8 @@
 							class="pas proxima-bold inbl w100 transition">
 								<span id="submit-upload-msg">Send it</span> <i id="upload-icon" class="fa fa-paw mls"></i>
 							</button>
+			
+							{% include "mail_warn.html.twig" with {'padding':'pts', 'id':'mail-warn-upload'} %}	
 						</div>
 					</div>
 				</form>
@@ -169,6 +171,7 @@
 			                $("#upload_submit").addClass("news-deal");
 							document.getElementById("upload-icon").setAttribute("class", "fa fa-check mls");
 							document.getElementById("submit-upload-msg").innerHTML = "Thank you";
+							document.getElementById("mail-warn-upload").style.display = "block";
 						}else{
 							$("#upload_submit").addClass("news-error");
 							document.getElementById("upload-icon").setAttribute("class", "fa fa-times mls");
