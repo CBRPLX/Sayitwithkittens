@@ -9,7 +9,7 @@ if($_SERVER["SERVER_NAME"] == "sayitwithkittens.io" || $_SERVER["SERVER_NAME"] =
 	$dev = false;
 }
 
-if($dev || isset($_GET['dev']){
+if($dev || isset($_GET['dev'])){
 	ini_set('display_error', '1');
 	error_reporting(E_ERROR | E_PARSE);
 	$host = "sayitwithkittens.localhost";
