@@ -6,6 +6,7 @@ if(!empty($_POST['id_image'])){
 		$u = new \classe\Upload();
 		$u->set('id_upload', $_POST['id_image']);
 		$u->load();
+		var_dump($u);
 		$validate = $u->validate();
 		if($validate != false){
 			echo $validate;

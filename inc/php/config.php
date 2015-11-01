@@ -9,15 +9,15 @@ if($_SERVER["SERVER_NAME"] == "sayitwithkittens.io" || $_SERVER["SERVER_NAME"] =
 	$dev = false;
 }
 
-// if($dev || isset($_GET['dev'])){
+if($dev || isset($_GET['dev'])){
 	ini_set('display_error', '1');
 	error_reporting(E_ERROR | E_PARSE);
 	$host = "sayitwithkittens.localhost";
-// }else{
-// 	ini_set('display_error', '0');
-// 	error_reporting(0);
-// 	$host = "sayitwithkittens.io";
-// }
+}else{
+	ini_set('display_error', '0');
+	error_reporting(0);
+	$host = "sayitwithkittens.io";
+}
 
 $refresh = false;
 if(isset($_GET["refresh"])) $refresh = true;
