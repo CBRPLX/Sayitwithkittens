@@ -10,7 +10,7 @@ if(!empty($_POST['id_image'])){
 		if($validate != false){
 			echo $validate;
 		}else{
-			echo "false";
+			echo "false1";
 		}
 	// }else{
 	// 	echo "false";
