@@ -27,6 +27,7 @@ require_once "inc/php/pdo.php";
 
 $loader = new \Twig_Loader_Filesystem('inc/template', 'Template');
 $twig = new \Twig_Environment($loader, array('debug' => true));
+$twig->addGlobal('dev', $dev);
 
 if (isset($_GET['PHPSESSID'])){
 	$requesturi = preg_replace('/?PHPSESSID=[^&]+/',"",$_SERVER['REQUEST_URI']);
