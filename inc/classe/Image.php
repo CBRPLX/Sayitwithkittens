@@ -387,6 +387,19 @@ class Image{
         return rename('assets/preview/kitten_'.$this->filename.'.png', 'assets/generate/kitten_'.$this->filename.'.png');
     }
 
+    public function validatePreview(){
+        $validate =  false;
+
+        if($this->isPreviewExist()){
+            if($this->moveFileFromPreview()){
+                $this->setFileExist();
+                $validate = true;
+            }
+        }
+
+        return $validate;
+    }
+
     public function getPreviousKitten(){
     	global $pdo;
 

@@ -107,7 +107,7 @@
 
 	$('.btn-validate').click(function(e){
 		e.preventDefault();
-		var retour = file("/inc/ajax/validate_kitten.php", "id_image={{img.get('id_image')}}");
+		var retour = file("/inc/ajax/preview_kitten.php", "id_image={{img.get('id_image')}}");
 
 		if(retour == ""){
 			sessionStorage.removeItem("kitten_txt");
