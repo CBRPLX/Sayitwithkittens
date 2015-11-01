@@ -155,6 +155,9 @@
 
 			if(document.getElementById("nom_upload").value != "" && document.getElementById("email_upload").value != "" && document.getElementById("input_photo").value != "" && $('#input_license').is(':checked')){
 
+				document.getElementById("upload-icon").setAttribute("class", "fa fa-sun-o fa-spin mls");
+				document.getElementById("submit-upload-msg").innerHTML = "Load ...";
+
 				var $form = $(this);
 				var formdata = (window.FormData) ? new FormData($form[0]) : null;
 	        	var data = (formdata !== null) ? formdata : $form.serialize();
