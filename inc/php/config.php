@@ -36,3 +36,8 @@ if (isset($_GET['PHPSESSID'])){
 	header("Location: http://".$_SERVER['HTTP_HOST'].$requesturi);
 	exit;
 }
+
+if(!empty($_GET["bg"])){
+	$bg = new \classe\Image();
+    $bg->chooseKitten($_GET["bg"]-1);;
+}

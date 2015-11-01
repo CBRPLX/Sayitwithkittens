@@ -15,7 +15,7 @@ class generalController {
         $kitten_img = "";
         if(!empty($_SESSION['kitten_img']))
             $kitten_img = $_SESSION['kitten_img'];
-
+        
         $template = $twig->loadTemplate('index.html.twig');
         $contenu = $template->render(array(
             'kitten_img' => $kitten_img
