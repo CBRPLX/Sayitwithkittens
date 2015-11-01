@@ -8,7 +8,7 @@ if(!empty($_POST['id_image'])){
 		$u->load();
 		$validate = $u->validatePreview();
 		if($validate != false){
-			echo $validate;
+			echo "";
 		}else{
 			echo "false1";
 		}
