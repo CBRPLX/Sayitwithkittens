@@ -24,8 +24,6 @@ ________________________________________________________________________________
 <link rel="stylesheet" type="text/css" href="/dist/css/styles.css" />
 <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<link type="image/png" href="/dist/images/favicon-16.png" rel="icon" sizes="16x16" /> 
-<link type="image/png" href="/dist/images/favicon-32.png" rel="icon" sizes="32x32" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,51 +38,63 @@ ________________________________________________________________________________
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="mobile-web-app-capable" content="yes">
 
-	<!-- Windows 8 et windows phone-->
-	<!-- <meta name="application-name" content="cbrplx.io"/>
-	<meta name="msapplication-TileColor" content="#000000"/>
-	<meta name="msapplication-square70x70logo" content="/dist/images/windows-tiny.jpg"/>
-	<meta name="msapplication-square150x150logo" content="/dist/images/windows-square.jpg"/>
-	<meta name="msapplication-wide310x150logo" content="/dist/images/windows-wide.jpg"/>
-	<meta name="msapplication-square310x310logo" content="/dist/images/windows-large.jpg"/>
-	<meta name="msapplication-tap-highlight" content="no"/>  -->
+	<!-- Apple icons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/dist/images/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/dist/images/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/dist/images/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/dist/images/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/dist/images/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/dist/images/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/dist/images/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/dist/images/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/dist/images/favicons/apple-touch-icon-180x180.png">
 
-	<!-- Apple touch icons -->
-	<!-- <link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-152x152-precomposed.jpg" sizes="152x152">
-	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-120x120-precomposed.jpg" sizes="120x120">
-	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-76x76-precomposed.jpg" sizes="76x76">
-	<link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-precomposed.jpg">
-	<link rel="apple-touch-icon" href="/dist/images/apple-touch-icon-152x152-precomposed.jpg" sizes="152x152"> -->
+	<!-- Icons & manifest -->
+	<link rel="icon" type="image/png" href="/dist/images/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/dist/images/favicons/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="/dist/images/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/dist/images/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/dist/images/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/dist/images/favicons/manifest.json">
+	<link rel="mask-icon" href="/dist/images/favicons/safari-pinned-tab.svg" color="#f26a94">
+	<link rel="shortcut icon" href="/dist/images/favicons/favicon.ico">
+
+	<!-- Windows icons -->
+	<meta name="application-name" content="Sayitwithkittens">
+	<meta name="msapplication-TileColor" content="#f26a94">
+	<meta name="msapplication-TileImage" content="/dist/images/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="/dist/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#f26a94">
 
 	<!-- Apple load image -->
 	<!-- iPad, retina, portrait -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-1536x2008.jpg" 
+	<link href="/dist/images/favicons/apple-touch-startup-image-1536x2008.jpg" 
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 	<!-- iPad, retina, landscape -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-1496x2048.jpg"
+	<link href="/dist/images/favicons/apple-touch-startup-image-1496x2048.jpg"
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 	<!-- iPad, portrait -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-768x1004.jpg"
+	<link href="/dist/images/favicons/apple-touch-startup-image-768x1004.jpg"
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 	<!-- iPad, landscape -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-748x1024.jpg"
+	<link href="/dist/images/favicons/apple-touch-startup-image-748x1024.jpg"
 	    media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 	<!-- iPhone 5 -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-640x1096.jpg"
+	<link href="/dist/images/favicons/apple-touch-startup-image-640x1096.jpg"
 	    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 	<!-- iPhone, retina -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-640x920.jpg"
+	<link href="/dist/images/favicons/apple-touch-startup-image-640x920.jpg"
 	    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 	<!-- iPhone -->
-	<!-- <link href="/dist/images/apple-touch-startup-image-320x460.jpg"
+	<link href="/dist/images/favicons/apple-touch-startup-image-320x460.jpg"
 	    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
-	    rel="apple-touch-startup-image"> -->
+	    rel="apple-touch-startup-image">
 
 	{% block meta %}
 		<title>Say it with kittens</title>
