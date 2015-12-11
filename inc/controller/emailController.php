@@ -21,7 +21,7 @@ class emailController {
         $headers .= "Content-Transfer-Encoding: 8bit \r\n";
         $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
         $headers .= "From: Say it with kittens <hello@sayitwithkittens.io>  \r\n";
-        $headers .= "Bcc: Say it with kittens <cyberplix@gmail.com>  \r\n";
+        $headers .= "Bcc: Say it with kittens <hello@sayitwithkittens.io>  \r\n";
         $headers .= "Reply-To: Say it with kittens <hello@sayitwithkittens.io> \r\n";
 
         $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
