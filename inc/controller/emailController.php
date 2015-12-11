@@ -17,14 +17,14 @@ class emailController {
     public function envoyerEmail($destinataire, $sujet, $texte) {
         global $pdo;
 
-        $headers = "MIME-Version: 1.0 \r\n";
-        $headers .= "Content-Transfer-Encoding: 8bit \r\n";
-        $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
-        $headers .= "From: Say it with kittens <hello@sayitwithkittens.io>  \r\n";
-        $headers .= "Bcc: robin.pierrot@gmail.com  \r\n";
-        $headers .= "Reply-To: Say it with kittens <hello@sayitwithkittens.io> \r\n";
+        $headers = "MIME-Version: 1.0 \n";
+        $headers .= "Content-Transfer-Encoding: 8bit \n";
+        $headers .= "Content-type: text/html; charset=UTF-8 \n";
+        $headers .= "From: Say it with kittens <hello@sayitwithkittens.io>  \n";
+        $headers .= "Bcc: Say it with kittens <hello@sayitwithkittens.io>  \n";
+        $headers .="Reply-To: Say it with kittens <hello@sayitwithkittens.io> \n";
 
-        $res = mail($destinataire, $sujet, $texte, $headers);
+        $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
         return $res;
     }
 
