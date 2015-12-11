@@ -39,8 +39,8 @@ class Newsletter{
                 // $destinataire = ucfirst(strtolower($_POST["nom"]))." <".$_POST["email"].">";
                 $pageController->envoyerEmail($_POST["email"], "Subscription to the newsletter", $contenu);
 
-                $contenu = $pageController->genererNouvelleInscription($_POST["nom"], $_POST["email"]);
-                $pageController->envoyerEmail('Say it with kittens <robin.pierrot@gmail.com>', "New subscription to the newsletter Sayitwithkittens.io", $contenu);
+                // $contenu = $pageController->genererNouvelleInscription($_POST["nom"], $_POST["email"]);
+                // $pageController->envoyerEmail('Say it with kittens <robin.pierrot@gmail.com>', "New subscription to the newsletter Sayitwithkittens.io", $contenu);
 
                 return true;
             }else{

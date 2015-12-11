@@ -17,14 +17,38 @@ class emailController {
     public function envoyerEmail($destinataire, $sujet, $texte) {
         global $pdo;
 
-        $headers = 'MIME-Version: 1.0 '."\r\n";
-        $headers .= 'Content-Transfer-Encoding: 8bit '."\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8 '."\r\n";
-        $headers .= 'From: Say it with kittens <hello@sayitwithkittens.io>  '."\r\n";
-        $headers .= 'Bcc: hello@sayitwithkittens.io  '."\r\n";
-        $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
+        // $headers = 'MIME-Version: 1.0 '."\r\n";
+        // $headers .= 'Content-Transfer-Encoding: 8bit '."\r\n";
+        // $headers .= 'Content-type: text/html; charset=UTF-8 '."\r\n";
+        // $headers .= 'From: Say it with kittens <hello@sayitwithkittens.io>  '."\r\n";
+        // $headers .= 'Bcc: hello@sayitwithkittens.io  '."\r\n";
+        // $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
 
-        $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
+        // $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
+
+        //Create a new PHPMailer instance
+        $mail = new PHPMailer;
+        //Set who the message is to be sent from
+        $mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');
+        //Set an alternative reply-to address
+        $mail->addReplyTo('hello@sayitwithkittens.io', 'Say it with kittens');
+        $mail->addBCC('hello@sayitwithkittens.io', 'Say it with kittens');
+        //Set who the message is to be sent to
+        $mail->addAddress($destinataire);
+        //Set the subject line
+        $mail->Subject = $subject;
+        //Read an HTML message body from an external file, convert referenced images to embedded,
+        //convert HTML into a basic plain-text alternative body
+        $mail->msgHTML($texte);
+
+        //send the message, check for errors
+        $res = $mail->send();
+        // if (!$res) {
+        //     echo "Mailer Error: " . $mail->ErrorInfo;
+        // } else {
+        //     echo "Message sent!";
+        // }
+
         return $res;
     }
 
