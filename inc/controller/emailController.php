@@ -25,7 +25,6 @@ class emailController {
         $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
 
         $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
-        
         return $res;
     }
 
