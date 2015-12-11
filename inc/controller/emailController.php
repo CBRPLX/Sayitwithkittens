@@ -20,11 +20,11 @@ class emailController {
         $headers = "MIME-Version: 1.0 \n";
         $headers .= "Content-Transfer-Encoding: 8bit \n";
         $headers .= "Content-type: text/html; charset=UTF-8 \n";
-        $headers .= "From: Say it with kittens <info@sayitwithkittens.io>  \n";
-        $headers .= "Bcc: Say it with kittens <info@sayitwithkittens.io>  \n";
-        $headers .="Reply-To: Say it with kittens <info@sayitwithkittens.io> \n";
+        $headers .= "From: Say it with kittens <hello@sayitwithkittens.io>  \n";
+        $headers .= "Bcc: Say it with kittens <hello@sayitwithkittens.io>  \n";
+        $headers .="Reply-To: Say it with kittens <hello@sayitwithkittens.io> \n";
 
-        $res = mail($destinataire, $sujet, $texte, $headers, "-f info@sayitwithkittens.io");
+        $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
         return $res;
     }
 
