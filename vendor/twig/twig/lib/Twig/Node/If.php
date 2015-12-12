@@ -22,6 +22,11 @@ class Twig_Node_If extends Twig_Node
         parent::__construct(array('tests' => $tests, 'else' => $else), array(), $lineno, $tag);
     }
 
+    /**
+     * Compiles the node to PHP.
+     *
+     * @param Twig_Compiler $compiler A Twig_Compiler instance
+     */
     public function compile(Twig_Compiler $compiler)
     {
         $compiler->addDebugInfo($this);
@@ -29,7 +34,7 @@ class Twig_Node_If extends Twig_Node
             if ($i > 0) {
                 $compiler
                     ->outdent()
-                    ->write('} elseif (')
+                    ->write("} elseif (")
                 ;
             } else {
                 $compiler
