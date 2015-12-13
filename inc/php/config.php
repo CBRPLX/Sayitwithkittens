@@ -13,11 +13,18 @@ if($dev || isset($_GET['dev'])){
 	ini_set('display_error', '1');
 	error_reporting(E_ERROR | E_PARSE);
 	$host = "sayitwithkittens.localhost";
+	$pear_path = "/usr/local/pear/share/pear";
 }else{
 	ini_set('display_error', '0');
 	error_reporting(0);
 	$host = "sayitwithkittens.io";
+	$pear_path = "/usr/local/pear/share/pear";
 }
+
+// require_once $pear_path."/PEAR.php";
+// require_once $pear_path."/SMTP.php";
+// echo "salut";
+// require_once $pear_path."/Mail.php";
 
 $refresh = false;
 if(isset($_GET["refresh"])) $refresh = true;
