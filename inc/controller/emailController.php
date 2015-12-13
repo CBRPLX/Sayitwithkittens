@@ -21,10 +21,23 @@ class emailController {
         $headers .= 'Content-Transfer-Encoding: 8bit '."\r\n";
         $headers .= 'Content-type: text/html; charset=UTF-8 '."\r\n";
         $headers .= 'From: Say it with kittens <hello@sayitwithkittens.io>  '."\r\n";
-        $headers .= 'Bcc: hello.cbrplx@gmail.com  '."\r\n";
+        // $headers .= 'Bcc: hello.cbrplx@gmail.com  '."\r\n";
         $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
 
         $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
+
+
+        //Bcc
+        $headers = 'MIME-Version: 1.0 '."\r\n";
+        $headers .= 'Content-Transfer-Encoding: 8bit '."\r\n";
+        $headers .= 'Content-type: text/html; charset=UTF-8 '."\r\n";
+        $headers .= 'From: Say it with kittens <hello@sayitwithkittens.io>  '."\r\n";
+        // $headers .= 'Bcc: hello.cbrplx@gmail.com  '."\r\n";
+        // $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
+
+        mail("hello@sayitwithkittens.io", $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
+
+
         return $res;
     }
 
