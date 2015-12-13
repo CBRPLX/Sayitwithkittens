@@ -4,7 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "05a5a9c5f1bf28e9567da936175867fa",
+=======
+    "hash": "1361af06c5782aaf0e41053dd8bff731",
+>>>>>>> parent of 3fe78eb... composer
     "packages": [
         {
             "name": "swiftmailer/swiftmailer",
