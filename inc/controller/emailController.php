@@ -17,25 +17,27 @@ class emailController {
     public function envoyerEmail($destinataire, $sujet, $texte) {
         global $pdo;
 
-        $headers = 'MIME-Version: 1.0 '."\r\n";
-        $headers .= 'Content-Transfer-Encoding: 8bit '."\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8 '."\r\n";
-        $headers .= 'From: Say it with kittens <hello@sayitwithkittens.io>  '."\r\n";
-        // $headers .= 'Bcc: hello.cbrplx@gmail.com  '."\r\n";
-        $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
+        $mail = new \PHPMailer;
 
-        $res = mail($destinataire, $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup server
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        // $mail->SMTPDebug   = 2;
+        $mail->Username = 'hello@sayitwithkittens.io';                   // SMTP username
+        $mail->Password = 'KAC000762';               // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+        $mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
 
+        $mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');     //Set who the message is to be sent from
+        $mail->addReplyTo('hello@sayitwithkittens.io', 'Say it with kittens');  //Set an alternative reply-to address
+        $mail->addAddress($destinataire);  // Add a recipient
+        $mail->addBCC('hello.cbrplx@gmail.com');
 
-        //Bcc
-        $headers = 'MIME-Version: 1.0 '."\r\n";
-        $headers .= 'Content-Transfer-Encoding: 8bit '."\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8 '."\r\n";
-        $headers .= 'From: Say it with kittens <hello@sayitwithkittens.io>  '."\r\n";
-        // $headers .= 'Bcc: hello.cbrplx@gmail.com  '."\r\n";
-        // $headers .= 'Reply-To: Say it with kittens <hello@sayitwithkittens.io> '."\r\n";
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = $sujet;
+        $mail->Body    = $texte;
 
-        mail("hello@sayitwithkittens.io", $sujet, $texte, $headers, "-f hello@sayitwithkittens.io");
+        $res = $mail->send();
 
 
         return $res;
