@@ -38,7 +38,7 @@ ini_set('display_error', '1');
 //   echo("<p>Message successfully sent!</p>");
 //  }
 
-// require 'PHPMailerAutoload.php';
+require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
  
 $mail = new PHPMailer;
 
