@@ -14,8 +14,8 @@ if($dev || isset($_GET['dev'])){
 	error_reporting(E_ERROR | E_PARSE);
 	$host = "sayitwithkittens.localhost";
 }else{
-	ini_set('display_error', '0');
-	error_reporting(0);
+	ini_set('display_error', '1');
+	error_reporting(E_ERROR | E_PARSE);
 	$host = "sayitwithkittens.io";
 }
 
