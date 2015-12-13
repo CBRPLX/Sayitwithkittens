@@ -3,7 +3,7 @@
 include 'inc/php/config.php';
 
 ini_set('display_error', '1');
-	error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 
 // $e = new \controller\emailController();
 // echo $e->genererInscriptionNews("Paul");
@@ -39,7 +39,7 @@ ini_set('display_error', '1');
 //  }
 echo "ok";
 
-require 'vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
+require '/vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
 echo "ko";
  
