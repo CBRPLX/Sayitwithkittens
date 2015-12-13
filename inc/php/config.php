@@ -30,6 +30,7 @@ $refresh = false;
 if(isset($_GET["refresh"])) $refresh = true;
 
 require_once "vendor/autoload.php";
+require_once "vendor/phpmailer/phpmailer/PHPMailerAutoload.php";
 require_once "inc/php/pdo.php";
 
 $loader = new \Twig_Loader_Filesystem('inc/template', 'Template');
