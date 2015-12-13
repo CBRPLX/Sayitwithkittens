@@ -8,7 +8,7 @@ error_reporting(-1);
 
 echo "ok";
 
-require_once "vendor/phpmailer/phpmailer/PHPMailerAutoload.php";
+require_once "./vendor/phpmailer/phpmailer/PHPMailerAutoload.php";
 
 echo "ko";
  
