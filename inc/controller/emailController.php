@@ -20,13 +20,13 @@ class emailController {
         $mail = new \PHPMailer;
 
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup server
+        $mail->Host = 'smtp.servermx.com';                       // Specify main and backup server
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         // $mail->SMTPDebug   = 2;
         $mail->Username = 'hello@sayitwithkittens.io';                   // SMTP username
-        $mail->Password = 'KAC000762';               // SMTP password
+        $mail->Password = 'KAC381381521cbrplx';               // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
-        $mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
+        $mail->Port = 687;                                    //Set the SMTP port number - 587 for authenticated TLS
 
         $mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');     //Set who the message is to be sent from
         $mail->addReplyTo('hello@sayitwithkittens.io', 'Say it with kittens');  //Set an alternative reply-to address
