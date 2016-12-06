@@ -23,13 +23,13 @@ class emailController {
         $mail->Host = 'smtp.gmail.com';                       // Specify main and backup server
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         // $mail->SMTPDebug   = 2;
-        $mail->Username = 'robin.pierrot@gmail.com';                   // SMTP username
-        $mail->Password = 'KAC381381521cbrplx';               // SMTP password
+        $mail->Username = 'hello@sayitwithkittens.io';                   // SMTP username
+        $mail->Password = 'KAC000762';               // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
         $mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
 
-        $mail->setFrom('robin.pierrot@gmail.com', 'Say it with kittens');     //Set who the message is to be sent from
-        $mail->addReplyTo('robin.pierrot@gmail.com', 'Robin Pierrot');  //Set an alternative reply-to address
+        $mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');     //Set who the message is to be sent from
+        $mail->addReplyTo('hello@sayitwithkittens.io', 'Say it with kittens');  //Set an alternative reply-to address
         $mail->addAddress($destinataire);  // Add a recipient
         // $mail->addBCC('hello.cbrplx@gmail.com');
 
