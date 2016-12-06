@@ -22,16 +22,17 @@ class emailController {
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.servermx.com';                       // Specify main and backup server
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        // $mail->SMTPDebug   = 2;
+        // $mail->SMTPDebug   = 3;
         $mail->Username = 'hello@sayitwithkittens.io';                   // SMTP username
         $mail->Password = 'KAC381381521cbrplx';               // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
-        $mail->Port = 687;                                    //Set the SMTP port number - 587 for authenticated TLS
+        $mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
 
         $mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');     //Set who the message is to be sent from
-        $mail->addReplyTo('hello@sayitwithkittens.io', 'Say it with kittens');  //Set an alternative reply-to address
+        $mail->addReplyTo('robin.pierrot@gmail.com', 'Robin Pierrot');  //Set an alternative reply-to address
+        $mail->addBCC('hello@sayitwithkittens.io');
+        // $mail->addBCC('cyberplix@gmail.com');
         $mail->addAddress($destinataire);  // Add a recipient
-        // $mail->addBCC('hello.cbrplx@gmail.com');
 
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = $sujet;
