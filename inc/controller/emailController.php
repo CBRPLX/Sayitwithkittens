@@ -31,7 +31,6 @@ class emailController {
         $mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');     //Set who the message is to be sent from
         $mail->addReplyTo('robin.pierrot@gmail.com', 'Robin Pierrot');  //Set an alternative reply-to address
         $mail->addBCC('hello@sayitwithkittens.io');
-        // $mail->addBCC('cyberplix@gmail.com');
         $mail->addAddress($destinataire);  // Add a recipient
 
         $mail->isHTML(true);                                  // Set email format to HTML
