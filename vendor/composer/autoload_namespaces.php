@@ -10,5 +10,4 @@ return array(
     'controller' => array($baseDir . '/inc'),
     'classe' => array($baseDir . '/inc'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'Slim' => array($vendorDir . '/slim/slim'),
 );

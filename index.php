@@ -1,39 +1,42 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
 
-require 'inc/php/config.php';
+$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+    $r->addRoute('GET', '/', 'index');
 
-$app = new \Slim\Slim();
+    // {id} must be a number (\d+)
+    $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
 
-$app->get('/', function () {
-    $pageController = new \controller\generalController();
-	echo $pageController->genererIndex();
-})->name('index');
-
-$app->get('/upload/', function () {
-    $pageController = new \controller\generalController();
-	echo $pageController->genererUpload();
+    // The /{title} suffix is optional
+    $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
 });
 
-$app->get('/generate/', function () {
-    $pageController = new \controller\generalController();
-	echo $pageController->genererGenerate();
-});
+// Fetch method and URI from somewhere
+$httpMethod = $_SERVER['REQUEST_METHOD'];
+$uri = $_SERVER['REQUEST_URI'];
 
-$app->get('/preview/:id_image/', function ($id_image) {
-	$pageController = new \controller\generalController();
-	echo $pageController->genererPreview($id_image);
-});
+// Strip query string (?foo=bar) and decode URI
+if (false !== $pos = strpos($uri, '?')) {
+    $uri = substr($uri, 0, $pos);
+}
+$uri = rawurldecode($uri);
 
-$app->get('/cat/:id_image/', function ($id_image) {
-	$pageController = new \controller\generalController();
-	echo $pageController->genererKitten($id_image);
-});
+var_dump($uri);
 
-$app->get('/verify/:id_upload/', function ($id_upload) {
-	$pageController = new \controller\generalController();
-	echo $pageController->genererValidate($id_upload);
-});
+$routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 
-$app->run();
+var_dump($routeInfo);
+
+switch ($routeInfo[0]) {
+    case FastRoute\Dispatcher::NOT_FOUND:
+        // ... 404 Not Found
+        break;
+    case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+        $allowedMethods = $routeInfo[1];
+        // ... 405 Method Not Allowed
+        break;
+    case FastRoute\Dispatcher::FOUND:
+        $handler = $routeInfo[1];
+        $vars = $routeInfo[2];
+        // ... call $handler with $vars
+        break;
+}
