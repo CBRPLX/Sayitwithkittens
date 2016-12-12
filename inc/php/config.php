@@ -28,3 +28,5 @@ if(!empty($_GET["bg"])){
 	$bg = new \classe\Image();
     $bg->chooseKitten($_GET["bg"]-1);;
 }
+
+$twig->addGlobal("host", "sayitwithkittens.io");

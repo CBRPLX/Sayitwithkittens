@@ -121,16 +121,11 @@ $('#generate_it').click(function(){
 
 		setTimeout(function(){
 			var retour = file('/inc/ajax/generate_image.php', 'kitten='+bg+'&pseudo='+pseudo+'&texte='+texte);
-			// alert(retour);
+
 			if(retour != 'false'){
 				sessionStorage.removeItem("kitten_txt");
 				sessionStorage.removeItem("kitten_pseudo");
-				// setTimeout(function(){ window.location.href = "/preview/"+retour; }, 1000);
-				{% if dev %}
-					window.location.href = "/preview.php?id_image="+retour;
-				{% else %}
-					window.location.href = "/preview/"+retour;
-				{% endif %}
+				window.location.href = "/preview/"+retour+"/";
 			}else{
 				alert("Error, please try again");
 				window.location.href = "/generate/";

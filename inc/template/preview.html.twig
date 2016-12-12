@@ -28,7 +28,7 @@
 
 {% block header %}
 	{% if img.get('id_kitten') != "" %}
-		<div class="bloc-header" style="background-image:url('../assets/kittens/kitten_{{img.get('id_kitten')}}.jpg')">
+		<div class="bloc-header" style="background-image:url('/assets/kittens/kitten_{{img.get('id_kitten')}}.jpg')">
 	{% else %}
 		<div class="bloc-header">
 	{% endif %}
@@ -67,7 +67,7 @@
 							</div>
 							<div class="kitten-preview-right col col-mobile w50">
 								<div class="kitten-validate pointer transition-fast">
-									<a class="inbl w100 pas not-a-like btn-validate" href="/cat/{{img.get('id_image')}}">
+									<a class="inbl w100 pas not-a-like btn-validate" href="/cat/{{img.get('id_image')}}/">
 										<span class="txtmiddle">Validate</span> &nbsp; <i class="fa fa-check txtmiddle"></i>
 									</a>
 								</div>
@@ -113,7 +113,7 @@
 			sessionStorage.removeItem("kitten_txt");
 			sessionStorage.removeItem("kitten_pseudo");
 
-			window.location.href = "/cat/{{img.get('id_image')}}";
+			window.location.href = "/cat/{{img.get('id_image')}}/";
 		}else{
 			alert("Error, please try again");
 
