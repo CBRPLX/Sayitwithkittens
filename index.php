@@ -1,18 +1,39 @@
 <?php
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
-include "inc/php/config.php";
+require 'inc/php/config.php';
 
-// $i = new \classe\Image();
-// $i->set('texte', 'Sale batard de fils de pute je vais niquer ta maman, ta grand-mère et aussi tout tes petits rejetons sale pd de mes deux');
-// $i->set('pseudo', 'Je te love Jeanne d\'Arc');
-// // $i->add();
-// // $file = $i->generate();
+$app = new \Slim\Slim();
 
-// // echo '<img src="'.$file.'" />';
+$app->get('/', function () {
+    $pageController = new \controller\generalController();
+	echo $pageController->genererIndex();
+})->name('index');
 
-// var_dump($i->likeKitten(1));
+$app->get('/upload/', function () {
+    $pageController = new \controller\generalController();
+	echo $pageController->genererUpload();
+});
 
-$pageController = new \controller\generalController();
-echo $pageController->genererIndex();
+$app->get('/generate/', function () {
+    $pageController = new \controller\generalController();
+	echo $pageController->genererGenerate();
+});
 
-?>
+$app->get('/preview/:id_image/', function ($id_image) {
+	$pageController = new \controller\generalController();
+	echo $pageController->genererPreview($id_image);
+});
+
+$app->get('/cat/:id_image/', function ($id_image) {
+	$pageController = new \controller\generalController();
+	echo $pageController->genererKitten($id_image);
+});
+
+$app->get('/verify/:id_upload/', function ($id_upload) {
+	$pageController = new \controller\generalController();
+	echo $pageController->genererValidate($id_upload);
+});
+
+$app->run();

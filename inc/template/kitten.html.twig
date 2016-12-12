@@ -31,7 +31,7 @@
 
 {% block header %}
 	{% if img.get('id_kitten') != "" %}
-		<div class="bloc-header" style="background-image:url('../assets/kittens/kitten_{{img.get('id_kitten')}}.jpg')">
+		<div class="bloc-header" style="background-image:url('/assets/kittens/kitten_{{img.get('id_kitten')}}.jpg')">
 	{% else %}
 		<div class="bloc-header">
 	{% endif %}
