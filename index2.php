@@ -1,43 +1,131 @@
-<?php
+<head>
+	<style type="text/css">
+		@media only screen and (max-width: 480px) {
+			.table-row-mobile{
+				display: table-row !important;
+			}
 
-include 'inc/php/config.php';
+			.dnone-mobile{
+				display: none !important;
+			}
 
-ini_set('display_error', '1');
-error_reporting(-1);
- 
-$mail = new \PHPMailer;
+			table{
+				text-align: center !important;
+			}
 
-var_dump($mail);
+			.no-padding-left-mobile{
+				padding-left: 0px !important
+			}
+		}
+	</style>
+	<meta name="format-detection" content="telephone=no">
+</head>
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.servermx.com';                       // Specify main and backup server
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-// $mail->SMTPDebug   = 3;
-$mail->Username = 'hello@sayitwithkittens.io';                   // SMTP username
-$mail->Password = 'KAC381381521cbrplx';               // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
-$mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
-$mail->setFrom('hello@sayitwithkittens.io', 'Say it with kittens');     //Set who the message is to be sent from
-$mail->addReplyTo('hello@sayitwithkittens.io', 'Say it with kittens');  //Set an alternative reply-to address
-$mail->addAddress('cyberplix@gmail.com');  // Add a recipient
-// $mail->addBCC('hello.cbrplx@gmail.com');
-// $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-// $mail->addAttachment('/usr/labnol/file.doc');         // Add attachments
-// $mail->addAttachment('/images/image.jpg', 'new.jpg'); // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
- 
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
- 
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
-// $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
- echo "<br/><br/>";
-if(!$mail->send()) {
-   echo 'Message could not be sent.';
-   echo 'Mailer Error: ' . $mail->ErrorInfo;
-   exit;
-}
- 
-echo 'Message has been sent';
+<body>
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" 
+	style="padding-top:10px;background-color:#ffffff;font-family:Helvetica, Arial, sans-serif;color:#717171;">
+	<tbody>
+		<tr>
+			<td>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" 
+					style="padding-top:20px;padding-bottom:20px;border-top:1px solid #d5d4d4;">
+					<tbody>
+						<tr style="display: none;" class="table-row-mobile">
+							<td style="padding-bottom:12px;">
+								<img src="http://image.noelshack.com/fichiers/2016/49/1480953164-photo-120x120.png" style="max-width: 60px; width: 60px;" />
+							</td>
+						</tr>
+						<tr>
+							<td width="60px" style="width:60px;max-width: 60px;vertical-align:top;" class="dnone-mobile">
+								<img src="http://image.noelshack.com/fichiers/2016/49/1480953164-photo-120x120.png" style="max-width: 60px; width: 60px;" />
+							</td>
+							<td style="vertical-align:middle;">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0"
+									style="padding-left:16px;" class="no-padding-left-mobile">
+									<tbody>
+										<tr>
+											<td style="padding-top:4px;">
+												<table width="100%" cellpadding="0" cellspacing="0" border="0" 
+													style="">
+													<tbody>
+														<tr>
+															<td>
+																<span style="font-weight:bold; color:#868686; font-size: 16px;">
+																	Robin Pierrot
+																</span>
+															</td>
+														</tr>
+														<tr>
+															<td style="padding-top:3px;">
+																<span style="color:#a6a6a6; font-size: 12px;">
+																	Chef de projet web
+																</span>
+																<span style="color:#d5d4d4; font-size: 12px;">
+																	-
+																</span>
+																<a href="tel:+33645761800" 
+																	style="color:#a6a6a6;text-decoration:none;">
+																	<span style="color:#a6a6a6; font-size: 12px;">
+																		+33 645 761 800
+																	</span>
+																</a>
+															</td>
+														</tr>
+														<tr>
+															<td style="padding-top:3px;">
+																<a href="https://cbrplx.io/" 
+																	style="color:#a6a6a6;">
+																	<span style="color:#a6a6a6; font-size: 12px;">
+																		cbrplx.io
+																	</span>
+																</a>
+																<span style="color:#d5d4d4; font-size: 12px;padding-left:0px;padding-right: 0px;">
+																	|
+																</span>
+																<a href="https://chronostan.fr/" 
+																	style="color:#a6a6a6;">
+																	<span style="color:#a6a6a6; font-size: 12px;">
+																		chronostan.fr
+																	</span>
+																</a>
+																<span style="color:#d5d4d4; font-size: 12px;padding-left:0px;padding-right: 0px;">
+																	|
+																</span>
+																<a href="https://sayitwithkittens.io/" 
+																	style="color:#a6a6a6;">
+																	<span style="color:#a6a6a6; font-size: 12px;">
+																		sayitwithkittens.io
+																	</span>
+																</a>
+																<span style="color:#d5d4d4; font-size: 12px;padding-left:0px;padding-right: 0px;">
+																	|
+																</span>
+																<a href="https://neo-nomade.com/" 
+																	style="color:#a6a6a6;">
+																	<span style="color:#a6a6a6; font-size: 12px;">
+																		neo-nomade.com
+																	</span>
+																</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<hr style="background-color:white;color:white;border: 1px solid white;" />
+			</td>
+		</tr>
+	</tbody>
+</table>
