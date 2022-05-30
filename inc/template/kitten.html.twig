@@ -11,7 +11,7 @@
 	<meta property="og:image:type" content="{{img.get('mime')}}">
 	<meta property="og:image:width" content="{{img.get('width')}}">
 	<meta property="og:image:height" content="{{img.get('height')}}">
-	<meta property="og:url" content="https://sayitwithkittens.io/cat/{{img.get('id_image')}}">
+	<meta property="og:url" content="https://sayitwithkittens.io/cat/{{img.get('id_image')}}/">
 	<meta property="og:site_name" content="sayitwithkittens.io">
 	<meta property="fb:admins" content="1614882856">
 
@@ -99,7 +99,7 @@
 
 				{% if previous %}
 					<div class="previous-kitten h4-like">
-						<a href="/cat/{{previous.get('id_image')}}" class="pal">
+						<a href="/cat/{{previous.get('id_image')}}/" class="pal">
 							<i class="fa fa-chevron-left"></i>
 						</a>
 					</div>
@@ -107,7 +107,7 @@
 
 				{% if next %}
 					<div class="next-kitten h4-like">
-						<a href="/cat/{{next.get('id_image')}}" class="pal">
+						<a href="/cat/{{next.get('id_image')}}/" class="pal">
 							<i class="fa fa-chevron-right"></i>
 						</a>
 					</div>
