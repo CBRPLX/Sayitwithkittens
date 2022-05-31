@@ -1,7 +1,7 @@
 {
     "require": {
-		"php": ">=7.4.20",
-        "twig/twig": ">=1.18.1",
+		"php": "~7.4",
+        "twig/twig": "~3.4",
         "phpmailer/phpmailer": "~5.2",
         "nikic/fast-route": "~1.0"
     },

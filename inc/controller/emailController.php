@@ -48,7 +48,7 @@ class emailController {
     	global $dev;
         global $host;
 
-        $template = $twig->loadTemplate('email/email_squelette.html.twig');
+        $template = $twig->load('email/email_squelette.html.twig');
         $twig->addGlobal('host', $host);
         
         $image = new \classe\Image();
@@ -65,7 +65,7 @@ class emailController {
     public function genererInscriptionNews($nom){
         global $twig;
         global $dev;
-        $template = $twig->loadTemplate('email/inscription_news.html.twig');
+        $template = $twig->load('email/inscription_news.html.twig');
 
         $contenu = $template->render(array(
             'nom' => ucfirst(strtolower($nom))
@@ -77,7 +77,7 @@ class emailController {
     public function genererNouvelleInscription($nom, $email){
         global $twig;
         global $dev;
-        $template = $twig->loadTemplate('email/new_inscription.html.twig');
+        $template = $twig->load('email/new_inscription.html.twig');
 
         $contenu = $template->render(array(
             'nom' => $nom,
@@ -92,7 +92,7 @@ class emailController {
         global $dev;
         global $host;
 
-        $template = $twig->loadTemplate('email/post_upload.html.twig');
+        $template = $twig->load('email/post_upload.html.twig');
         $twig->addGlobal('host', $host);
 
         $upload = new \classe\Upload();
@@ -116,7 +116,7 @@ class emailController {
         global $dev;
         global $host;
 
-        $template = $twig->loadTemplate('email/check_upload.html.twig');
+        $template = $twig->load('email/check_upload.html.twig');
         $twig->addGlobal('host', $host);
 
         $upload = new \classe\Upload();
@@ -140,7 +140,7 @@ class emailController {
         global $dev;
         global $host;
 
-        $template = $twig->loadTemplate('email/verify.html.twig');
+        $template = $twig->load('email/verify.html.twig');
         $twig->addGlobal('host', $host);
 
         $i = new \classe\Upload();

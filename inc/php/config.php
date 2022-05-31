@@ -2,6 +2,8 @@
 header('Content-type: text/html; charset=utf-8');
 setlocale (LC_TIME, 'fr_FR.utf8','fra', 'fr_FR');
 ini_set('date.timezone', 'Europe/Paris');
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL); 
 
 if(!isset($_SESSION)){ 
 	session_start();
@@ -13,8 +15,8 @@ if(isset($_GET["refresh"])) $refresh = true;
 require_once "vendor/autoload.php";
 require_once "inc/php/pdo.php";
 
-$loader = new \Twig_Loader_Filesystem('inc/template', 'Template');
-$twig = new \Twig_Environment($loader, array('debug' => true));
+$loader = new \Twig\Loader\FilesystemLoader('inc/template');
+$twig = new \Twig\Environment($loader, array('debug' => true));
 
 if (isset($_GET['PHPSESSID'])){
 	$requesturi = preg_replace('/?PHPSESSID=[^&]+/',"",$_SERVER['REQUEST_URI']);

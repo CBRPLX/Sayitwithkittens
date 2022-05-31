@@ -18,7 +18,7 @@ class generalController {
 
         $latestKittens = \classe\Image::getLatestKittens();
         
-        $template = $twig->loadTemplate('index.html.twig');
+        $template = $twig->load('index.html.twig');
         $contenu = $template->render(array(
             'kitten_img' => $kitten_img,
             'latestKittens' => $latestKittens,
@@ -35,7 +35,7 @@ class generalController {
         if(!empty($_SESSION['kitten_img']))
             $kitten_img = $_SESSION['kitten_img'];
 
-        $template = $twig->loadTemplate('generate.html.twig');
+        $template = $twig->load('generate.html.twig');
         $contenu = $template->render(array(
         	'kitten_img' => $kitten_img
         ));
@@ -47,7 +47,7 @@ class generalController {
         global $twig;
         global $dev;
 
-        $template = $twig->loadTemplate('upload.html.twig');
+        $template = $twig->load('upload.html.twig');
         $contenu = $template->render(array(
         ));
 
@@ -65,7 +65,7 @@ class generalController {
 
             $i->getFilename();
 
-            $template = $twig->loadTemplate('preview.html.twig');
+            $template = $twig->load('preview.html.twig');
             $contenu = $template->render(array(
                 'img' => $i
             ));
@@ -87,7 +87,7 @@ class generalController {
 
         if($i->isFileExist() && $i->get('validate') != -1){
 
-            $template = $twig->loadTemplate('validate.html.twig');
+            $template = $twig->load('validate.html.twig');
             $contenu = $template->render(array(
                 'img' => $i
             ));
@@ -119,7 +119,7 @@ class generalController {
             // if(isset($_SESSION['kitten_img']))
             //     unset($_SESSION['kitten_img']);
 
-            $template = $twig->loadTemplate('kitten.html.twig');
+            $template = $twig->load('kitten.html.twig');
             $contenu = $template->render(array(
                 'img' => $i,
                 'previous' => $previous,
