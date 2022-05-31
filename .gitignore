@@ -31,3 +31,4 @@ src/fonts/
 *.sublime-project
 *.sublime-workspace
 .vscode
+sftp-*
