@@ -9,6 +9,8 @@ if(!empty($_POST['id_image'])){
 		$validate = $u->validatePreview();
 		if($validate != false){
 			echo "";
+
+			\classe\Image::cleanPreview();
 		}else{
 			echo "false1";
 		}

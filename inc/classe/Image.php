@@ -493,4 +493,18 @@ class Image{
         $this->set('mime', $img['mime']);
     }
 
+	public static function cleanPreview() {
+		$path = 'assets/preview/';
+		if ($handle = opendir($path)) {
+			while (false !== ($file = readdir($handle))) { 
+				$filelastmodified = filemtime($path . $file);
+				// 3600 seconds per hour
+				if((time() - $filelastmodified) > 3600) {
+					unlink($path . $file);
+				}
+			}
+
+			closedir($handle); 
+		}
+	}
 }
