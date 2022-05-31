@@ -13,34 +13,27 @@ class ComposerAutoloaderInite095c2bf687c4a10c2d59a7fa0001f3a
         }
     }
 
+    /**
+     * @return \Composer\Autoload\ClassLoader
+     */
     public static function getLoader()
     {
         if (null !== self::$loader) {
             return self::$loader;
         }
 
+        require __DIR__ . '/platform_check.php';
+
         spl_autoload_register(array('ComposerAutoloaderInite095c2bf687c4a10c2d59a7fa0001f3a', 'loadClassLoader'), true, true);
-        self::$loader = $loader = new \Composer\Autoload\ClassLoader();
+        self::$loader = $loader = new \Composer\Autoload\ClassLoader(\dirname(__DIR__));
         spl_autoload_unregister(array('ComposerAutoloaderInite095c2bf687c4a10c2d59a7fa0001f3a', 'loadClassLoader'));
 
-        $map = require __DIR__ . '/autoload_namespaces.php';
-        foreach ($map as $namespace => $path) {
-            $loader->set($namespace, $path);
-        }
-
-        $map = require __DIR__ . '/autoload_psr4.php';
-        foreach ($map as $namespace => $path) {
-            $loader->setPsr4($namespace, $path);
-        }
-
-        $classMap = require __DIR__ . '/autoload_classmap.php';
-        if ($classMap) {
-            $loader->addClassMap($classMap);
-        }
+        require __DIR__ . '/autoload_static.php';
+        \Composer\Autoload\ComposerStaticInite095c2bf687c4a10c2d59a7fa0001f3a::getInitializer($loader)();
 
         $loader->register(true);
 
-        $includeFiles = require __DIR__ . '/autoload_files.php';
+        $includeFiles = \Composer\Autoload\ComposerStaticInite095c2bf687c4a10c2d59a7fa0001f3a::$files;
         foreach ($includeFiles as $fileIdentifier => $file) {
             composerRequiree095c2bf687c4a10c2d59a7fa0001f3a($fileIdentifier, $file);
         }
@@ -49,11 +42,16 @@ class ComposerAutoloaderInite095c2bf687c4a10c2d59a7fa0001f3a
     }
 }
 
+/**
+ * @param string $fileIdentifier
+ * @param string $file
+ * @return void
+ */
 function composerRequiree095c2bf687c4a10c2d59a7fa0001f3a($fileIdentifier, $file)
 {
     if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
-        require $file;
-
         $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
+
+        require $file;
     }
 }
