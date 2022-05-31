@@ -24,6 +24,33 @@
 </div>
 
 <div class="bloc-contenu">
+	<div class="bloc-article latest index ptl pbl">
+		<div class="bloc-article-container prm plm pbl ptl">
+			<div class="row pbl">
+				<div class="col txtmiddle uppercase txtcenter">
+					<h3 class="proxima h5-like">Latest images</h3>
+				</div>
+			</div>
+			<div class="flex pbl">
+				{% for kitten in latestKittens %}
+					<a class="kittenCard" href="https://sayitwithkittens.io/cat/{{kitten.get('id_image')}}/">
+						<img src="https://sayitwithkittens.io/assets/generate/kitten_{{kitten.get('filename')}}.png" />
+						<div class="man pam flex">
+							<span>
+								by&nbsp;{{kitten.get('pseudo')}}
+							</span>
+							<span>
+								{{kitten.get('date_creation')|date('d/m/Y')}}
+							</span>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bloc-contenu">
 	<div class="bloc-article upload index ptl pbl">
 		<div class="bloc-article-container prm plm pbl ptl">
 			<div class="row pbl">
@@ -47,18 +74,6 @@
 					<a href="/upload/" class="pas proxima-bold inbl pts pbs pll prl not-a-like">
 						Share it <i class="fa fa-paw pls"></i>
 					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="bloc-contenu">
-	<div class="bloc-article upload index ptl pbl">
-		<div class="bloc-article-container prm plm pbl ptl">
-			<div class="row pbl">
-				<div class="col txtmiddle uppercase txtcenter">
-					<h3 class="proxima h5-like">Latest images</h3>
 				</div>
 			</div>
 		</div>

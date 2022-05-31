@@ -11,13 +11,12 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del');
  
 // Styles
-gulp.task('styles', function() {
-  return gulp.src('src/sass/*.scss')
+const styles = (done) => {
+  gulp.src('src/sass/*.scss')
     .pipe(plumber())
     .pipe(compass({
           config_file: './config.rb',
@@ -34,11 +33,13 @@ gulp.task('styles', function() {
     .pipe(minifycss())
     .pipe(gulp.dest('dist/css'))
     .pipe(notify({ message: 'CSS OK' }));
-});
+  done();
+};
+gulp.task('styles', styles);
  
 // Scripts
-gulp.task('scripts', function() {
-  return gulp.src('src/js/**/*.js')
+const scripts = (done) => {
+  gulp.src('src/js/**/*.js')
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
@@ -47,43 +48,48 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
     .pipe(notify({ message: 'JS OK' }));
-});
+  done();
+};
+gulp.task('scripts', scripts);
  
 // Images
-gulp.task('images', function() {
-  return gulp.src('src/images/**/*')
+const images = (done) => {
+  gulp.src('src/images/**/*')
     .pipe(plumber())
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('dist/images'));
-    // .pipe(notify({ message: 'IMG OK' }));
-});
+    .pipe(gulp.dest('dist/images'))
+    .pipe(notify({ message: 'IMG OK' }));
+  done();
+};
+gulp.task('images', images);
  
 // Clean
-gulp.task('clean', function(cb) {
-    del(['dist/css', 'dist/js', 'dist/images'], cb)
-});
+const clean = (done) => {
+  del(['dist/css', 'dist/js', 'dist/images']);
+  done();
+};
+gulp.task('clean', clean);
  
 // Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('scripts', 'images', 'styles');
-});
+gulp.task('default', gulp.series('clean', 'scripts', 'images', 'styles'));
  
 // Watch
-gulp.task('watch', ['default'], function() {
+// Todo : A passer sous Gulp 4
+// gulp.task('watch', gulp.series('default', async function() {
  
-  // Watch .scss files
-  gulp.watch('src/sass/**/*.scss', ['styles']).on('change', function(e) {
-    console.log('Le fichier '+ e.path + ' a ete modifie');
-  });
+//   // Watch .scss files
+//   gulp.watch('src/sass/**/*.scss', ['styles']).on('change', function(e) {
+//     console.log('Le fichier '+ e.path + ' a ete modifie');
+//   });
  
-  // Watch .js files
-  gulp.watch('src/js/**/*.js', ['scripts']).on('change', function(e) {
-    console.log('Le fichier '+ e.path + ' a ete modifie');
-  });
+//   // Watch .js files
+//   gulp.watch('src/js/**/*.js', ['scripts']).on('change', function(e) {
+//     console.log('Le fichier '+ e.path + ' a ete modifie');
+//   });
  
-  // Watch image files
-  gulp.watch('src/images/**/*', ['images']).on('change', function(e) {
-    console.log('Le fichier '+ e.path + ' a ete modifie');
-  });
+//   // Watch image files
+//   gulp.watch('src/images/**/*', ['images']).on('change', function(e) {
+//     console.log('Le fichier '+ e.path + ' a ete modifie');
+//   });
  
-});
+// }));

@@ -596,6 +596,54 @@
 				}
 			}
 		}
+
+		&.latest {
+			.bloc-article-container {
+				max-width: 90%;
+
+				.flex {
+					gap: 20px;
+
+					.kittenCard {
+						box-shadow: $shadow;
+						border-bottom-left-radius: 5px;
+						border-bottom-right-radius: 5px;
+						color: $gris-font;
+
+						img {
+							border-top-left-radius: 5px;
+							border-top-right-radius: 5px;
+						}
+
+						.flex {
+							justify-content: space-between;
+
+							& > span + span {
+								font-style: italic;
+								opacity: 0.3;
+							}
+						}
+
+						&:hover {
+							box-shadow: $shadowHover;
+							color: $rose;
+							text-decoration: none;
+
+							.flex {
+								& > span {
+									text-decoration: underline;
+								}
+
+								& > span + span {
+									color: $gris-font;
+									text-decoration: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

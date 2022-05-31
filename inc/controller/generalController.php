@@ -15,10 +15,13 @@ class generalController {
         $kitten_img = "";
         if(!empty($_SESSION['kitten_img']))
             $kitten_img = $_SESSION['kitten_img'];
+
+        $latestKittens = \classe\Image::getLatestKittens();
         
         $template = $twig->loadTemplate('index.html.twig');
         $contenu = $template->render(array(
-            'kitten_img' => $kitten_img
+            'kitten_img' => $kitten_img,
+            'latestKittens' => $latestKittens,
         ));
 
         return $contenu;

@@ -107,67 +107,42 @@
 }
 
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
 
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
 }
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
-  -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
@@ -176,8 +151,7 @@
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 .fa-stack {
@@ -3771,54 +3745,38 @@ input[type='submit']::-moz-focus-inner {
 /* flexbox layout 
 Tutorial: http://knacss.com/demos/tutoriel.html#flex */
 .flex {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
 .flex-h {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .flex-v {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 
 .flex-fluid {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+      flex: 1;
 }
 
 .flex-start {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-      -ms-flex-order: -1;
-          order: -1;
+  -ms-flex-order: -1;
+      order: -1;
 }
 
 .flex-mid {
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-      -ms-flex-order: 1;
-          order: 1;
+  -ms-flex-order: 1;
+      order: 1;
 }
 
 .flex-end {
-  -webkit-box-ordinal-group: 43;
-  -webkit-order: 42;
-      -ms-flex-order: 42;
-          order: 42;
+  -ms-flex-order: 42;
+      order: 42;
 }
 
 /* ----------------------------- */
@@ -4259,8 +4217,7 @@ Tutorial: http://knacss.com/demos/tutoriel.html#flex */
   }
 
   img {
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+    filter: grayscale(100%);
   }
 
   /* no orphans, no widows */
@@ -4858,38 +4815,26 @@ a:hover, .a-like:hover {
 }
 
 .transition {
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.04s;
   transition-duration: 0.04s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 
 .transition-fast {
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 
 .transition-medium {
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.7s;
   transition-duration: 0.7s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 
 .transition-slow {
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 1.3s;
   transition-duration: 1.3s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 
@@ -4949,22 +4894,10 @@ img {
 
 .typed-cursor {
   opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes blink {
   0% {
     opacity: 1;
   }
@@ -5034,7 +4967,6 @@ img {
   height: 20px;
   border: 2px solid #4C4C4C;
   border-radius: 3px;
-  -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
   cursor: pointer;
   overflow: hidden;
@@ -5051,8 +4983,6 @@ img {
   height: 9px;
   border: solid rgba(0, 0, 0, 0.1);
   border-width: 0 3px 3px 0;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .custom-checkbox input {
@@ -5074,12 +5004,9 @@ img {
   height: 9px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .custom-checkbox input:checked + label {
-  -webkit-animation: boom 0.5s ease;
   animation: boom 0.5s ease;
 }
 
@@ -5629,6 +5556,42 @@ select::-ms-expand {
 .bloc-contenu .bloc-article.upload .bloc-rond.upload i {
   vertical-align: middle !important;
 }
+.bloc-contenu .bloc-article.latest .bloc-article-container {
+  max-width: 90%;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex {
+  gap: 20px;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard {
+  box-shadow: 3px 3px 15px 3px rgba(101, 136, 167, 0.16);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #858383;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard .flex {
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard .flex > span + span {
+  font-style: italic;
+  opacity: 0.3;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard:hover {
+  box-shadow: 3px 3px 15px 3px rgba(101, 136, 167, 0.25);
+  color: #f26a94;
+  text-decoration: none;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard:hover .flex > span {
+  text-decoration: underline;
+}
+.bloc-contenu .bloc-article.latest .bloc-article-container .flex .kittenCard:hover .flex > span + span {
+  color: #858383;
+  text-decoration: none;
+}
 
 form#upload_photo {
   color: #4C4C4C;
@@ -5695,7 +5658,7 @@ form#upload_photo .photo-area div {
 
 @font-face {
   font-family: "grobold";
-  src: url('../fonts/grobold.ttf?1432066594') format('truetype'), url('../fonts/grobold.eot?1432066594') format('embedded-opentype'), url('../fonts/grobold.woff?1432066594') format('woff'), url('../fonts/grobold.svg?1432066594') format('svg');
+  src: url('../fonts/grobold.ttf?1653920783') format('truetype'), url('../fonts/grobold.eot?1653920783') format('embedded-opentype'), url('../fonts/grobold.woff?1653920783') format('woff'), url('../fonts/grobold.svg?1653920783') format('svg');
 }
 .grobold {
   font-family: "grobold", Helvetica, Arial, sans-serif !important;
@@ -5706,7 +5669,7 @@ form#upload_photo .photo-area div {
 
 @font-face {
   font-family: "proxima";
-  src: url('../fonts/ProximaNovaRegular.ttf?1430831282') format('truetype'), url('../fonts/ProximaNovaRegular.eot?1430831288') format('embedded-opentype'), url('../fonts/ProximaNovaRegular.woff?1430831280') format('woff'), url('../fonts/ProximaNovaRegular.svg?1430831291') format('svg');
+  src: url('../fonts/ProximaNovaRegular.ttf') format('truetype'), url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'), url('../fonts/ProximaNovaRegular.woff') format('woff'), url('../fonts/ProximaNovaRegular.svg') format('svg');
 }
 .proxima {
   font-family: "proxima", Helvetica, Arial, sans-serif !important;
@@ -5717,7 +5680,7 @@ form#upload_photo .photo-area div {
 
 @font-face {
   font-family: "proxima-bold";
-  src: url('../fonts/ProximaNovaBold.ttf?1430831295') format('truetype'), url('../fonts/ProximaNovaBold.eot?1430831299') format('embedded-opentype'), url('../fonts/ProximaNovaBold.woff?1430831293') format('woff'), url('../fonts/ProximaNovaBold.svg?1430831300') format('svg');
+  src: url('../fonts/ProximaNovaBold.ttf?1653920783') format('truetype'), url('../fonts/ProximaNovaBold.eot?1653920783') format('embedded-opentype'), url('../fonts/ProximaNovaBold.woff?1653920783') format('woff'), url('../fonts/ProximaNovaBold.svg?1653920783') format('svg');
 }
 .proxima-bold {
   font-family: "proxima-bold", Helvetica, Arial, sans-serif !important;
@@ -5728,7 +5691,7 @@ form#upload_photo .photo-area div {
 
 @font-face {
   font-family: "wendy";
-  src: url('../fonts/Wendy.ttf?1432153570') format('truetype'), url('../fonts/Wendy.eot?1432153570') format('embedded-opentype'), url('../fonts/Wendy.woff?1432153570') format('woff'), url('../fonts/Wendy.svg?1432153570') format('svg');
+  src: url('../fonts/Wendy.ttf') format('truetype'), url('../fonts/Wendy.eot') format('embedded-opentype'), url('../fonts/Wendy.woff') format('woff'), url('../fonts/Wendy.svg') format('svg');
 }
 .wendy {
   font-family: "wendy", Helvetica, Arial, sans-serif !important;
@@ -5738,12 +5701,12 @@ form#upload_photo .photo-area div {
 }
 
 [class^="icone-"] {
-  background: url('../images/icone-sf5c7b02ce3.png');
+  background: url('../images/icone-se2354c2334.png');
   display: inline-block;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min—moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   [class^="icone-"] {
-    background: url('../images/icone-2x-s51a2f3ef6e.png');
+    background: url('../images/icone-2x-s54e8692bbb.png');
     background-size: 62px 443px;
   }
 }
@@ -5845,24 +5808,7 @@ form#upload_photo .photo-area div {
     -o-transform: rotate(360deg);
   }
 }
-@-webkit-keyframes rotating-droite /* Safari and Chrome */ {
-  from {
-    transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-  }
-}
 .rotating-droite {
-  -webkit-animation: rotating-droite 0.3s linear infinite;
   animation: rotating-droite 0.3s linear infinite;
 }
 
@@ -5882,23 +5828,6 @@ form#upload_photo .photo-area div {
     -o-transform: rotate(-360deg);
   }
 }
-@-webkit-keyframes rotating-gauche /* Safari and Chrome */ {
-  from {
-    transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-    -ms-transform: rotate(-360deg);
-    -moz-transform: rotate(-360deg);
-    -webkit-transform: rotate(-360deg);
-    -o-transform: rotate(-360deg);
-  }
-}
 .rotating-gauche {
-  -webkit-animation: rotating-gauche 0.3s linear infinite;
   animation: rotating-gauche 0.3s linear infinite;
 }

@@ -339,6 +339,30 @@ class Image{
     	}
     }
 
+    public static function getLatestKittens(){
+        global $pdo;
+		$latestKittens = [];
+
+        $sql = "SELECT * FROM kitten_image WHERE file_exist = 1 ORDER BY date_creation DESC LIMIT 3";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array());
+
+        $resKittens = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+		foreach ($resKittens as $resKitten) {
+			$currentKitten = new \classe\Image();
+
+			foreach ($resKitten as $k => $v) {
+				$currentKitten->$k = $v;
+			}
+			
+			$currentKitten->getFilename();
+
+			array_push($latestKittens, $currentKitten);
+		}
+
+		return $latestKittens;
+    }
+
     public function getFilename(){
     	$filename = strtolower($this->texte);
     	$count = null;
