@@ -24,7 +24,7 @@ class emailController {
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         // $mail->SMTPDebug   = 3;
         $mail->Username = 'hello@sayitwithkittens.io';                   // SMTP username
-        $mail->Password = 'KAC381381521cbrplx';               // SMTP password
+        $mail->Password = '';               // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
         $mail->Port = 587;                                    //Set the SMTP port number - 587 for authenticated TLS
 
